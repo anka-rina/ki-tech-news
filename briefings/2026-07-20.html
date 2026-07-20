@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive AI Intelligence Briefing — 20. Juli 2026</title>
+<style>
+  :root{
+    --bg:#0b0e14; --panel:#141922; --panel2:#1b2230; --line:#26304180;
+    --ink:#e8ecf3; --muted:#94a0b4; --dim:#6b7688;
+    --accent:#6ea8fe; --accent2:#8b7bff; --green:#4ade80; --red:#f87171;
+    --amber:#fbbf24; --pink:#f472b6; --teal:#2dd4bf;
+    --star:#ffcf4d;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:linear-gradient(180deg,#0b0e14,#0d1119 40%,#0b0e14);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55; font-size:16px; letter-spacing:.1px;
+  }
+  .wrap{max-width:860px; margin:0 auto; padding:28px 20px 80px}
+  header.masthead{
+    border:1px solid var(--line); border-radius:18px; overflow:hidden;
+    background:radial-gradient(120% 140% at 0% 0%, #1a2740 0%, #121722 55%, #0f141d 100%);
+    box-shadow:0 20px 60px -30px #000;
+  }
+  .masthead .top{padding:26px 26px 20px}
+  .kicker{font-size:12px; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); font-weight:700}
+  h1.title{margin:8px 0 4px; font-size:29px; line-height:1.15; font-weight:800; letter-spacing:-.3px}
+  .subtitle{color:var(--muted); font-size:14.5px; margin-top:6px; max-width:640px}
+  .meta-row{display:flex; flex-wrap:wrap; gap:10px 18px; margin-top:16px; font-size:12.5px; color:var(--dim)}
+  .meta-row b{color:var(--muted); font-weight:600}
+  .scorestrip{display:flex; flex-wrap:wrap; gap:0; border-top:1px solid var(--line); background:#0e131c}
+  .score{flex:1 1 20%; min-width:120px; padding:14px 16px; border-right:1px solid var(--line)}
+  .score:last-child{border-right:none}
+  .score .lbl{font-size:11px; text-transform:uppercase; letter-spacing:.8px; color:var(--dim)}
+  .score .val{font-size:22px; font-weight:800; margin-top:3px}
+  .score .bar{height:5px; border-radius:3px; background:#222b3a; margin-top:8px; overflow:hidden}
+  .score .bar > i{display:block; height:100%; border-radius:3px}
+
+  section{margin-top:30px}
+  .sec-head{display:flex; align-items:center; gap:10px; margin:0 0 14px}
+  .sec-head .ic{font-size:20px}
+  .sec-head h2{margin:0; font-size:19px; font-weight:800; letter-spacing:-.2px}
+  .sec-head .rule{flex:1; height:1px; background:linear-gradient(90deg,var(--line),transparent)}
+
+  .card{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:18px 18px; margin-bottom:14px}
+  .card.big{background:linear-gradient(135deg,#182033,#12161f); border-color:#324563}
+  .topstory{background:linear-gradient(135deg,#241a2e,#171320); border:1px solid #4a2f6a80; border-radius:16px; padding:22px}
+  .topstory h3{margin:0 0 8px; font-size:20px; font-weight:800}
+  .topstory p{margin:8px 0 0; color:#d9dbe8}
+
+  .card h3{margin:0 0 6px; font-size:16.5px; font-weight:750}
+  .card .lab{font-size:11.5px; letter-spacing:.6px; text-transform:uppercase; color:var(--accent); font-weight:700}
+  .card p{margin:7px 0 0; color:#cdd4e0; font-size:14.5px}
+  .card ul{margin:9px 0 0; padding-left:18px; color:#cdd4e0; font-size:14px}
+  .card ul li{margin:3px 0}
+
+  .stars{color:var(--star); letter-spacing:2px; font-size:13px}
+  .badge{display:inline-block; padding:2px 9px; border-radius:999px; font-size:11px; font-weight:700; letter-spacing:.4px; vertical-align:middle}
+  .b-game{background:#3b1d2b; color:#ff8fb0; border:1px solid #7a2f4a}
+  .b-high{background:#3a2f12; color:#ffd76b; border:1px solid #7a5f1f}
+  .b-mid{background:#12303a; color:#7fe3ff; border:1px solid #1f5f7a}
+  .b-new{background:#16321f; color:#7ff0a8; border:1px solid #245f38}
+  .b-open{background:#1c2440; color:#9db4ff; border:1px solid #33488a}
+  .pill{display:inline-block; margin:3px 6px 0 0; padding:3px 10px; border-radius:8px; background:#1a2130; border:1px solid var(--line); font-size:12px; color:var(--muted)}
+
+  .kv{display:flex; flex-wrap:wrap; gap:6px 14px; margin-top:9px; font-size:12.5px; color:var(--muted)}
+  .kv span b{color:var(--ink); font-weight:650}
+
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+  @media(max-width:640px){ .grid2{grid-template-columns:1fr} .score{flex-basis:45%} h1.title{font-size:24px} }
+
+  table.wl{width:100%; border-collapse:collapse; font-size:14px; margin-top:4px}
+  table.wl th,table.wl td{padding:9px 12px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top}
+  table.wl th{font-size:11px; text-transform:uppercase; letter-spacing:.7px; color:var(--dim)}
+  .win{color:var(--green); font-weight:700}
+  .lose{color:var(--red); font-weight:700}
+
+  .callout{border-left:3px solid var(--accent2); background:#161c28; border-radius:0 12px 12px 0; padding:14px 16px; color:#d7dcea; font-size:14.5px}
+  .callout.fore{border-color:var(--pink); background:#1d1622}
+  .callout.chance{border-color:var(--teal); background:#111f24}
+
+  .try a, .src a{color:var(--accent)}
+  .try .item{padding:10px 0; border-bottom:1px solid var(--line)}
+  .try .item:last-child{border:none}
+  .try .item b{color:var(--ink)}
+
+  .legend{display:grid; grid-template-columns:repeat(5,1fr); gap:8px; font-size:12px}
+  @media(max-width:640px){ .legend{grid-template-columns:repeat(2,1fr)} }
+  .legend .l{background:#141922; border:1px solid var(--line); border-radius:10px; padding:9px 10px}
+  .legend .l .s{color:var(--star); letter-spacing:1px}
+  .legend .l .t{display:block; color:var(--muted); margin-top:3px}
+
+  footer{margin-top:40px; padding-top:18px; border-top:1px solid var(--line); color:var(--dim); font-size:12px}
+  footer a{color:var(--muted)}
+  .note{background:#161a12; border:1px solid #33401f; border-radius:12px; padding:12px 15px; color:#cdd6bd; font-size:13px; margin-top:14px}
+  .verify{color:var(--amber); font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="top">
+      <div class="kicker">Executive AI Intelligence · Tägliches Briefing</div>
+      <h1 class="title">Was heute in KI wirklich zählt</h1>
+      <div class="subtitle">Nicht nur Meldungen — sondern Einordnung: Was ist passiert, warum ist es wichtig, wer profitiert, kannst du es heute nutzen, und was bedeutet es in 6–24 Monaten.</div>
+      <div class="meta-row">
+        <span><b>Ausgabe</b> · Montag, 20. Juli 2026</span>
+        <span><b>Zeitraum</b> · letzte 1–4 Wochen</span>
+        <span><b>Zustellung</b> · täglich 09:00 Uhr (Europe/Berlin)</span>
+        <span><b>Lesezeit</b> · ~12 Min</span>
+      </div>
+    </div>
+    <div class="scorestrip">
+      <div class="score"><div class="lbl">Business</div><div class="val">9<span style="font-size:13px;color:var(--dim)">/10</span></div><div class="bar"><i style="width:90%;background:var(--accent)"></i></div></div>
+      <div class="score"><div class="lbl">Developer</div><div class="val">9<span style="font-size:13px;color:var(--dim)">/10</span></div><div class="bar"><i style="width:90%;background:var(--teal)"></i></div></div>
+      <div class="score"><div class="lbl">Creator</div><div class="val">7<span style="font-size:13px;color:var(--dim)">/10</span></div><div class="bar"><i style="width:70%;background:var(--pink)"></i></div></div>
+      <div class="score"><div class="lbl">Investment</div><div class="val">8<span style="font-size:13px;color:var(--dim)">/10</span></div><div class="bar"><i style="width:80%;background:var(--amber)"></i></div></div>
+      <div class="score"><div class="lbl">Langfristig</div><div class="val">9<span style="font-size:13px;color:var(--dim)">/10</span></div><div class="bar"><i style="width:90%;background:var(--accent2)"></i></div></div>
+    </div>
+  </header>
+
+  <!-- TOP STORY -->
+  <section>
+    <div class="sec-head"><span class="ic">🚨</span><h2>Top Story des Tages</h2><span class="rule"></span></div>
+    <div class="topstory">
+      <div class="lab" style="color:#ff9ec4">Open Weights erreichen die Frontier · <span class="stars">★★★★★</span> Game Changer</div>
+      <h3>Moonshot AI veröffentlicht Kimi K3 — das erste offene Modell der „3-Billionen-Klasse“</h3>
+      <p>Am 16. Juli hat das chinesische Labor Moonshot AI <b>Kimi K3</b> vorgestellt (2,8 Bio. Parameter). Auf dem Artificial-Analysis-Index erreicht es eine Elo von <b>1547</b> (+732 gegenüber K2.6) und schlägt damit Claude Opus 4.8 und GPT-5.5 High — nur die allerneuesten US-Flaggschiffe (Claude Fable 5, GPT-5.6 Sol) liegen noch davor. Bei rund <b>0,94 $ Kosten pro Aufgabe</b> ist es etwa halb so teuer wie Opus 4.8. Die offenen Gewichte sind für den <b>27. Juli</b> angekündigt.</p>
+      <p style="margin-top:12px;color:var(--muted);font-size:13.5px"><b style="color:var(--ink)">Warum das zählt:</b> Ein chinesisches Labor liefert Frontier-Niveau zum halben Preis — und open weights. Für Beschaffung, Datensouveränität und Kostenmodelle ist das die strategisch wichtigste Meldung der Woche. In 6–24 Monaten verschiebt sich die Preis-Leistungs-Grenze so weit, dass „closed vs. open“ zur echten Vendor-Entscheidung wird, nicht mehr zur Qualitätsfrage.</p>
+      <div class="kv" style="margin-top:14px">
+        <span><b>Runner-up:</b></span>
+        <span>Mira Muratis <b>Thinking Machines</b> liefert mit <b>Inkling</b> (15. Juli) das neue führende US-Open-Weights-Modell.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEUE MODELLE -->
+  <section>
+    <div class="sec-head"><span class="ic">🧠</span><h2>Neue Modelle</h2><span class="rule"></span></div>
+    <p style="color:var(--muted);font-size:13.5px;margin:-4px 0 14px">Das dichteste Frontier-Release-Fenster des Jahres: fünf große Modelle in fünf Tagen (15.–19. Juli).</p>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="lab">Moonshot AI · Kimi K3</div>
+        <h3>Kimi K3 <span class="badge b-open">Open Weights 27.7.</span></h3>
+        <div class="stars">★★★★★</div>
+        <ul>
+          <li><b>Neu:</b> 2,8 Bio. Parameter, erstes „offenes 3T-Klasse“-Modell, Vision integriert</li>
+          <li><b>Benchmarks:</b> AA-Elo 1547 (+732 vs. K2.6), führt Arena Frontend-Code</li>
+          <li><b>Kontext / Effizienz:</b> ~21 % weniger Output-Tokens als K2.6</li>
+        </ul>
+        <div class="kv"><span><b>Preis:</b> 3 $ / 15 $ pro 1M</span><span><b>Wechseln?</b> Kostensensible Coding-Workloads</span></div>
+      </div>
+
+      <div class="card">
+        <div class="lab">Thinking Machines · Mira Murati</div>
+        <h3>Inkling <span class="badge b-open">Open Weights</span></h3>
+        <div class="stars">★★★★☆</div>
+        <ul>
+          <li><b>Neu:</b> Debütmodell, MoE 975B total / 41B aktiv, 1M Kontext, 45T multimodale Tokens</li>
+          <li><b>Benchmarks:</b> SWE-Bench Verified 77,6 %, AIME 2026 97,1 %</li>
+          <li><b>Fokus:</b> steuerbarer „thinking effort“, Fine-Tuning-Basis (nicht das stärkste Overall-Modell)</li>
+        </ul>
+        <div class="kv"><span><b>Plattform:</b> Tinker (−50 % Launch)</span><span><b>Wechseln?</b> Wer eine offene Tuning-Basis sucht</span></div>
+      </div>
+
+      <div class="card">
+        <div class="lab">OpenAI · GPT-5.6</div>
+        <h3>Sol / Terra / Luna <span class="badge b-high">Flagship</span></h3>
+        <div class="stars">★★★★★</div>
+        <ul>
+          <li><b>Neu:</b> Rollout seit ~8. Juli; „max“-Reasoning + „ultra“-Subagent-Modus</li>
+          <li><b>Benchmarks:</b> SOTA auf Terminal-Bench 2.1; ~1/3 der Output-Tokens der Rivalen</li>
+          <li><b>Bleibt</b> das Top-US-Flaggschiff, an dem sich alle messen</li>
+        </ul>
+        <div class="kv"><span><b>Preis:</b> Sol 5/30 · Terra 2,50/15 · Luna 1/6</span></div>
+      </div>
+
+      <div class="card">
+        <div class="lab">Anthropic · Claude</div>
+        <h3>Fable 5 — redeployt <span class="badge b-mid">1.7.</span></h3>
+        <div class="stars">★★★★☆</div>
+        <ul>
+          <li><b>Neu:</b> Nach Sicherheitsstopp (12.6.) am 1.7. wieder ausgerollt</li>
+          <li>Neuer Klassifikator blockt den Jailbreak in &gt;99 % der Fälle</li>
+          <li>Bleibt zusammen mit GPT-5.6 Sol das Top-Tier-Referenzmodell</li>
+        </ul>
+        <div class="kv"><span><b>Hinweis:</b> Re-Deployment, kein neues Modell</span></div>
+      </div>
+
+      <div class="card">
+        <div class="lab">xAI (SpaceXAI) · Grok</div>
+        <h3>Grok 4.5 <span class="badge b-high">„Opus-class“</span></h3>
+        <div class="stars">★★★★☆</div>
+        <ul>
+          <li><b>Neu:</b> 16. Juli; mit Cursor fürs Coding trainiert, Office-Integration</li>
+          <li><b>Benchmarks:</b> Terminal-Bench 2.1 83,3 %; ~4,2× weniger Tokens als Opus 4.8</li>
+        </ul>
+        <div class="kv"><span><b>Preis:</b> 2 $ / 6 $ pro 1M</span><span><b>Via:</b> Cursor, xAI API</span></div>
+      </div>
+
+      <div class="card">
+        <div class="lab">Alibaba · Qwen</div>
+        <h3>Qwen 3.8 <span class="badge b-new">Preview 19.7.</span> <span class="badge b-open">open bald</span></h3>
+        <div class="stars">★★★☆☆</div>
+        <ul>
+          <li><b>Neu:</b> 2,4 Bio. Params — erstes &gt;1T multimodales Qwen, direkt gegen K3</li>
+          <li><b>Benchmarks:</b> <span class="verify">noch keine unabhängigen Zahlen</span> — nur Hersteller-Claim „nur hinter Fable 5“</li>
+        </ul>
+        <div class="kv"><span><b>Preis:</b> Preview zu 10 % der Standardrate</span></div>
+      </div>
+    </div>
+
+    <div class="note">Weitere: <b>DeepSeek V4</b> (offiziell, 1M Kontext, neuartige Peak/Off-Peak-Preise) · <b>Zhipu GLM-5.2</b> (MIT-Lizenz, 744B MoE, schlägt Gemini 3.1 Pro Preview) · <b>Mistral Robostral Navigate</b> (erstes Robotik-Modell). <span class="verify">Verifizierung:</span> Gemini 3.5 Pro und Qwen 3.8 sind Launch-/Preview-Items ohne bestätigte unabhängige Benchmarks; China-Lab-„schlägt-Fable-5“-Claims bis zur Arena-Bestätigung als Richtungswert lesen.</div>
+  </section>
+
+  <!-- STARTUP RADAR -->
+  <section>
+    <div class="sec-head"><span class="ic">💰</span><h2>Startup Radar</h2><span class="rule"></span></div>
+    <div class="card">
+      <h3>Emergent — neues Unicorn <span class="badge b-new">15.7.</span></h3>
+      <div class="stars">★★★★☆</div>
+      <p>„Engineering-Team in a Box“ für nicht-technische Gründer. <b>130 Mio. $ Series C bei 1,5 Mrd. $</b> (Creaegis, Khosla, SoftBank Vision Fund 2, Lightspeed, YC). 120 Mio. $ ARR, 200k+ zahlende Kunden — 13 Monate nach Launch.</p>
+      <div class="callout chance" style="margin-top:10px"><b>Warum gefährlich:</b> zielt auf Nicht-Coder und greift damit Replit/Cursor <i>und</i> den gesamten Low-Code-Markt von unten an.</div>
+    </div>
+    <div class="grid2">
+      <div class="card">
+        <h3>Norm Ai — Unicorn <span class="badge b-new">7.7.</span></h3>
+        <div class="stars">★★★☆☆</div>
+        <p>KI-Agenten mit Rechts-/Regulatorik-Reasoning für Finanzdienstleister, plus eigene KI-native Kanzlei. <b>120 Mio. $ bei 1,2 Mrd. $</b> (Khosla, Blackstone, Bain, Coatue).</p>
+      </div>
+      <div class="card">
+        <h3>Fora — Unicorn <span class="badge b-new">16.7.</span></h3>
+        <div class="stars">★★★☆☆</div>
+        <p>KI-gestützte Reisebüro-Plattform (Assistent „Via“). <b>60 Mio. $ Series D bei 1 Mrd. $</b>. 3 Mrd. $+ gebuchtes Reisevolumen.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Makro: H1 2026 — Rekord-Kapital</h3>
+      <p>Globales VC bei <b>510 Mrd. $ in H1 2026</b> (mehr als das gesamte Jahr 2025). OpenAI + Anthropic allein <b>217 Mrd. $ = 43 %</b> aller Startup-Finanzierung. <b>Zoom</b> kauft <b>Common Room</b> (KI-Sales-Agenten) — Schwenk von Video zur KI-Workplace-Plattform.</p>
+      <div class="note"><span class="verify">Zu verifizieren:</span> Der kolportierte <b>SpaceXAI-Kauf von Cursor/Anysphere (60 Mrd. $)</b> stammt vom 16. Juni und liest sich in der Quelle spekulativ — als unbestätigt behandeln.</div>
+    </div>
+  </section>
+
+  <!-- BIG TECH -->
+  <section>
+    <div class="sec-head"><span class="ic">🏢</span><h2>Big Tech — heute</h2><span class="rule"></span></div>
+    <div class="grid2">
+      <div class="card"><div class="lab">OpenAI</div><p>GPT-5.6-Familie + <b>ChatGPT Work</b> (Enterprise-Agent mit Drive/Slack/Salesforce) + <b>GPT-Live</b> Full-Duplex-Voice. <span class="verify">Caveat:</span> UK AISI fand universelle Jailbreaks in den Cyber-Safeguards.</p></div>
+      <div class="card"><div class="lab">Google</div><p>NotebookLM heißt jetzt <b>„Gemini Notebook“</b> (30M+ Nutzer), in Gemini-App & Search integriert. Gemini 3.5 Pro auf 17.7. verschoben (Architektur-Rebuild).</p></div>
+      <div class="card"><div class="lab">Microsoft</div><p>Preiserhöhungen zum 1.7.; <b>Copilot Cowork</b> GA mit Verbrauchspreisen. Neu: <b>Claude Sonnet 5 & Opus 4.8 direkt in M365 Copilot</b> wählbar.</p></div>
+      <div class="card"><div class="lab">Anthropic</div><p><b>Claude for Teachers</b> (14.7.). Sekundärmarkt-Bewertung kolportiert bei ~<b>1,2 Bio. $</b>. <span class="verify">Kontrovers:</span> Location-Tracking-Code in Claude Code — Alibaba stoppt Nutzung.</p></div>
+      <div class="card"><div class="lab">Nvidia</div><p>Neu: <b>Sechs-Jahres-Mindestumsatz-Garantien</b> für GPU-Miete — Finanzstruktur mit Signalwirkung für den KI-Schulden-Markt. Rubin-Plattform liefert H2 2026.</p></div>
+      <div class="card"><div class="lab">Meta / Apple</div><p><b>Meta:</b> <b>Muse Spark 1.1</b> über neue Meta Model API (1,25–4,25 $/M), Meta AI auf Platz 4 US. <b>Apple:</b> verklagt OpenAI wegen Abwerbung von Hardware-Personal.</p></div>
+    </div>
+  </section>
+
+  <!-- AGENTEN -->
+  <section>
+    <div class="sec-head"><span class="ic">🤖</span><h2>Agenten</h2><span class="rule"></span></div>
+    <div class="card">
+      <ul>
+        <li><b>Claude Code:</b> Desktop mit <b>eingebautem In-App-Browser</b>; Sonnet 5 default (1M Kontext), Claude-in-Chrome GA, Subagenten laufen standardmäßig im Hintergrund. <span class="stars">★★★★☆</span></li>
+        <li><b>ChatGPT Work (9.7.):</b> „Ziel rein → fertige Arbeit raus“ — Sheets, Slides, Docs, Web-Apps; bleibt Stunden an Aufgaben dran; 1.400+ Plugins. <span class="stars">★★★★★</span></li>
+        <li><b>Cognition / Devin:</b> <b>SWE-1.7</b> (auf Kimi-K2.7-Basis, ~1.000 Tok/s auf Cerebras) + <b>Devin Security Swarm</b>; Windsurf → „Devin Desktop“. <span class="stars">★★★★☆</span></li>
+        <li><b>xAI open-sourct <code>grok-build</code></b> (~9,3k Stars) — transparente Coding-Agent-CLI (Apache 2.0). <span class="stars">★★★☆☆</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- NEUE TOOLS -->
+  <section>
+    <div class="sec-head"><span class="ic">🛠</span><h2>Neue Tools</h2><span class="rule"></span></div>
+    <div class="card">
+      <span class="pill">MCP 2026-07-28 · stateless core + MCP Apps (interaktive UIs)</span>
+      <span class="pill">Revid.ai MCP + CLI · KI-Video als Agent-Tool</span>
+      <span class="pill">Claude Code In-App-Browser</span>
+      <span class="pill">Google Video Remix · Relighting/BG-Swap</span>
+      <span class="pill">Gemini Omni Flash · Video-Edit ~0,10 $/s</span>
+      <span class="pill">Meta Muse Image · QR/Infografik-Editing</span>
+      <span class="pill">Nano Banana 2 Lite · ~4 s Bilder</span>
+      <span class="pill">GPT-Live-1 (mini) · Full-Duplex Voice</span>
+      <span class="pill">codebase-memory-mcp · Code-Knowledge-Graph</span>
+      <span class="pill">OmniRoute · Gateway über 231+ Provider</span>
+      <span class="pill">OfficeCLI · agenten-natives Office</span>
+    </div>
+    <div class="note">Video-, Bild- und Voice-Tool-Specs (5–8, 12) stammen aus einem Aggregator — Zahlen als Richtwert bis zur Primärquelle.</div>
+  </section>
+
+  <!-- FORSCHUNG -->
+  <section>
+    <div class="sec-head"><span class="ic">🔬</span><h2>Forschung</h2><span class="rule"></span></div>
+    <div class="card">
+      <ul>
+        <li><b>Qwen-AgentWorld (Alibaba, arXiv Jun 2026):</b> LLMs als „Weltmodelle“, die Agenten-Umgebungen simulieren. <i>In 2 Jahren:</i> Agenten werden günstig in Simulation statt teuer in der Realität trainiert.</li>
+        <li><b>Reasoning-Selbstkorrektur (MIT/Stanford):</b> Fähigkeit hängt am <i>Training</i>, nicht an der Größe — kleine, billige Modelle könnten große einholen.</li>
+        <li><b>Prospective Credit Assignment (DeepMind):</b> Modelle antizipieren Spätfolgen von Entscheidungen → weniger Kaskadenfehler bei langen Agent-Tasks.</li>
+        <li><b>Effizienzwelle:</b> JetSpec (~9,6× schneller), NVIDIA Nemotron Diffusion-LM (~2,4× Durchsatz), Google TabFM (zero-shot Tabellen).</li>
+      </ul>
+      <div class="note"><span class="verify">Verifizierung:</span> Nur Qwen-AgentWorld hat einen Primär-arXiv-Link; die übrigen Zahlen aus Sekundärquellen vor externem Zitieren prüfen.</div>
+    </div>
+  </section>
+
+  <!-- OPEN SOURCE -->
+  <section>
+    <div class="sec-head"><span class="ic">⚡</span><h2>Open Source</h2><span class="rule"></span></div>
+    <div class="grid2">
+      <div class="card"><h3>strix · ~42k ★</h3><p>KI-Pentesting-Agent, validiert Lücken mit PoC-Exploits, CI/CD-ready. <b>Reif.</b></p></div>
+      <div class="card"><h3>colibri · ~14,7k ★</h3><p>Pure-C-Engine, die <b>GLM-5.2 (744B) auf ~25 GB RAM</b> per Disk-Streaming laufen lässt. On-Device-Frontier.</p></div>
+      <div class="card"><h3>codebase-memory-mcp · ~32k ★</h3><p>Persistenter Code-Knowledge-Graph (158 Sprachen) für Agenten.</p></div>
+      <div class="card"><h3>Kimi K2.7 Code · HF</h3><p>Offenes Coding-Modell; Basis für Devin SWE-1.7, in GitHub Copilot integriert.</p></div>
+    </div>
+  </section>
+
+  <!-- TRENDANALYSE -->
+  <section>
+    <div class="sec-head"><span class="ic">📈</span><h2>Trendanalyse</h2><span class="rule"></span></div>
+    <div class="card">
+      <p style="margin-top:0">Welche Themen häufen sich gerade?</p>
+      <span class="pill">Coding-Agenten + Agent-Security</span>
+      <span class="pill">MCP wird Enterprise-Infra</span>
+      <span class="pill">Agentische Browser</span>
+      <span class="pill">World Models für Agenten</span>
+      <span class="pill">On-Device / lokale Frontier</span>
+      <span class="pill">Full-Duplex Voice</span>
+      <span class="pill">Video-AI als Tooling</span>
+      <span class="pill">Diffusion Language Models</span>
+      <p style="margin-top:12px;color:var(--muted);font-size:13.5px">Roter Faden: Die Wertschöpfung wandert von „welches Modell“ zu „welcher Agent + welche Infrastruktur“. Token-Effizienz (Grok 4.5, Sol, K3) ist die neue Preisfront — nicht mehr der Preis pro Token allein.</p>
+    </div>
+  </section>
+
+  <!-- CHANCEN + BUILDER -->
+  <section>
+    <div class="sec-head"><span class="ic">🎯</span><h2>Chancen &amp; Builder Corner</h2><span class="rule"></span></div>
+    <div class="callout chance">
+      <b>Chance des Tages:</b> Kimi K3 + GLM-5.2 machen Frontier-Qualität zum Open-Weight-Preis. Ableitbare Geschäftsideen: (1) <b>Sovereign-AI-Hosting</b> für DACH-Mittelstand auf offenen Modellen; (2) <b>Kostenrouter-SaaS</b>, das pro Task automatisch das billigste ausreichende Modell wählt (OmniRoute-Prinzip als Produkt); (3) <b>On-Device-Assistenten</b> auf colibri/GLM-5.2 für datensensible Branchen.
+    </div>
+    <div class="callout" style="margin-top:12px">
+      <b>🏗 Was du heute bauen kannst:</b> Ein <b>Agenten-Workflow mit ChatGPT Work oder Claude Code + MCP Apps</b>, der eine wiederkehrende Büroaufgabe (Report, Angebot, Recherche) end-to-end erledigt. Marktpotenzial: jedes KMU ohne eigenes Dev-Team — genau das Segment, das Emergent gerade zum Unicorn gemacht hat.
+    </div>
+  </section>
+
+  <!-- GEWINNER & VERLIERER -->
+  <section>
+    <div class="sec-head"><span class="ic">📊</span><h2>Gewinner &amp; Verlierer</h2><span class="rule"></span></div>
+    <div class="card" style="padding:6px 6px">
+      <table class="wl">
+        <tr><th>Akteur</th><th>Richtung</th><th>Warum</th></tr>
+        <tr><td>Moonshot / Kimi</td><td class="win">Gewinner</td><td>Open-Weight-Frontier zum halben Preis — setzt die Agenda</td></tr>
+        <tr><td>Nvidia</td><td class="win">Gewinner</td><td>Umsatzgarantien sichern GPU-Nachfrage über Jahre</td></tr>
+        <tr><td>Anthropic</td><td class="win">Gewinner</td><td>In M365 Copilot wählbar; Bewertung ~1,2 Bio. $ — aber Tracking-Kontroverse</td></tr>
+        <tr><td>Cursor / Replit</td><td class="lose">unter Druck</td><td>Emergent greift Nicht-Coder-Segment frontal an</td></tr>
+        <tr><td>Grok (Consumer)</td><td class="lose">Verlierer</td><td>starkes Modell, aber weiter sinkender Consumer-Marktanteil</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- PROGNOSE -->
+  <section>
+    <div class="sec-head"><span class="ic">🔮</span><h2>Meine Prognose</h2><span class="rule"></span></div>
+    <div class="callout fore">
+      Kimi K3 halte ich für wichtiger, als die westliche Berichterstattung es abbildet: Sobald am 27. Juli die Gewichte fallen, wird es innerhalb von Wochen zur Default-Basis für kostensensible Coding- und Agent-Startups — ähnlich wie es K2.7 Code bereits für Devin wurde. Qwen 3.8 dagegen wirkt zum jetzigen Zeitpunkt eher wie eine <i>Reaktions-Ankündigung</i> ohne Substanz; ich würde es erst nach unabhängigen Benchmarks ernst nehmen. Und die eigentliche Story der nächsten sechs Monate ist nicht ein einzelnes Modell, sondern <b>MCP als Standard-Klebstoff</b> zwischen Agenten und Enterprise-Systemen.
+    </div>
+  </section>
+
+  <!-- SOFORT AUSPROBIEREN -->
+  <section>
+    <div class="sec-head"><span class="ic">🚀</span><h2>Sofort ausprobieren</h2><span class="rule"></span></div>
+    <div class="card try">
+      <div class="item"><b>Modell:</b> Grok 4.5 in Cursor testen — bei 2/6 $ und ~4× Token-Effizienz ein günstiger Opus-Ersatz fürs Coding.</div>
+      <div class="item"><b>Agent:</b> ChatGPT Work eine wiederkehrende Aufgabe als geplanten Lauf übergeben und die Plan-Mode-Freigaben ausprobieren.</div>
+      <div class="item"><b>Open Source:</b> <code>colibri</code> lokal starten und GLM-5.2 auf dem eigenen Rechner laufen lassen (~25 GB RAM).</div>
+      <div class="item"><b>Vormerken:</b> 27. Juli — Kimi-K3-Gewichte auf Hugging Face.</div>
+    </div>
+  </section>
+
+  <!-- WICHTIGKEIT LEGENDE -->
+  <section>
+    <div class="sec-head"><span class="ic">⭐</span><h2>Wichtigkeits-Skala</h2><span class="rule"></span></div>
+    <div class="legend">
+      <div class="l"><span class="s">★★★★★</span><span class="t">Game Changer</span></div>
+      <div class="l"><span class="s">★★★★</span><span class="t">Sehr wichtig</span></div>
+      <div class="l"><span class="s">★★★</span><span class="t">Interessant</span></div>
+      <div class="l"><span class="s">★★</span><span class="t">Nische</span></div>
+      <div class="l"><span class="s">★</span><span class="t">Ignorierbar</span></div>
+    </div>
+  </section>
+
+  <footer>
+    <div><b>Executive AI Intelligence Briefing</b> — automatisch erstellt, täglich 09:00 Uhr (Europe/Berlin). Dies ist ein Muster für die Formatabstimmung.</div>
+    <div style="margin-top:8px" class="src">Ausgewählte Quellen: Simon Willison · CNBC · TechCrunch · Artificial Analysis · Thinking Machines · OpenAI · Anthropic · Bloomberg · Crunchbase · The Decoder · modelcontextprotocol.io · arXiv · Analytics Vidhya. Vollständige Links liegen der Recherche bei.</div>
+    <div style="margin-top:8px;color:#57606f">Einordnungen und Prognosen sind Analysen, keine Anlage-, Rechts- oder Steuerberatung.</div>
+  </footer>
+
+</div>
+</body>
+</html>
