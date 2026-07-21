@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive AI Intelligence Briefing — 21. Juli 2026</title>
+<style>
+  :root{
+    --bg:#0b0e14; --bg2:#11151d; --card:#151a24; --card2:#1a2130;
+    --border:#242c3d; --text:#e6e9f0; --muted:#93a0b8; --muted2:#6b7690;
+    --accent:#7c9cff; --accent2:#5865f2;
+    --green:#3ddc97; --red:#ff6b6b; --yellow:#ffcc66; --purple:#c792ea; --orange:#ff9f5a; --cyan:#5adfe0; --pink:#ff8fc7;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; padding:0; background:linear-gradient(180deg,#0b0e14 0%,#0d1119 100%);
+    color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6; font-size:16px;
+  }
+  .wrap{max-width:920px; margin:0 auto; padding:0 16px 60px;}
+  header.hero{
+    background:radial-gradient(1200px 400px at 20% -10%, rgba(124,156,255,.25), transparent),
+               linear-gradient(135deg,#141a2b 0%,#0f1420 100%);
+    border-bottom:1px solid var(--border);
+    padding:36px 16px 28px;
+  }
+  .hero-inner{max-width:920px; margin:0 auto;}
+  .eyebrow{
+    color:var(--accent); text-transform:uppercase; letter-spacing:.14em; font-size:12px; font-weight:700;
+    display:flex; align-items:center; gap:8px; margin-bottom:10px;
+  }
+  .eyebrow .dot{width:8px; height:8px; border-radius:50%; background:var(--green); box-shadow:0 0 8px var(--green); animation:pulse 2s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+  h1.title{font-size:clamp(24px,4.2vw,34px); margin:0 0 6px; font-weight:800; letter-spacing:-.02em;}
+  .subtitle{color:var(--muted); font-size:15px; margin-bottom:22px;}
+  .impact-bar{
+    display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-top:18px;
+  }
+  .impact-card{
+    background:rgba(255,255,255,.03); border:1px solid var(--border); border-radius:12px;
+    padding:12px 8px; text-align:center;
+  }
+  .impact-card .label{font-size:10.5px; color:var(--muted2); text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px;}
+  .impact-card .score{font-size:22px; font-weight:800;}
+  .impact-card .bar{height:5px; border-radius:3px; background:#232a3a; margin-top:8px; overflow:hidden;}
+  .impact-card .bar > span{display:block; height:100%; border-radius:3px;}
+  section{margin-top:34px;}
+  .sec-head{
+    display:flex; align-items:center; gap:10px; padding:10px 16px; border-radius:12px; margin-bottom:16px;
+    font-size:19px; font-weight:800; letter-spacing:-.01em;
+  }
+  .sec-head .n{font-size:12px; font-weight:700; color:rgba(255,255,255,.6); background:rgba(0,0,0,.2); padding:2px 8px; border-radius:20px; margin-left:auto;}
+  .sh-top{background:linear-gradient(90deg,rgba(255,107,107,.18),rgba(255,107,107,.03)); border:1px solid rgba(255,107,107,.35); color:#ffb3b3;}
+  .sh-models{background:linear-gradient(90deg,rgba(124,156,255,.18),rgba(124,156,255,.03)); border:1px solid rgba(124,156,255,.35); color:#adc0ff;}
+  .sh-money{background:linear-gradient(90deg,rgba(61,220,151,.18),rgba(61,220,151,.03)); border:1px solid rgba(61,220,151,.35); color:#8fecc4;}
+  .sh-corp{background:linear-gradient(90deg,rgba(255,159,90,.18),rgba(255,159,90,.03)); border:1px solid rgba(255,159,90,.35); color:#ffc199;}
+  .sh-research{background:linear-gradient(90deg,rgba(199,146,234,.18),rgba(199,146,234,.03)); border:1px solid rgba(199,146,234,.35); color:#ddb8f2;}
+  .sh-agent{background:linear-gradient(90deg,rgba(90,223,224,.18),rgba(90,223,224,.03)); border:1px solid rgba(90,223,224,.35); color:#a6eeee;}
+  .sh-tools{background:linear-gradient(90deg,rgba(255,204,102,.18),rgba(255,204,102,.03)); border:1px solid rgba(255,204,102,.35); color:#ffdf99;}
+  .sh-oss{background:linear-gradient(90deg,rgba(61,220,151,.18),rgba(61,220,151,.03)); border:1px solid rgba(61,220,151,.35); color:#8fecc4;}
+  .sh-trend{background:linear-gradient(90deg,rgba(255,143,199,.18),rgba(255,143,199,.03)); border:1px solid rgba(255,143,199,.35); color:#ffc2e0;}
+  .sh-chance{background:linear-gradient(90deg,rgba(255,204,102,.18),rgba(255,204,102,.03)); border:1px solid rgba(255,204,102,.35); color:#ffdf99;}
+  .sh-build{background:linear-gradient(90deg,rgba(124,156,255,.18),rgba(124,156,255,.03)); border:1px solid rgba(124,156,255,.35); color:#adc0ff;}
+  .sh-table{background:linear-gradient(90deg,rgba(255,107,107,.18),rgba(61,220,151,.1)); border:1px solid rgba(255,255,255,.2); color:#e6e9f0;}
+  .sh-forecast{background:linear-gradient(90deg,rgba(199,146,234,.18),rgba(199,146,234,.03)); border:1px solid rgba(199,146,234,.35); color:#ddb8f2;}
+  .sh-try{background:linear-gradient(90deg,rgba(61,220,151,.18),rgba(61,220,151,.03)); border:1px solid rgba(61,220,151,.35); color:#8fecc4;}
+
+  .card{
+    background:var(--card); border:1px solid var(--border); border-radius:14px; padding:18px 20px; margin-bottom:14px;
+  }
+  .card h3{margin:0 0 8px; font-size:16.5px; font-weight:700; display:flex; align-items:center; gap:8px; flex-wrap:wrap;}
+  .card p{margin:6px 0; color:#cfd6e4; font-size:14.8px;}
+  .card .meta{margin:10px 0 0; padding-top:10px; border-top:1px dashed var(--border); font-size:13.5px; color:var(--muted);}
+  .card .meta b{color:#dfe4ee;}
+  .stars{color:var(--yellow); font-size:13px; letter-spacing:1px; white-space:nowrap;}
+  .badge{
+    display:inline-block; font-size:11px; font-weight:700; padding:2px 9px; border-radius:20px; letter-spacing:.02em;
+  }
+  .badge-lab{background:rgba(124,156,255,.15); color:#adc0ff; border:1px solid rgba(124,156,255,.35);}
+  .badge-verify{background:rgba(255,204,102,.15); color:#ffdf99; border:1px solid rgba(255,204,102,.4);}
+  .src{font-size:12.5px;}
+  .src a{color:var(--accent); text-decoration:none; border-bottom:1px dotted rgba(124,156,255,.5);}
+  .src a:hover{color:#fff;}
+  .callout{
+    border-left:3px solid var(--accent); background:rgba(124,156,255,.07); border-radius:0 10px 10px 0;
+    padding:12px 16px; margin:14px 0; font-size:14.5px; color:#d6dcec;
+  }
+  .callout.warn{border-color:var(--yellow); background:rgba(255,204,102,.08);}
+  .callout.top{border-color:var(--red); background:rgba(255,107,107,.08);}
+  .lead{font-size:15.5px; color:#dbe1ee;}
+  table.wl{width:100%; border-collapse:collapse; margin-top:6px; font-size:14px;}
+  table.wl th{text-align:left; padding:10px 12px; background:rgba(255,255,255,.04); color:var(--muted); font-size:11.5px; text-transform:uppercase; letter-spacing:.05em;}
+  table.wl td{padding:12px; border-top:1px solid var(--border); vertical-align:top;}
+  table.wl tr.win td:first-child{color:var(--green); font-weight:700;}
+  table.wl tr.lose td:first-child{color:var(--red); font-weight:700;}
+  .tag{display:inline-block; font-size:11px; padding:2px 8px; border-radius:6px; background:rgba(255,255,255,.06); color:var(--muted); margin-right:4px;}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  ul.clean{margin:8px 0 0; padding-left:20px;}
+  ul.clean li{margin-bottom:6px; color:#cfd6e4; font-size:14.5px;}
+  .try-box{
+    background:linear-gradient(135deg,#101826,#0e1420); border:1px solid rgba(61,220,151,.3); border-radius:12px; padding:14px 18px; margin-bottom:12px;
+  }
+  .try-box .lbl{font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--green); font-weight:700; margin-bottom:6px;}
+  code{background:#0b0f18; border:1px solid var(--border); padding:2px 7px; border-radius:6px; font-size:13px; color:#d6f5e3;}
+  footer{
+    margin-top:48px; padding:24px 16px; border-top:1px solid var(--border); color:var(--muted2); font-size:12.5px; text-align:center;
+  }
+  footer .legal{max-width:680px; margin:14px auto 0; line-height:1.6;}
+  @media (max-width:600px){
+    .impact-bar{grid-template-columns:repeat(5,1fr); gap:6px;}
+    .impact-card{padding:8px 4px;}
+    .impact-card .score{font-size:17px;}
+    .impact-card .label{font-size:8.7px;}
+    .grid2{grid-template-columns:1fr;}
+    .sec-head{font-size:16px; padding:9px 12px;}
+    table.wl{font-size:12.5px;}
+    table.wl th, table.wl td{padding:8px 6px;}
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow"><span class="dot"></span>DAILY EXECUTIVE BRIEFING · KI TECH NEWS</div>
+    <h1 class="title">🧭 Executive AI Intelligence Briefing</h1>
+    <div class="subtitle">Montag, 21. Juli 2026 · Analysezeitraum ca. 14.–21. Juli 2026 · für Mööp</div>
+    <div class="impact-bar">
+      <div class="impact-card"><div class="label">Business</div><div class="score" style="color:var(--green)">8/10</div><div class="bar"><span style="width:80%;background:var(--green)"></span></div></div>
+      <div class="impact-card"><div class="label">Developer</div><div class="score" style="color:var(--accent)">9/10</div><div class="bar"><span style="width:90%;background:var(--accent)"></span></div></div>
+      <div class="impact-card"><div class="label">Creator</div><div class="score" style="color:var(--purple)">6/10</div><div class="bar"><span style="width:60%;background:var(--purple)"></span></div></div>
+      <div class="impact-card"><div class="label">Investment</div><div class="score" style="color:var(--orange)">8/10</div><div class="bar"><span style="width:80%;background:var(--orange)"></span></div></div>
+      <div class="impact-card"><div class="label">Langfristig</div><div class="score" style="color:var(--red)">9/10</div><div class="bar"><span style="width:90%;background:var(--red)"></span></div></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- TOP STORY -->
+<section>
+  <div class="sec-head sh-top">🚨 Top Story <span class="n">★★★★★</span></div>
+  <div class="card">
+    <h3>Chinas Open-Weight-Offensive (Kimi K3 + Qwen3.8) trifft ein strauchelndes Google mitten ins Gesicht</h3>
+    <p class="lead">Die größte Geschichte der Woche ist eine Kombination aus zwei Entwicklungen, die gleichzeitig eintraten: Moonshot AIs <b>Kimi K3</b> — mit 2,8 Billionen Parametern das größte Open-Weight-Modell überhaupt — hat eine führende Coding-Rangliste angeführt und soll Anthropics Spitzenmodell „Claude Fable 5" bei Coding-Aufgaben schlagen. Der Andrang war so groß, dass Moonshot neue Anmeldungen vorübergehend stoppen musste; die freien Gewichte sollen am 27. Juli 2026 folgen. Nur Tage später präsentierte Alibaba auf der WAIC in Shanghai <b>Qwen3.8-Max</b> (2,4 Billionen Parameter, erstes Alibaba-Modell über 1 Billion Parameter, multimodal) und behauptet, „nur hinter Claude Fable 5" zu liegen — eine unbestätigte Eigenaussage. Parallel bestätigte Apple, dass Qwen künftig Apple Intelligence in China antreibt, nachdem Chinas Cyberspace-Regulierer dies genehmigt hat. Das hat in Washington und im Silicon Valley echte Nervosität ausgelöst: OpenAI erwog laut TechCrunch offenbar sogar regulatorische Hürden gegen chinesische Open-Weight-Modelle, zog dies aber wieder zurück. Fast zeitgleich verpasste <b>Googles Gemini 3.5 Pro</b> zum dritten Mal seinen Starttermin (diesmal 17. Juli), Alphabet verlor daraufhin rund 4% Börsenwert, und die EU verpflichtete Google per Digital Markets Act, Android für konkurrierende KI-Assistenten zu öffnen. China nutzte die Gunst der Stunde, um in Shanghai die „World AI Cooperation Organization" (WAICO) mit 29 Gründungsstaaten aus dem Globalen Süden zu lancieren — ein Gegenentwurf zu westlich geprägten KI-Governance-Strukturen.</p>
+    <div class="callout top"><b>Warum wichtig:</b> Zum ersten Mal gerät die Preissetzungsmacht der US-Frontier-Labs unter echten Druck — ein 2,8-Billionen-Parameter-Modell aus China schlägt Claude bei Coding und wird in Kürze kostenlos verfügbar sein. Wer profitiert? Kostensensible Entwicklerteams und Unternehmen im Globalen Süden, die bislang an teure US-APIs gebunden waren. Heute nutzbar? Teilweise — Kimi K3 läuft bereits (mit Wartelisten), offene Gewichte kommen am 27.7. In 6–24 Monaten dürfte dies jede Build-vs-Buy-Entscheidung bei Modellwahl beeinflussen und den Preisdruck auf OpenAI, Anthropic und Google strukturell erhöhen.</div>
+    <div class="meta"><b>Quellen:</b> <span class="src"><a href="https://techcrunch.com/2026/07/16/moonshots-upcoming-kimi-3-is-expected-to-close-the-gap-with-anthropics-opus-4-8/">TechCrunch</a> · <a href="https://www.scmp.com/tech/tech-war/article/3361142/why-chinas-open-weight-ai-model-kimi-k3-sparking-anxiety-silicon-valley">SCMP</a> · <a href="https://www.marktechpost.com/2026/07/19/alibaba-previews-qwen3-8-max-a-2-4-trillion-parameter-multimodal-model-days-after-moonshots-kimi-k3-open-weight-launch/">MarkTechPost</a> · <a href="https://techcrunch.com/2026/07/20/openai-is-scared-of-open-weight-models-should-the-us-be/">TechCrunch (OpenAI-Reaktion)</a> · <a href="https://www.techtimes.com/articles/320308/20260713/gemini-35-pro-targets-july-17-after-full-rebuild-every-spec-remains-unconfirmed.htm">TechTimes (Gemini)</a> · <a href="https://www.aljazeera.com/news/2026/7/17/chinas-xi-jinping-launches-new-ai-alliance-what-is-it">Al Jazeera (WAICO)</a></span></div>
+  </div>
+</section>
+
+<!-- NEUE MODELLE -->
+<section>
+  <div class="sec-head sh-models">🧠 Neue Modelle pro Lab <span class="n">10 Labs</span></div>
+
+  <div class="card">
+    <h3><span class="badge badge-lab">OpenAI</span> GPT-5.6-Familie (Sol / Terra / Luna) + ChatGPT Work <span class="stars">★★★★★</span></h3>
+    <p><b>Was neu:</b> Statt eines einzelnen Flaggschiffs jetzt drei Stufen — Sol (Top-Leistung), Terra (Mittelklasse), Luna (günstig) — plus „ChatGPT Work", ein Agenten-Tool für Dokumente/Tabellen/Präsentationen im Unternehmenskontext. Kontextfenster ca. 1,05 Mio. Token.</p>
+    <p><b>Benchmarks (OpenAI-Angabe, vorsichtig einordnen):</b> Sol erreicht 80 Punkte im Artificial Analysis Coding Agent Index, angeblich 2,8 Punkte über Claude Fable 5; Terra ≈ Fable 5; Luna soll Opus 4.8 übertreffen.</p>
+    <p><b>Kosten:</b> Sol 5 $/30 $ pro Mio. Token (Input/Output), Terra 2,50 $/15 $, Luna 1 $/6 $.</p>
+    <p><b>Wer sollte wechseln:</b> Teams mit stark schwankendem Budget profitieren von der dreistufigen Preisstruktur; seit 20.7. auch über AWS Bedrock verfügbar.</p>
+    <div class="meta"><span class="src"><a href="https://techcrunch.com/2026/07/09/openai-launches-its-new-family-of-models-with-gpt-5-6/">TechCrunch</a> · <a href="https://www.cnbc.com/2026/07/08/openai-expanding-gpt-5point6-ai-model-release-ending-government-limits.html">CNBC</a> · <a href="https://aws.amazon.com/blogs/aws/aws-weekly-roundup-one-click-lambda-setup-prompt-openai-gpt-5-6-models-on-bedrock-and-more-july-20-2026/">AWS Blog</a></span></div>
+  </div>
+
+  <div class="card">
+    <h3><span class="badge badge-lab">Anthropic</span> Claude Fable 5 / Opus 4.8 — turbulente Woche <span class="stars">★★★★</span></h3>
+    <p><b>Was neu:</b> Kein neues Flaggschiff in diesem Zeitraum, aber viel Bewegung: Fable 5 war nach Exportkontrollen (Jailbreak-Bedenken von Pentagon/NSA) zeitweise gesperrt und wurde am 1. Juli mit neuem Klassifikator (blockt die betroffene Jailbreak-Technik in &gt;99% der Fälle) wieder freigeschaltet. Der kostenlose Zugang zu Fable 5 endete laut Sekundärquelle am 19. Juli — auffällig zeitnah zur Kimi-K3-Ankündigung (Zusammenhang nicht belegt).</p>
+    <p><b>Talent-Zuwachs:</b> Ex-DeepMind-Forscher John Jumper (Nobelpreisträger, AlphaFold) sowie Jonas Adler und Alexander Pritzel wechselten zu Anthropic.</p>
+    <p><b>Kosten:</b> Opus 4.8 unverändert bei 5 $/25 $ pro Mio. Token, Fast-Mode 10 $/50 $ (3x günstiger als zuvor).</p>
+    <span class="badge badge-verify">zu verifizieren</span> <span style="font-size:13px;color:var(--muted)">„Claude Sonnet 5" als günstigeres Agenten-Modell erwähnt, Details nicht unabhängig bestätigt.</span>
+    <div class="meta"><span class="src"><a href="https://www.anthropic.com/news/redeploying-fable-5">Anthropic</a> · <a href="https://www.anthropic.com/news/claude-opus-4-8">Anthropic (Opus 4.8)</a> · <a href="https://the-agent-report.com/2026/07/google-gemini-3-5-pro-delayed-july-2026/">The Agent Report</a></span></div>
+  </div>
+
+  <div class="card">
+    <h3><span class="badge badge-lab">Google DeepMind</span> Gemini 3.5 Pro — dritte verpasste Deadline <span class="stars">★★★</span></h3>
+    <p><b>Was neu:</b> Erneut verschoben (diesmal 17. Juli), nach angeblich komplettem architektonischem Neubau. Google prüft eine Übergangslösung „Gemini 3.6 Flash". Versprochene Specs (2-Mio.-Token-Kontext, „Deep Think"-Modus) offiziell nicht bestätigt.</p>
+    <p><b>Nebenwirkung:</b> Alphabet-Aktie fiel am 22. Juni um ~5% (ca. 225 Mrd. $ Marktkapitalisierung), nach dem ersten verpassten Termin. Zusätzlich verordnete die EU per DMA die Öffnung von Android für Rivalen-Assistenten.</p>
+    <p><b>Lichtblick:</b> NotebookLM wurde zu „Gemini Notebook" umbenannt und tiefer in die Gemini-Marke integriert (30+ Mio. Nutzer, 600.000+ Organisationen).</p>
+    <div class="meta"><span class="src"><a href="https://www.techtimes.com/articles/320308/20260713/gemini-35-pro-targets-july-17-after-full-rebuild-every-spec-remains-unconfirmed.htm">TechTimes</a> · <a href="https://the-agent-report.com/2026/07/google-gemini-3-5-pro-delayed-july-2026/">The Agent Report</a> · <a href="https://digital-markets-act.ec.europa.eu/commission-provides-guidance-google-ai-interoperability-android-and-sharing-google-search-data-under-2026-07-16_en">EU-Kommission</a> · <a href="https://9to5google.com/2026/07/16/notebooklm-gemini-notebook/">9to5Google</a></span></div>
+  </div>
+
+  <div class="card">
+    <h3><span class="badge badge-lab">Meta</span> Muse Image statt neuem Llama <span class="stars">★★</span></h3>
+    <p><b>Was neu:</b> „Muse Image", Metas erstes eigenes Bildgenerierungsmodell (Meta Superintelligence Labs), gestartet am 7. Juli in Meta AI, Instagram Stories und WhatsApp. Mehrfoto-Blending, 30+ Stilvorlagen, Skizzen-Editing, lesbarer Text im Bild. Kostenlos in der Basisversion.</p>
+    <p><b>Kein neues Llama-Flaggschiff</b> in diesem Zeitraum; anhaltende Berichte über Verzögerungen und einen möglichen Kurswechsel Richtung Closed-Source.</p>
+    <div class="meta"><span class="src"><a href="https://about.fb.com/news/2026/07/introducing-muse-image-meta-ai/">Meta Newsroom</a></span></div>
+  </div>
+
+  <div class="card">
+    <h3><span class="badge badge-lab">xAI</span> Grok 4.5 — aggressiv günstig fürs Coding <span class="stars">★★★★</span></h3>
+    <p><b>Was neu:</b> Gestartet am 16. Juli, gebaut für/mit Cursor, Fokus auf Coding & Agentenaufgaben. ~80 Tokens/Sek., laut xAI ~4,2x bessere Token-Effizienz als Wettbewerber. Native Office-Integration (Word/PowerPoint/Excel).</p>
+    <p><b>Benchmarks (Hersteller-Angabe):</b> DeepSWE 1.0: 62%, SWE Marathon: 29%, SWE-Bench Pro: 64,7%.</p>
+    <p><b>Kosten:</b> 2 $ Input / 6 $ Output pro Mio. Token — deutlich günstiger als GPT-5.6 Sol.</p>
+    <p><b>Wer sollte wechseln:</b> Kostenbewusste Engineering-Teams, die bereits Cursor nutzen.</p>
+    <div class="meta"><span class="src"><a href="https://x.ai/news/grok-4-5">x.ai</a> · <a href="https://www.axios.com/2026/07/08/spacexai-grok-new-model">Axios</a></span></div>
+  </div>
+
+  <div class="card">
+    <h3><span class="badge badge-lab">Mistral AI</span> Robotik-/„Physical AI"-Modell <span class="stars">★★</span> <span class="badge badge-verify">zu verifizieren</span></h3>
+    <p>Bloomberg berichtete um den 8. Juli von einem neuen Mistral-Modell für „Physical AI"/Robotik; Details (Name, Benchmarks, Partner) konnten nicht unabhängig verifiziert werden (Artikel per robots.txt blockiert). Zusätzlich soll ein Open-Weight-Modell für die Frontier-Lücke in früher Testphase sein — ebenfalls unbestätigt.</p>
+    <div class="meta"><span class="src"><a href="https://mistral.ai/news/">Mistral Newsroom</a> · <a href="https://www.techtimes.com/articles/319798/20260706/mistral-ai-targets-frontier-gap-open-weight-model-entering-july-early-access.htm">TechTimes</a></span></div>
+  </div>
+
+  <div class="card">
+    <h3><span class="badge badge-lab">DeepSeek</span> V4 — 1-Mio.-Token-Kontext, Stapelrelease 24. Juli <span class="stars">★★★</span></h3>
+    <p><b>Was neu:</b> Preview bereits live, stabiler Release für den 24. Juli angekündigt (unmittelbar nach diesem Briefing-Zeitraum). Gesamte Modellreihe mit 1-Mio.-Token-Kontextfenster, Verbesserungen bei Agenten-Aufgaben, Mathe und Code.</p>
+    <p><b>Besonderheit:</b> Neue „Peak-Time"-API-Preisgestaltung — doppelter Standardpreis 9–12 Uhr und 14–18 Uhr, Normalpreis außerhalb dieser Zeiten.</p>
+    <div class="meta"><span class="src"><a href="https://technode.com/2026/06/30/deepseek-to-launch-v4-in-mid-july-with-new-peak-time-api-pricing/">TechNode</a></span></div>
+  </div>
+
+  <div class="card">
+    <h3><span class="badge badge-lab">Moonshot AI / Kimi</span> K3 — größtes Open-Weight-Modell der Welt <span class="stars">★★★★★</span></h3>
+    <p><b>Was neu:</b> 2,8 Billionen Parameter, 1-Mio.-Token-Kontext, „Kimi Delta Attention" soll 6,3x schnelleres Decoding bei Millionen-Token-Kontext ermöglichen. Score von 81,2 auf einem „FrontierSWE"-Benchmark (Herstellerangabe). Anmeldungen wegen Nachfrageüberhang pausiert; Preise ab 0,30 $ pro Mio. Input-Token; offene Gewichte am 27. Juli.</p>
+    <p><b>Konkurrenzvergleich:</b> Soll Claude Fable 5 bei Coding schlagen — bislang nicht durch unabhängige Dritte bestätigt.</p>
+    <div class="meta"><span class="src"><a href="https://www.interconnects.ai/p/kimi-k3-the-open-weights-escalation">Interconnects.ai</a> · <a href="https://www.caixinglobal.com/2026-07-21/kimi-k3-demand-surge-forces-moonshot-ai-to-pause-sign-ups-102466370.html">Caixin Global</a></span></div>
+  </div>
+
+  <div class="card">
+    <h3><span class="badge badge-lab">Qwen (Alibaba)</span> Qwen3.8-Max-Preview — 2,4 Billionen Parameter <span class="stars">★★★★</span></h3>
+    <p><b>Was neu:</b> Erstes Alibaba-Modell über 1 Billion Parameter, multimodal (Text/Bild/Video/Dokumente), vorgestellt am 19. Juli auf der WAIC Shanghai. Zehn-Prozent-Vorschaupreise über den Token Plan; offene Gewichte „bald" angekündigt, kein Datum bestätigt.</p>
+    <p><b>Strategischer Kontext:</b> Apple bestätigte, dass Qwen künftig Apple Intelligence in China antreibt — Alibaba-Aktie stieg daraufhin über 6%.</p>
+    <div class="meta"><span class="src"><a href="https://www.marktechpost.com/2026/07/19/alibaba-previews-qwen3-8-max-a-2-4-trillion-parameter-multimodal-model-days-after-moonshots-kimi-k3-open-weight-launch/">MarkTechPost</a> · <a href="https://www.cnbc.com/2026/07/15/alibaba-qwen-ai-apple-intelligence.html">CNBC</a></span></div>
+  </div>
+
+  <div class="card">
+    <h3><span class="badge badge-lab">Thinking Machines Lab</span> Inkling — erstes eigenes Modell von Mira Murati <span class="stars">★★★★</span></h3>
+    <p><b>Was neu:</b> Gestartet am 15. Juli. Mixture-of-Experts mit 975 Mrd. Gesamt-/~41 Mrd. aktiven Parametern, nativ multimodal (Text/Bild/Audio/Video), 1-Mio.-Token-Kontext, 45 Billionen Trainings-Token. Offene Gewichte — bewusster Kontrast zu Closed-Source-Labs. Kalibrierte Unsicherheit (Modell erkennt eigenes Nicht-Wissen) und einstellbarer „Denkaufwand".</p>
+    <p><b>Eigene Einordnung:</b> Thinking Machines sagt selbst, Inkling sei „nicht das stärkste Modell am Markt", beansprucht aber ~1/3 der Token von Nvidias Nemotron 3 Ultra bei vergleichbarer Coding-Leistung. Geschäftsmodell ist die Fine-Tuning-Plattform „Tinker", nicht das Modell selbst.</p>
+    <div class="meta"><span class="src"><a href="https://techcrunch.com/2026/07/15/thinking-machines-amps-up-its-bet-against-one-size-fits-all-ai-with-its-first-open-model-inkling/">TechCrunch</a> · <a href="https://huggingface.co/blog/thinkingmachines-inkling">Hugging Face</a></span></div>
+  </div>
+
+  <div class="card">
+    <h3>Weitere Labs im Blick <span class="stars">★★★</span></h3>
+    <p><b>Zhipu / Z.ai (GLM-5.2):</b> Neue Agenten-„Harness" veröffentlicht, richtet sich explizit gegen Anthropics Zielgruppe; Konkurrenzaussagen (schlägt Google-Modelle) sind Presse-/Herstellerbehauptungen, nicht unabhängig geprüft.</p>
+    <p><b>Microsoft (MAI):</b> „Project Perception" kombiniert Microsoft-, OpenAI- und Anthropic-Modelle für Sicherheits-Use-Cases mit „Smart Routing" zur Kostenoptimierung. <span class="badge badge-verify">zu verifizieren</span></p>
+    <p><b>Cohere:</b> Keine Neuigkeiten in diesem Zeitraum; zuletzt Command A+ (Open-Source-MoE, Mai) als westliche Alternative zu chinesischen Open-Weight-Modellen.</p>
+    <div class="meta"><span class="src"><a href="https://www.scmp.com/tech/tech-trends/article/3359170/zhipu-ai-releases-harness-glm-52-model-chinese-firm-takes-aim-anthropic">SCMP</a> · <a href="https://www.buildfastwithai.com/blogs/ai-news-today-july-20-2026-16-biggest-stories">BuildFastWithAI-Roundup</a></span></div>
+  </div>
+</section>
+
+<!-- STARTUP RADAR -->
+<section>
+  <div class="sec-head sh-money">💰 Startup Radar <span class="n">Runden &amp; Deals</span></div>
+
+  <div class="card">
+    <h3>Databricks auf 188 Mrd. $ Bewertung <span class="stars">★★★★</span></h3>
+    <p>Strategische Finanzierungsrunde angeführt von Coatue, Mittel fließen v.a. in GPU-Beschaffung für Enterprise-KI-Nachfrage (~16./17. Juli). Bemerkenswert: Aktien sollen laut Sekundärquelle nachbörslich trotz der Rekordbewertung gefallen sein — ein Signal für „Blasen-Müdigkeit" bei Investoren.</p>
+    <div class="meta"><span class="src"><a href="https://www.databricks.com/company/newsroom/press-releases/databricks-raising-strategic-round-funding-188-billion-valuation">Databricks</a> · <a href="https://techcrunch.com/2026/07/17/databricks-hits-188b-valuation-extending-its-run-as-ais-favorite-second-act/">TechCrunch</a></span></div>
+  </div>
+
+  <div class="card grid2" style="display:block;">
+    <h3>Neue Unicorns dieser Woche <span class="stars">★★★</span></h3>
+    <ul class="clean">
+      <li><b>CuspAI</b> (UK, Materialforschung mit KI): 450 Mio. $ Series B bei 2,6 Mrd. $ Bewertung, u.a. mit Jeff Bezos' Fonds und britischer Regierungsbeteiligung. <span class="src">(<a href="https://tech.eu/2026/07/20/jeff-bezos-and-sovereign-ai-back-cuspai-in-450m-raise/">Tech.eu</a>)</span></li>
+      <li><b>Emergent</b> (Indien, „KI-Ingenieur im Karton" fürs Coding): 130 Mio. $ Series C bei 1,5 Mrd. $ — 5x Bewertungssprung in 6 Monaten, 120 Mio. $ ARR, 200.000+ zahlende Kunden. <span class="src">(<a href="https://techcrunch.com/2026/07/15/indian-ai-coding-startup-emergent-becomes-a-unicorn-just-over-a-year-after-launch/">TechCrunch</a>)</span></li>
+      <li><b>Fora</b> (KI-Reisebüro „Via"): 60 Mio. $ Series D bei 1 Mrd. $. <span class="src">(<a href="https://techcrunch.com/2026/07/16/ai-powered-travel-agency-fora-hits-unicorn-status-raises-60m/">TechCrunch</a>)</span></li>
+      <li><b>Norm AI</b> (Legal-KI): 120 Mio. $ Series C bei 1,2 Mrd. $, angeführt von Khosla Ventures. <span class="src">(<a href="https://techcrunch.com/2026/07/07/ai-law-startup-norm-raises-120m-hits-unicorn-valuation/">TechCrunch</a>)</span></li>
+    </ul>
+    <div class="callout warn"><b>Warum gefährlich?</b> Emergents Bewertungssprung (5x in 6 Monaten) bei noch junger ARR-Basis ist ein klassisches Überhitzungsmuster. Und ein internes US-Finanzministeriums-Papier (unbestätigt/Entwurf) warnt explizit, der KI-Investitionsboom könne die Dot-Com-Blase widerspiegeln und ein „erhebliches Risiko" für die US-Wirtschaft darstellen. <span class="badge badge-verify">zu verifizieren</span></div>
+  </div>
+
+  <div class="card">
+    <h3>Etched — will auf 20 Mrd. $ Bewertung <span class="stars">★★★</span> <span class="badge badge-verify">zu verifizieren</span></h3>
+    <p>Der Nvidia-Herausforderer (transformer-spezifische Inferenz-Chips) soll laut WSJ eine neue Runde bei bis zu 20 Mrd. $ Bewertung anstreben — nach 5 Mrd. $ Bewertung und ~1 Mrd. $ Auftragsvolumen im Juni. Deal-Details nicht offiziell bestätigt.</p>
+    <div class="callout warn"><b>Warum gefährlich?</b> Reine Wette gegen Nvidias CUDA-Ökosystem-Lock-in bei offenbar konzentrierter Kundenbasis laut Berichten.</div>
+    <div class="meta"><span class="src"><a href="https://www.investing.com/news/company-news/etched-seeks-20-billion-valuation-in-new-ai-chip-funding-round--wsj-reports-4799566">Investing.com/WSJ</a></span></div>
+  </div>
+
+  <div class="card">
+    <h3>M&amp;A &amp; Übernahmen <span class="stars">★★★</span></h3>
+    <ul class="clean">
+      <li><b>SAP übernimmt Prior Labs</b> (Macher von TabPFN, in Nature publiziert) für über 1 Mrd. € über vier Jahre — nur 18 Monate nach Prior Labs' Start. <span class="src">(<a href="https://news.sap.com/2026/07/sap-completes-prior-labs-acquisition/">SAP</a>)</span></li>
+      <li><b>Blackstone × Anthropic „Ode with Anthropic"</b>: 1,5-Mrd.-$-Joint-Venture (mit Hellman & Friedman, Goldman Sachs) für KI-Implementierung in Unternehmen, aufgebaut auf der Übernahme von Fractional AI. CEO Chris Taylor nennt es einen möglichen „trillion-dollar business". <span class="src">(<a href="https://techcrunch.com/2026/07/15/anthropic-blackstone-bet-the-next-trillion-dollar-ai-business-is-implementation-not-models/">TechCrunch</a>)</span></li>
+      <li><b>Tempus AI übernimmt Personalis</b> (Genomtests) für rund 1,5 Mrd. $. <span class="badge badge-verify">zu verifizieren (Einzelquelle)</span></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Infrastruktur-Finanzierung im großen Stil <span class="stars">★★★★</span></h3>
+    <p><b>Oracle</b> streicht laut Berichten ~30.000 Stellen (18% der Belegschaft), um 8–10 Mrd. $/Jahr für den 300-Mrd.-$-Stargate-Cloudvertrag mit OpenAI (5 Jahre, 4,5 GW) freizusetzen — ein direktes Signal für Kundenkonzentrationsrisiko bei OpenAIs Compute-Versorgung. <span class="badge badge-verify">zu verifizieren</span></p>
+    <p><b>Hut 8</b> unterzeichnet einen zweiten Texas-Rechenzentrums-Deal über 9,8 Mrd. $ / 15 Jahre und vollvermietet damit seinen 1-GW-Campus „Beacon Point". <span class="badge badge-verify">zu verifizieren (Einzelquelle)</span></p>
+  </div>
+</section>
+
+<!-- BIG TECH -->
+<section>
+  <div class="sec-head sh-corp">🏢 Big Tech <span class="n">9 Konzerne</span></div>
+  <div class="card">
+    <h3>OpenAI <span class="stars">★★★★</span></h3>
+    <p>GPT-5.6-Familie + ChatGPT Work live (s.o.). Kurs Richtung möglicher ~1-Billion-$-IPO-Bewertung <span class="badge badge-verify">zu verifizieren</span>; Microsofts ~27%-Anteil wäre dann ~270 Mrd. $ wert. Ebenfalls berichtet: ein Vorschlag, dem US-Staat 5% Eigenkapital zu geben <span class="badge badge-verify">zu verifizieren</span>. Sora-API wird zum 24. September 2026 eingestellt, Guthaben lässt sich auf Codex übertragen.</p>
+    <div class="meta"><span class="src"><a href="https://www.fool.com/investing/2026/07/04/chatgpt-maker-openai-is-headed-for-a-1-trillion-ip/">Motley Fool</a> · <a href="https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation">OpenAI Help Center</a></span></div>
+  </div>
+  <div class="card">
+    <h3>Google / Alphabet <span class="stars">★★★</span></h3>
+    <p>Dreifach belastete Woche: Gemini-3.5-Pro-Verzögerung, EU-DMA-Anordnung zur Android-Öffnung (Suchdaten-Teilen ab Januar 2027, Interoperabilität ab Juli 2027) und Kursrückgang. Positiv: NotebookLM → „Gemini Notebook"-Rebrand mit tieferer Integration.</p>
+    <div class="meta"><span class="src"><a href="https://digital-markets-act.ec.europa.eu/commission-provides-guidance-google-ai-interoperability-android-and-sharing-google-search-data-under-2026-07-16_en">EU-Kommission</a></span></div>
+  </div>
+  <div class="card">
+    <h3>Microsoft <span class="stars">★★★</span></h3>
+    <p>„Project Perception": Sicherheitsplattform mit Multi-Modell-Routing (Microsoft/OpenAI/Anthropic) zur Schwachstellenerkennung — direkte Konkurrenz zu Anthropics „Project Glasswing". Patch Tuesday im Juli soll mit KI-Unterstützung 570 Schwachstellen behoben haben. <span class="badge badge-verify">beide Punkte zu verifizieren</span></p>
+  </div>
+  <div class="card">
+    <h3>Anthropic <span class="stars">★★★★</span></h3>
+    <p>Berichte über IPO-Vorbereitungen mit ersten Investorengesprächen <span class="badge badge-verify">zu verifizieren</span>. „Ode with Anthropic"-JV mit Blackstone (s.o.). „Project Glasswing" (KI-gestützte Kritische-Infrastruktur-Sicherheit) auf ~150 Organisationen in 15+ Ländern ausgeweitet.</p>
+    <div class="meta"><span class="src"><a href="https://www.helpnetsecurity.com/2026/06/03/anthropic-project-glasswing-expansion/">Help Net Security</a></span></div>
+  </div>
+  <div class="card">
+    <h3>Amazon <span class="stars">★★</span></h3>
+    <p>Keine materiellen Neuigkeiten spezifisch für diesen Zeitraum über die laufenden Anthropic-Compute-Partnerschaften hinaus (bis zu 8 Mrd. $ / 5 GW). Investorenstimmung bleibt bullish zu AWS-KI-Capex.</p>
+  </div>
+  <div class="card">
+    <h3>Apple <span class="stars">★★★</span></h3>
+    <p>Berichte, Apple wolle KI-Chip-Firmen übernehmen, um Nvidia-Abhängigkeit zu verringern — der interne „Baltra"-Serverchip soll Verzögerungen haben; die Broadcom-Partnerschaft wurde bis 2031 verlängert. Neuer CEO John Ternus und erweiterte Kompetenzen für Johny Srouji könnten M&A beschleunigen. <span class="badge badge-verify">Details zu verifizieren</span></p>
+    <div class="meta"><span class="src"><a href="https://www.macrumors.com/2026/07/15/apple-looking-to-acquire-ai-chip-companies/">MacRumors</a></span></div>
+  </div>
+  <div class="card">
+    <h3>Nvidia <span class="stars">★★★</span></h3>
+    <p>Erste, laut US-Handelsvertretern „triviale" Mengen an H200-Chips gehen unter neuer Exportlizenz nach China — Kritiker sprechen bereits von einem möglichen „Blackwell-Schlupfloch". Bristol Myers Squibb wird erster Life-Sciences-Käufer eines Nvidia-DGX-SuperPOD (Vera-Rubin-Architektur) für Arzneimittelentwicklung. <span class="badge badge-verify">letzteres zu verifizieren</span></p>
+    <div class="meta"><span class="src"><a href="https://www.cnbc.com/2026/07/14/nvidia-h200-ai-chips-china.html">CNBC</a> · <a href="https://www.techtimes.com/articles/320544/20260715/nvidia-h200-shipments-china-called-trivial-blackwell-loophole-draws-fire.htm">TechTimes</a></span></div>
+  </div>
+  <div class="card">
+    <h3>Meta &amp; Tesla/xAI <span class="stars">★★</span></h3>
+    <p>Keine materiell neuen Geschäftsmeldungen speziell für diesen Zeitraum gefunden — bei Meta bleibt der Llama-Fahrplan unklar, bei xAI/Tesla keine neue Finanzierungs- oder Robotik-Meldung dieser Woche (die vielzitierte 20-Mrd.-$-xAI-Runde datiert auf Januar 2026 und ist NICHT neu).</p>
+  </div>
+</section>
+
+<!-- FORSCHUNG -->
+<section>
+  <div class="sec-head sh-research">🔬 Forschung <span class="n">5 Paper</span></div>
+  <div class="card">
+    <h3>MCPEvol-Bench: Agenten brechen ein, wenn sich Tools ändern <span class="stars">★★★★</span></h3>
+    <p>12 führende LLMs wurden gegen 123 MCP-Server getestet, deren Tool-Schnittstellen gezielt verändert wurden. Ergebnis: Selbst Frontier-Modelle verlieren 13,7–14,4% Leistung, sobald sich Tool-Formen ändern — mit deutlich mehr Planungsfehlern.</p>
+    <p><b>Was ändert das in 2 Jahren?</b> Je mehr Unternehmen Agenten über MCP an ständig aktualisierte interne Tools anbinden, desto mehr braucht es „Agenten-Zuverlässigkeits"-Tooling und Versionierungspraxis für Tool-Schnittstellen — ähnlich wie bei API-Deprecation-Fenstern heute.</p>
+    <div class="meta"><span class="src"><a href="https://arxiv.org/abs/2607.14642">arXiv:2607.14642</a></span></div>
+  </div>
+  <div class="card">
+    <h3>Plover: Steuerbare GUI-Agenten durch sichtbare Pläne <span class="stars">★★★</span></h3>
+    <p>Macht den Aufgabenplan eines GUI-Agenten zu einem dauerhaften, editierbaren Artefakt statt verstecktem internen Denkprozess — Menschen können pausieren, korrigieren, ohne Fortschritt zu verlieren.</p>
+    <p><b>Was ändert das in 2 Jahren?</b> Dürfte der kommende UX-Standard für Computer-Use-/Browser-Agenten werden: „Plan sehen und steuern" statt Blackbox — das könnte die Vertrauenslücke schließen, die aktuell die Unternehmensakzeptanz autonomer GUI-Agenten bremst.</p>
+    <div class="meta"><span class="src"><a href="https://arxiv.org/abs/2607.15193">arXiv:2607.15193</a></span></div>
+  </div>
+  <div class="card">
+    <h3>AutoSynthesis: Automatisierte Meta-Analysen <span class="stars">★★★</span> <span class="badge badge-verify">Details zu verifizieren</span></h3>
+    <p>Ein agentisches System zur automatisierten Zusammenfassung von Forschungsergebnissen über viele Paper hinweg. Könnte monatelange manuelle Literaturrecherche (Medizin, Politik, Wissenschaft) auf Stunden verkürzen — wirft aber Qualitätssicherungsfragen auf, wenn KI-generierte Zusammenfassungen in echte Entscheidungen einfließen.</p>
+  </div>
+  <div class="card">
+    <h3>Überzogenes Selbstvertrauen bei KI-Radiologie <span class="stars">★★★</span> <span class="badge badge-verify">zu verifizieren</span></h3>
+    <p>Berichtete Erkenntnis (RadLE-2.0-Benchmark): Klinische Bildgebungs-KI liefert falsche Befunde mit hoher angegebener Sicherheit — die Fehlkalibrierung gilt als gefährlicher als die reine Fehlerquote. Dürfte in den nächsten zwei Jahren zu einem regulatorischen/Beschaffungs-Kriterium werden.</p>
+  </div>
+  <div class="card">
+    <h3>KI-Text-Detektoren versagen bei Stilnachahmung <span class="stars">★★</span> <span class="badge badge-verify">zu verifizieren</span></h3>
+    <p>Getestete Tools (Pangram, GPTZero, Originality.ai) sollen bis zu 18% KI-generierter Texte übersehen, wenn Stilnachahmung eingesetzt wird — besonders bei wissenschaftlichem Schreiben. Untergräbt detektorbasierte Integritätsprüfung und dürfte Provenienz-/Wasserzeichen-Ansätze beschleunigen.</p>
+  </div>
+</section>
+
+<!-- AGENTEN -->
+<section>
+  <div class="sec-head sh-agent">🤖 Agenten <span class="n">Claude · ChatGPT · Gemini · mehr</span></div>
+  <div class="card">
+    <h3>Claude Code / Anthropic <span class="stars">★★★★</span></h3>
+    <p>Mehrere Versionssprünge diese Woche (v2.1.209–215): u.a. Verifikations-/Code-Review-Skills laufen nicht mehr automatisch (explizit via <code>/verify</code> bzw. <code>/code-review</code> aufzurufen), Sicherheits-Fixes für Windows-PowerShell/Bash-Berechtigungsprüfungen, neuer <code>/fork</code>-Befehl für Hintergrund-Sessions, Standard-Sicherheitslimits (200 Websuchen, 200 Subagenten pro Session) gegen außer Kontrolle geratene Agentenschleifen. VS Code 1.128 brachte Multi-Chat-Unterstützung, „Quick Chats" und GA für Copilot Vision.</p>
+    <div class="meta"><span class="src"><a href="https://www.gradually.ai/en/changelogs/claude-code/">Claude Code Changelog</a> · <a href="https://visualstudiomagazine.com/articles/2026/07/08/claude-ai-gets-yet-another-boost-in-vs-code-1-128.aspx">Visual Studio Magazine</a></span></div>
+  </div>
+  <div class="card">
+    <h3>ChatGPT / Codex <span class="stars">★★★</span></h3>
+    <p>„ChatGPT Work" für mehrstündige komplexe Aufgaben angekündigt (~9. Juli) <span class="badge badge-verify">Details zu verifizieren</span>. Codex-Changelog zeigt keine neuen Einträge für Juli — letzte bestätigte Updates stammen aus Anfang Juni (Web-Suche in Codex CLI, Desktop-Handoff macOS/Windows).</p>
+  </div>
+  <div class="card">
+    <h3>Gemini / Manus / Devin <span class="stars">★★★</span></h3>
+    <p><b>Gemini:</b> NotebookLM → Gemini Notebook (s.o.). <b>Manus AI:</b> Tencent soll in Gesprächen sein, größter Anteilseigner zu werden, nachdem ein früherer Meta-Deal offenbar rückabgewickelt wurde <span class="badge badge-verify">zu verifizieren</span>. <b>Devin (Cognition Labs):</b> „SWE-1.7" gestartet (8. Juli) — basiert auf einer „Kimi K2.7 Code"-Basis, läuft über Cerebras mit ~1.000 Token/Sek.; zusätzlich „Devin Security Swarm" für Schwachstellen-Backlogs angekündigt.</p>
+    <div class="meta"><span class="src"><a href="https://winbuzzer.com/2026/07/09/cognition-swe-17-adds-near-frontier-coding-scores-to-devin-xcxwbn/">Winbuzzer</a></span></div>
+  </div>
+  <div class="card">
+    <h3>OpenHands, Grok Build &amp; weitere Agenten-Infrastruktur <span class="stars">★★★</span></h3>
+    <p><b>OpenHands:</b> Keine Juli-Neuigkeit gefunden, letztes Update Mai (Software-Agent-SDK). <b>xAI:</b> Open-Source-Release von „Grok Build", dem Rust-basierten Agenten-Harness hinter der Coding-CLI — laut einem Bericht nach einem Vorfall, bei dem ein Cloud-Upload SSH-Keys/Repos offenlegte. <b>Hugging Face „ML Intern"</b>: autonomer Agent für Paper-Recherche, Datensatzauswahl, Code und GPU-Trainingsläufe; beansprucht laut HF Vorteile gegenüber Claude Code bei GPQA und gegenüber Codex bei HealthBench (Herstellerangaben). Zusätzlich meldete HF einen Sicherheitsvorfall, der „end-to-end von einem autonomen KI-Agentensystem" ausgeführt worden sein soll. <b>AWS Bedrock AgentCore</b> erreichte GA (~20. Juli).</p>
+    <div class="meta"><span class="src"><a href="https://github.com/xai-org/grok-build">GitHub (Grok Build)</a> · <a href="https://www.edtechinnovationhub.com/news/hugging-face-releases-ml-intern-the-ai-agent-teaching-itself-to-beat-claude-code-on-scientific-reasoning">EdTech Innovation Hub</a></span></div>
+  </div>
+</section>
+
+<!-- NEUE TOOLS -->
+<section>
+  <div class="sec-head sh-tools">🛠 Neue Tools <span class="n">~10 Kategorien</span></div>
+  <div class="card">
+    <ul class="clean">
+      <li><b>Coding-Agent:</b> xAI Grok Build (Rust-Harness, Open Source, 15.7.) — <a href="https://github.com/xai-org/grok-build">GitHub</a></li>
+      <li><b>Coding-Agent:</b> Cognition SWE-1.7 in Devin (8.7.)</li>
+      <li><b>MCP-Spezifikation:</b> MCP 2026-07-28 Release Candidate — zustandsloser Protokollkern, „MCP Apps" (sandboxed interaktive UIs in Tool-Aufrufen), neue OAuth2/OIDC-Sicherheits-SEPs — <a href="https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/">Blog</a></li>
+      <li><b>MCP-Server (Open Source):</b> codebase-memory-mcp — persistenter Wissensgraph für Codebases über 158 Sprachen, bis zu 99% Token-Ersparnis (Herstellerangabe, Sternezahl unbestätigt)</li>
+      <li><b>IDE-Integration:</b> VS Code 1.128 mit Claude-Multi-Chat, Quick Chats, Copilot Vision GA (8.7.)</li>
+      <li><b>Bildgenerierung:</b> Meta Muse Image (7.7., kostenlos in Meta AI/Instagram/WhatsApp) — enthält eine standardmäßig aktive, umstrittene Funktion, echte öffentliche Instagram-Profilfotos in Generierungen einzufügen</li>
+      <li><b>Automatisierung/Wissen:</b> Pinecone „Nexus" — Wissensschicht, die Organisationskontext über mehrere Agenten hinweg teilt</li>
+      <li><b>Enterprise-Orchestrierung:</b> Amazon Bedrock AgentCore (GA, ~20.7.)</li>
+      <li><b>Legal-Tech:</b> Smokeball „Archie" — autonome Workflows in Word/Outlook</li>
+      <li><b>Office-Automatisierung (Open Source):</b> iOfficeAI/OfficeCLI — Agenten bearbeiten Word/Excel/PowerPoint ohne installiertes Office</li>
+    </ul>
+    <div class="callout warn">Für Audio-/Musik- und Voice-Cloning-Tools wurden in diesem Zeitraum keine konkret datierten Neuerscheinungen gefunden — nur evergreen Listicles. Bewusst nicht als „News" ausgegeben.</div>
+    <div class="meta"><span class="src"><a href="https://aiagentstore.ai/ai-agent-news/this-week">AI Agent Store — Weekly Roundup</a></span></div>
+  </div>
+</section>
+
+<!-- OPEN SOURCE -->
+<section>
+  <div class="sec-head sh-oss">⚡ Open Source <span class="n">GitHub &amp; Hugging Face</span></div>
+  <div class="card">
+    <h3>GitHub Trending <span class="stars">★★★★</span> <span class="badge badge-verify">Sternezahlen laut Sekundärquelle, nicht live geprüft</span></h3>
+    <ul class="clean">
+      <li><b>usestrix/strix</b> (~42K★ gemeldet) — KI-Pentesting-Tool, agiert wie menschliche Sicherheitsforscher, dynamisches Testing/PoC-Validierung. Reifegrad: aktiv, spannend für offensive Security-Automatisierung.</li>
+      <li><b>DeusData/codebase-memory-mcp</b> (~32K★ gemeldet) — persistenter Codebase-Wissensgraph, relevant für die Reife der Agenten-Coding-Infrastruktur.</li>
+      <li><b>HKUDS/Vibe-Trading</b> (~24K★ gemeldet) — wandelt natürliche Sprache in Backtests um, 452 vorgefertigte Alpha-Faktoren; bei Finanz-Automatisierungscode Vorsicht bzgl. Produktionsreife geboten.</li>
+      <li><b>iOfficeAI/OfficeCLI</b> (~18K★ gemeldet) — praktisch, eng fokussiert, vermutlich heute direkt nutzbar.</li>
+      <li><b>diegosouzapw/OmniRoute</b> (~17,9K★ gemeldet) — KI-Gateway über 231+ Modellanbieter mit Token-Kompression/Fallback, relevante „Plumbing"-Schicht für Multi-Modell-Stacks.</li>
+      <li><b>JustVugg/colibri</b> (~14,7K★ gemeldet) — reiner C-Inferenzmotor für ein 744-Mrd.-Parameter-MoE-Modell (GLM-5.2) auf Consumer-Hardware — bemerkenswerte Effizienzbehauptung, mit Skepsis zu behandeln bis unabhängig bestätigt.</li>
+      <li><b>langchain-ai/openwiki</b> (~11,8K★ gemeldet) — CLI zur automatischen Dokumentationspflege für Codebases.</li>
+      <li><b>xai-org/grok-build</b> (~9,3K★ gemeldet) — s.o.</li>
+    </ul>
+    <div class="meta"><span class="src"><a href="https://www.analyticsvidhya.com/blog/2026/07/trending-ai-github-repositories/">Analytics Vidhya</a></span></div>
+  </div>
+  <div class="card">
+    <h3>Hugging Face — neue offene Modelle <span class="stars">★★★★★</span></h3>
+    <ul class="clean">
+      <li><b>Kimi K3</b> (Moonshot) — s.o., größtes Open-Weight-Modell, Gewichte ab 27.7.</li>
+      <li><b>Inkling</b> (Thinking Machines) — s.o., Tag-1-Support in Transformers, SGLang, llama.cpp.</li>
+      <li><b>Meituan LongCat-2.0</b> — 1,6 Billionen Parameter (48 Mrd. aktiv), MIT-Lizenz.</li>
+      <li><b>Poolside Laguna XS 2.1</b> — 33 Mrd. Gesamt-/3 Mrd. aktive Parameter, OpenMDW-1.1-Lizenz.</li>
+      <li><b>Tencent Hy3</b> — 295 Mrd. Parameter (21 Mrd. aktiv), Apache 2.0.</li>
+      <li><b>Qwen3.8-Max</b> (Alibaba) — s.o., offene Gewichte angekündigt.</li>
+    </ul>
+    <p style="margin-top:10px;"><b>Reifegrad-Einschätzung:</b> Die Open-Weight-Front hat sich in dieser Woche sichtbar verdichtet — von reinen Forschungs-Demos hin zu produktionsnahen 1T+-Parameter-Modellen mit Tag-1-Framework-Support. Das ist ein struktureller Reifesprung, nicht nur ein weiteres Modell-Release.</p>
+    <div class="meta"><span class="src"><a href="https://huggingface.co/blog/thinkingmachines-inkling">Hugging Face</a> · <a href="https://huggingface.co/blog/Svngoku/ai-models-week-july-09-2026">HF Weekly Roundup</a></span></div>
+  </div>
+</section>
+
+<!-- TRENDANALYSE -->
+<section>
+  <div class="sec-head sh-trend">📈 Trendanalyse</div>
+  <div class="card">
+    <ul class="clean">
+      <li><b>Open-Weight-Kostenkurve bricht ein:</b> Ein 2,8-Billionen-Parameter-Modell (Kimi K3), das Claude bei Coding schlägt, wird in einer Woche kostenlos verfügbar. Die Preissetzungsmacht geschlossener US-Frontier-Labs steht erstmals unter echtem strukturellem Druck.</li>
+      <li><b>Agenten-Zuverlässigkeit wird zum neuen Wettbewerbsfeld:</b> MCPEvol-Bench zeigt, dass Frontier-Modelle bei sich ändernden Tool-Schnittstellen 13–14% Leistung verlieren — Robustheit, nicht nur rohe Benchmark-Punkte, wird zum Differenzierungsmerkmal.</li>
+      <li><b>Infrastruktur-Finanzierung wird aggressiver und riskanter:</b> Oracles Stellenabbau zur Finanzierung des Stargate-Vertrags, Hut 8s 15-Jahres-Rechenzentrumsdeal und Databricks' 188-Mrd.-$-Runde trotz nachbörslichem Kursrückgang zeigen: Capex-Wetten wachsen schneller als der sichtbare ROI.</li>
+      <li><b>Geopolitische KI-Governance spaltet sich sichtbar auf:</b> Chinas WAICO mit 29 Gründungsstaaten (v.a. Globaler Süden) positioniert sich explizit als Gegenentwurf zu US-/EU-geführter KI-Regulierung — verknüpft mit dem Open-Weight-Vorstoß als Soft-Power-Instrument.</li>
+      <li><b>Implementierung statt Modelle wird das nächste große Geschäft:</b> Blackstones 1,5-Mrd.-$-JV mit Anthropic („Ode") und OpenAIs „The Deployment Company" zeigen, dass die eigentliche Marge zunehmend in der unternehmensseitigen KI-Einführung liegt, nicht im Modelltraining selbst.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CHANCEN -->
+<section>
+  <div class="sec-head sh-chance">🎯 Chancen (Geschäftsideen)</div>
+  <div class="card">
+    <ul class="clean">
+      <li><b>Agenten-Tool-Versionsmanagement-Dienst:</b> Angesichts MCPEvol-Bench — ein Produkt, das MCP-Tool-Schnittstellen versioniert, Breaking Changes erkennt und Agenten-Workflows davor schützt, still zu brechen.</li>
+      <li><b>Open-Weight-Hosting &amp; Fine-Tuning für den Mittelstand:</b> Mit Kimi K3, Inkling &amp; Co. als frei verfügbaren Spitzenmodellen entsteht Nachfrage nach verwalteten, DSGVO-konformen EU-Hosting-Angeboten für Unternehmen, die keine eigene Infrastruktur aufbauen wollen.</li>
+      <li><b>KI-Implementierungs-Boutiquen nach Blackstone/Anthropic-Vorbild:</b> Kleinere, spezialisierte Beratungen, die Unternehmen konkret bei der Einführung (nicht dem Training) von Agenten begleiten — ein wachsender Markt mit belegtem institutionellem Kapitalinteresse.</li>
+      <li><b>Kalibrierungs-/Vertrauens-Audits für regulierte KI:</b> Angesichts der RadLE-2.0-Erkenntnisse zu übermäßigem KI-Selbstvertrauen in der Radiologie — ein Prüfdienst für Konfidenzkalibrierung in Gesundheits-, Finanz- und Rechts-KI könnte zum Beschaffungsstandard werden.</li>
+      <li><b>Sicherheitswerkzeuge gegen autonome Agenten-Angriffe:</b> Der gemeldete Hugging-Face-Sicherheitsvorfall „end-to-end durch ein autonomes KI-Agentensystem" zeigt einen neuen Bedrohungstyp — Nachfrage nach spezialisierter Agenten-Abwehr dürfte steigen.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- BUILDER CORNER -->
+<section>
+  <div class="sec-head sh-build">🏗 Builder Corner</div>
+  <div class="card">
+    <p><b>Heute baubar:</b> Mit Grok Build (Open Source, Rust-Harness) lässt sich in Stunden ein eigener Coding-Agent mit MCP-Integration aufsetzen — Repo direkt nutzbar. Inkling (Hugging Face, Tag-1-Support in Transformers/SGLang/llama.cpp) erlaubt heute schon lokale oder Cloud-Deployments eines nativ multimodalen 975-Mrd.-Parameter-Modells mit kalibrierter Unsicherheit — interessant für Anwendungen, bei denen „ich weiß es nicht" besser ist als eine falsche Antwort. Der MCP-2026-07-28-Release-Candidate mit „MCP Apps" (sandboxed interaktive UIs in Tool-Aufrufen) öffnet ein neues UI-Paradigma für Agenten-Tools, das schon jetzt experimentell implementiert werden kann.</p>
+    <p><b>Marktpotenzial:</b> Firmen, die jetzt auf offene Gewichte statt teurer API-Abos setzen, sparen mittelfristig signifikant an Grenzkosten — besonders bei hochvolumigen Coding- oder Support-Workloads. Frühzeitige „MCP Apps"-Adoption könnte zu den ersten nativ agentenfähigen Enterprise-UIs führen, ein Bereich mit noch wenig etablierter Konkurrenz.</p>
+  </div>
+</section>
+
+<!-- GEWINNER & VERLIERER -->
+<section>
+  <div class="sec-head sh-table">📊 Gewinner &amp; Verlierer</div>
+  <div class="card">
+    <table class="wl">
+      <tr><th>Wer</th><th>Status</th><th>Begründung</th></tr>
+      <tr class="win"><td>Moonshot AI / Kimi</td><td>Gewinner</td><td>Größtes Open-Weight-Modell, schlägt laut Berichten Claude bei Coding, riesige Nachfrage.</td></tr>
+      <tr class="win"><td>Thinking Machines Lab</td><td>Gewinner</td><td>Erster eigener Modell-Launch (Inkling) etabliert die junge Firma glaubwürdig im Open-Weight-Feld.</td></tr>
+      <tr class="win"><td>xAI</td><td>Gewinner</td><td>Grok 4.5 aggressiv bepreist, Grok Build als Open Source positioniert xAI als Entwickler-Freund.</td></tr>
+      <tr class="win"><td>Anthropic (Implementierungsgeschäft)</td><td>Gewinner</td><td>Blackstone-JV eröffnet neue, margenstarke Einnahmequelle jenseits reiner Modell-APIs.</td></tr>
+      <tr class="win"><td>Databricks</td><td>Gewinner (mit Fragezeichen)</td><td>Rekordbewertung 188 Mrd. $, aber nachbörslicher Kursrückgang deutet auf Investoren-Skepsis hin.</td></tr>
+      <tr class="lose"><td>Google / Alphabet</td><td>Verlierer</td><td>Dritte verpasste Gemini-Deadline, EU-Zwangsöffnung von Android, Kursrückgang — geballte Negativwoche.</td></tr>
+      <tr class="lose"><td>OpenAI (strategisch)</td><td>Verlierer (Teilaspekt)</td><td>Erkennbare Nervosität gegenüber chinesischen Open-Weight-Modellen, Sora-Einstellung, hohe Abhängigkeit von Oracle-Infrastruktur.</td></tr>
+      <tr class="lose"><td>Oracle-Belegschaft</td><td>Verlierer</td><td>~30.000 Stellen laut Berichten gestrichen, um Stargate-Vertrag mitzufinanzieren.</td></tr>
+      <tr class="lose"><td>Meta (Llama-Roadmap)</td><td>Verlierer (Teilaspekt)</td><td>Kein neues Flaggschiff-Sprachmodell, anhaltende Verzögerungsgerüchte, während Konkurrenten Open-Weight-Rekorde aufstellen.</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- PROGNOSE -->
+<section>
+  <div class="sec-head sh-forecast">🔮 Meine Prognose</div>
+  <div class="card">
+    <p>Der Medien-Tenor dieser Woche lautet: „China überholt die USA bei KI." Meine Einschätzung ist differenzierter — und teils dagegen gerichtet. Erstens: Ein einzelner Coding-Benchmark-Sieg von Kimi K3 bedeutet nicht automatisch technologische Führung; er bedeutet vor allem, dass die Kostenkurve für Basisfähigkeiten schneller fällt als erwartet. Das ist ein größerer Markt-, kein reiner Kapazitätswandel — und er vergrößert den Gesamtmarkt eher, als dass er ihn zwischen „USA vs. China" nullsummig aufteilt, weil viele neue Nutzer (v.a. im Globalen Süden) bislang gar keinen Zugang zu Frontier-Modellen hatten. Zweitens: Ich halte Googles dritte verpasste Gemini-Deadline langfristig für die bedeutsamere Geschichte als Kimi K3 — ein wiederholtes Ausführungsproblem bei einem der ressourcenstärksten Labs der Welt signalisiert strukturelle Organisationsprobleme, die sich nicht einfach durch mehr Compute lösen lassen. Drittens: Ich erwarte, dass sich der eigentliche Wettbewerbsvorteil in den nächsten 12–24 Monaten von reinen Benchmark-Ergebnissen zu Agenten-Zuverlässigkeit und Implementierungsgeschwindigkeit verschiebt — die MCPEvol-Bench-Ergebnisse und der Blackstone/Anthropic-Deal zeigen beide in diese Richtung, auch wenn aktuell noch fast alle Schlagzeilen um Modell-Parameter kreisen.</p>
+    <div class="callout"><b>Gegen den Medien-Tenor:</b> Die „China gewinnt das KI-Rennen"-Erzählung dieser Woche überschätzt einen einzelnen Coding-Benchmark und unterschätzt, wie sehr Googles wiederholtes Scheitern bei Gemini 3.5 Pro ein hausgemachtes Problem westlicher Big-Tech-Exekution ist — nicht primär ein Erfolg chinesischer Modelle.</div>
+  </div>
+</section>
+
+<!-- SOFORT AUSPROBIEREN -->
+<section>
+  <div class="sec-head sh-try">🚀 Sofort ausprobieren</div>
+  <div class="card">
+    <div class="try-box"><div class="lbl">Open-Weight-Modell testen</div>Inkling (Thinking Machines) lokal oder über Hugging Face laden: <code>huggingface.co/blog/thinkingmachines-inkling</code> — Tag-1-Support in Transformers/SGLang/llama.cpp.</div>
+    <div class="try-box"><div class="lbl">Coding-Agent</div>xAI Grok Build klonen und als eigenen Coding-Harness aufsetzen: <code>github.com/xai-org/grok-build</code></div>
+    <div class="try-box"><div class="lbl">MCP-Zukunft anschauen</div>Den MCP-2026-07-28-Release-Candidate lesen, insbesondere das „MCP Apps"-Konzept: <code>blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/</code></div>
+    <div class="try-box"><div class="lbl">Kosten-Leistungs-Vergleich</div>Grok 4.5 über die xAI-API oder Cursor testen (2 $/6 $ pro Mio. Token) und gegen GPT-5.6 Terra oder Claude Opus 4.8 im eigenen Coding-Workflow benchmarken.</div>
+    <div class="try-box"><div class="lbl">Demo-Prompt für Agenten-Zuverlässigkeit</div>„Simuliere, wie sich die Antwortqualität deines Agenten verändert, wenn sich ein von dir genutztes MCP-Tool morgen in Parametername oder Rückgabeformat ändert — was würde brechen?" (inspiriert von MCPEvol-Bench)</div>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <div>Executive AI Intelligence Briefing · automatisch erstellt · 21. Juli 2026</div>
+  <div class="legal">Alle Einordnungen, Prognosen, „Gewinner/Verlierer"-Bewertungen und Chancen-Vorschläge in diesem Briefing sind redaktionelle Analyse, keine Anlage-, Rechts- oder Steuerberatung. Mit „zu verifizieren" markierte Punkte stammen aus einzelnen oder nicht vollständig verifizierbaren Quellen und sollten vor einer Geschäftsentscheidung eigenständig geprüft werden. Quellen sind bei jeder Meldung verlinkt.</div>
+</footer>
+
+</body>
+</html>
