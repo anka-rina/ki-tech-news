@@ -5,7 +5,9 @@ Läuft jeden Morgen ~09:00 Uhr (Europe/Berlin) und legt pro Tag eine HTML-Datei 
 
 ## GPT Morning Briefing
 
-Der GitHub-Workflow `.github/workflows/gpt-daily-briefing.yml` erzeugt täglich gegen 09:00 Uhr deutscher Zeit ein recherchiertes GPT-Briefing über die OpenAI Responses API mit Websuche.
+Der primäre Ablauf ist ein Codex-Chat-Workflow: Im mit diesem Repository verbundenen Task genügt der Befehl `go`. Codex recherchiert dann das heutige Briefing, validiert es, committed es und pusht es nach GitHub. Die verbindlichen Regeln stehen in `AGENTS.md`.
+
+Der optionale GitHub-Workflow `.github/workflows/gpt-daily-briefing.yml` kann manuell ein recherchiertes GPT-Briefing über die OpenAI Responses API mit Websuche erzeugen. Er benötigt aktive OpenAI-API-Abrechnung und ist nicht zeitgesteuert, solange diese nicht aktiviert ist.
 
 Verbindliche Konvention:
 
@@ -19,9 +21,9 @@ Jede Datei beginnt mit `# GPT KI- & Tech-Briefing – DATUM`. Der automatische C
 briefing(gpt): add daily briefing for YYYY-MM-DD
 ```
 
-Der Workflow:
+Beide Publishing-Wege:
 
-1. berücksichtigt Sommer- und Winterzeit für `Europe/Berlin`,
+1. verwenden `Europe/Berlin`,
 2. überschreibt keine bestehende Tagesdatei,
 3. prüft Überschrift, Metadaten, Pflichtabschnitte, Umfang, Meldungszahl und sichtbare Quellen,
 4. committed nur eine erfolgreich validierte neue GPT-Datei.

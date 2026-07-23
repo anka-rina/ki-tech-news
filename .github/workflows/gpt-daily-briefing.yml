@@ -1,10 +1,6 @@
 name: GPT Daily KI & Tech Briefing
 
 on:
-  schedule:
-    # GitHub cron uses UTC. Two slots plus the Berlin-time guard cover CET and CEST.
-    - cron: "7 7 * * *"
-    - cron: "7 8 * * *"
   workflow_dispatch:
     inputs:
       date:
@@ -37,16 +33,11 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Guard Berlin schedule
+      - name: Enable manual run
         id: schedule
         shell: bash
         run: |
-          if [[ "${{ github.event_name }}" == "workflow_dispatch" || "$(date +%H)" == "09" ]]; then
-            echo "run=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "run=false" >> "$GITHUB_OUTPUT"
-            echo "Skipping duplicate UTC slot; Berlin hour is $(date +%H)."
-          fi
+          echo "run=true" >> "$GITHUB_OUTPUT"
 
       - name: Resolve briefing date
         if: steps.schedule.outputs.run == 'true'
