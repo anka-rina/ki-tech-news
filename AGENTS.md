@@ -35,11 +35,14 @@ Wenn der Benutzer in diesem Repository nur `go` schreibt, ist das die ausdrückl
 11. Führe anschließend aus:
     `node scripts/validate_gpt_briefing.mjs <Dateipfad>`
 12. Wenn die Validierung fehlschlägt, verbessere die Datei und validiere erneut. Veröffentliche keine unvalidierte Ausgabe.
-13. Prüfe den Git-Diff und stage ausschließlich die neue GPT-Briefing-Datei.
-14. Committe mit:
+13. Erzeuge die lesefreundliche HTML-Ausgabe mit:
+    `node scripts/render_gpt_briefing.mjs <Dateipfad>`
+14. Baue anschließend `index.html` mit `bash scripts/build_index.sh` neu.
+15. Prüfe den Git-Diff und stage ausschließlich die neue GPT-Briefing-Datei, ihre HTML-Leseausgabe und die daraus neu gebaute `index.html`.
+16. Committe mit:
     `briefing(gpt): add daily briefing for YYYY-MM-DD`
-15. Pushe den Commit nach `origin/main` und prüfe, ob er im Remote-Repository angekommen ist.
-16. Antworte abschließend knapp mit:
+17. Pushe den Commit nach `origin/main` und prüfe, ob er im Remote-Repository angekommen ist.
+18. Antworte abschließend knapp mit:
     - Ergebnis
     - Zahl der Meldungen und Quellen
     - Commit-ID

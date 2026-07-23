@@ -2,7 +2,7 @@
 # Baut die Hub-Übersicht index.html mit drei Tracks:
 #   briefings/*.html  -> Executive AI Intelligence (09:00)
 #   praxis/*.html     -> AI Praxis (10:00)
-#   briefings/**/*.md -> GPT-Briefing (ChatGPT, Markdown -> Link auf GitHub-Ansicht)
+#   briefings/**/*.md -> GPT-Briefing (ChatGPT, bevorzugt lokale HTML-Leseansicht)
 set -e
 cd "$(dirname "$0")/.."
 
@@ -33,21 +33,31 @@ render_html_track () {
 # Markdown-Track (GPT): findet .md unter briefings/ rekursiv, verlinkt auf GitHub-Blob (rendert Markdown)
 render_md_track () {
   local title="$1" sub="$2" accent="$3"
-  local files latest base d f
+  local files latest base d f html
   files=$(find briefings -type f -name '*.md' 2>/dev/null | sort -r || true)
   latest=$(echo "$files" | head -1)
   echo "<div class='track' style='--tc:$accent'>"
   echo "<div class='tname'>$title</div><div class='tsub'>$sub</div>"
   if [ -n "$latest" ]; then
     base=$(basename "$latest" .md); d=${base:0:10}
-    echo "<a class='latest' href='$REPO_BLOB/$latest' target='_blank' rel='noopener'><span>Neuestes Briefing</span>&#10148; $d</a>"
+    html="${latest%.md}.html"
+    if [ -f "$html" ]; then
+      echo "<a class='latest' href='$html'><span>Neuestes Briefing</span>&#10148; $d</a>"
+    else
+      echo "<a class='latest' href='$REPO_BLOB/$latest' target='_blank' rel='noopener'><span>Neuestes Briefing</span>&#10148; $d</a>"
+    fi
   else
     echo "<div class='empty'>noch keine Ausgabe</div>"
   fi
   echo "<div class='arch'>Archiv</div><ul>"
   for f in $files; do
     base=$(basename "$f" .md); d=${base:0:10}
-    echo "<li><a href='$REPO_BLOB/$f' target='_blank' rel='noopener'>$d</a></li>"
+    html="${f%.md}.html"
+    if [ -f "$html" ]; then
+      echo "<li><a href='$html'>$d</a></li>"
+    else
+      echo "<li><a href='$REPO_BLOB/$f' target='_blank' rel='noopener'>$d</a></li>"
+    fi
   done
   echo "</ul></div>"
 }
@@ -88,7 +98,7 @@ footer{margin-top:34px;color:#57606f;font-size:12px}
 HEAD
 render_html_track "briefings" "&#128680; Executive AI Intelligence" "Strategisch &middot; t&auml;glich 09:00" "#6ea8fe"
 render_html_track "praxis" "&#128640; AI Praxis" "Hands-on &middot; t&auml;glich 10:00" "#2dd4bf"
-render_md_track "&#129302; GPT-Briefing" "ChatGPT &middot; Markdown auf GitHub" "#a78bfa"
+render_md_track "&#129302; GPT-Briefing" "GPT &middot; lesefreundliche HTML-Ausgabe" "#a78bfa"
 cat <<'FOOT'
 </div>
 <footer>Inhalte sind Analyse, keine Anlage-, Rechts- oder Steuerberatung.</footer>
