@@ -1,6 +1,8 @@
 name: GPT Daily KI & Tech Briefing
 
 on:
+  schedule:
+    - cron: "0 6 * * *"   # 06:00 UTC = 08:00 Berlin (Sommer); im Winter 07:00
   workflow_dispatch:
     inputs:
       date:
