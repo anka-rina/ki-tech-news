@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Praxis-Briefing — 23. Juli 2026</title>
+<style>
+  :root{
+    --bg:#0b0e14; --panel:#141922; --panel2:#1b2230; --line:#26304180;
+    --ink:#e8ecf3; --muted:#94a0b4; --dim:#6b7688;
+    --accent:#2dd4bf; --accent2:#4ade80; --blue:#6ea8fe; --pink:#f472b6;
+    --amber:#fbbf24; --purple:#a78bfa;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:linear-gradient(180deg,#0b0e14,#0d1119 40%,#0b0e14);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;font-size:16px;letter-spacing:.1px}
+  .wrap{max-width:860px;margin:0 auto;padding:28px 20px 80px}
+  header.masthead{border:1px solid var(--line);border-radius:18px;overflow:hidden;
+    background:radial-gradient(120% 140% at 0% 0%, #123230 0%, #121722 55%, #0f141d 100%);
+    box-shadow:0 20px 60px -30px #000;padding:26px 26px 22px}
+  .kicker{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);font-weight:700}
+  h1.title{margin:8px 0 4px;font-size:28px;line-height:1.15;font-weight:800;letter-spacing:-.3px}
+  .subtitle{color:var(--muted);font-size:14.5px;margin-top:6px;max-width:640px}
+  .meta-row{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:16px;font-size:12.5px;color:var(--dim)}
+  .meta-row b{color:var(--muted);font-weight:600}
+
+  section{margin-top:30px}
+  .sec-head{display:flex;align-items:center;gap:10px;margin:0 0 6px}
+  .sec-head .ic{font-size:20px}
+  .sec-head h2{margin:0;font-size:19px;font-weight:800;letter-spacing:-.2px}
+  .sec-head .rule{flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+  .sec-sub{color:var(--dim);font-size:12.5px;margin:0 0 14px}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:15px 16px;margin-bottom:12px}
+  .card .tag{display:inline-block;font-size:11px;letter-spacing:.5px;text-transform:uppercase;font-weight:700;
+    color:var(--accent);margin-bottom:5px}
+  .card h3{margin:0 0 6px;font-size:16px;font-weight:750}
+  .card .date{color:var(--dim);font-weight:500;font-size:12.5px}
+  .row{margin:6px 0 0;font-size:14px;color:#cdd4e0}
+  .row b{color:var(--ink);font-weight:650}
+  .how{border-left:2px solid var(--accent2);padding-left:10px;margin-top:8px;color:#d7dcea;font-size:14px}
+  .src{margin-top:8px;font-size:12.5px}
+  .src a{color:var(--blue);text-decoration:none}
+  .src a:hover{text-decoration:underline}
+  .flag{display:inline-block;margin-top:8px;font-size:12px;color:var(--amber);background:#241f10;
+    border:1px solid #4a3f1a;border-radius:8px;padding:3px 9px}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:640px){ .grid2{grid-template-columns:1fr} h1.title{font-size:23px} }
+
+  .try{background:linear-gradient(135deg,#122a26,#12161f);border:1px solid #235;border-color:#2a5f52;
+    border-radius:16px;padding:18px 20px}
+  .try h2{margin:0 0 10px;font-size:18px}
+  .try ol{margin:0;padding-left:20px}
+  .try li{margin:7px 0;font-size:14.5px;color:#d7dcea}
+  .try li b{color:var(--ink)}
+  .try a{color:var(--accent)}
+
+  footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);color:var(--dim);font-size:12px}
+  .navback{display:inline-block;margin-bottom:16px;color:var(--muted);text-decoration:none;font-size:13px}
+  .navback:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="navback" href="../index.html">← Übersicht</a>
+
+  <header class="masthead">
+    <div class="kicker">AI Praxis · Tägliches Hands-on-Briefing</div>
+    <h1 class="title">Was du heute ausprobieren kannst</h1>
+    <div class="subtitle">Anwendungsbezogen: neue Features, beste Skills, Prompts &amp; Workflows für LLMs und Kreativ-Plattformen — jede Meldung mit „So nutzt du's" und Link zum Nachmachen.</div>
+    <div class="meta-row">
+      <span><b>Ausgabe</b> · Donnerstag, 23. Juli 2026</span>
+      <span><b>Zeitraum</b> · letzte 1–2 Wochen</span>
+      <span><b>Zustellung</b> · täglich 10:00 Uhr (Europe/Berlin)</span>
+    </div>
+  </header>
+
+  <!-- HEUTE AUSPROBIEREN -->
+  <section>
+    <div class="try">
+      <h2>🚀 Heute ausprobieren — die 5 besten</h2>
+      <ol>
+        <li><b>ChatGPT Custom Instructions</b> auf ein echtes Stil-Handbuch aufbohren — das Limit liegt jetzt bei 5.000 Zeichen (statt 1.500). Höchster Hebel für wenig Aufwand.</li>
+        <li><b>Claude Code:</b> <code>/fork</code> für Seiten-Investigationen im Hintergrund nutzen und <code>/code-review</code> gezielt an Checkpoints statt automatisch.</li>
+        <li><b>ElevenLabs Music Finetune:</b> aus ~einer Handvoll eigener Tracks ein wiederverwendbares „Brand-Sound"-Modell trainieren.</li>
+        <li><b>Suno Lyricist Profile:</b> alte Songtexte einlesen → als Stil-Vorlage anwenden → neuen Song in deiner eigenen Schreibstimme generieren.</li>
+        <li><b>Gemini 3.6 Flash</b> für schnelle, günstige Coding-Fragen als Default setzen.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- LLM PRAXIS -->
+  <section>
+    <div class="sec-head"><span class="ic">🧠</span><h2>LLM-Praxis: Skills, Prompts &amp; Tricks</h2><span class="rule"></span></div>
+    <p class="sec-sub">Claude · ChatGPT · Gemini · Kimi</p>
+    <div class="grid2">
+      <div class="card">
+        <span class="tag">ChatGPT · 15. Juli</span>
+        <h3>Custom Instructions → 5.000 Zeichen</h3>
+        <div class="row">Das Personalisierungs-Feld wurde von 1.500 auf 5.000 Zeichen erweitert (Plus/Business/Enterprise/Edu).</div>
+        <div class="how"><b>So nutzt du's:</b> Ein echtes Stil-Handbuch hinterlegen — Do/Don't-Listen, Tonfall, Standard-Kontext. Sofort spürbar bessere Antworten.</div>
+        <div class="src"><a href="https://releasebot.io/updates/openai/chatgpt">releasebot.io</a></div>
+      </div>
+      <div class="card">
+        <span class="tag">Claude Code · 17.–22. Juli</span>
+        <h3><code>/fork</code> im Hintergrund + manuelles Review</h3>
+        <div class="row"><code>/fork</code> läuft jetzt als Hintergrund-Session; <code>/code-review</code> und <code>/verify</code> starten nur noch auf Zuruf.</div>
+        <div class="how"><b>So nutzt du's:</b> Seitenfrage per <code>/fork</code> auslagern, Hauptthread bleibt sauber; Review gezielt am Checkpoint aufrufen.</div>
+        <div class="src"><a href="https://code.claude.com/docs/en/changelog">code.claude.com/changelog</a></div>
+      </div>
+      <div class="card">
+        <span class="tag">Claude Cowork · 7. Juli</span>
+        <h3>Geplante Tasks + Handy-Push</h3>
+        <div class="row">Cowork läuft in der Cloud (Web &amp; Mobile); Aufgaben lassen sich planen und schicken dir eine Push-Nachricht, wenn eine Entscheidung ansteht.</div>
+        <div class="how"><b>So nutzt du's:</b> Wiederkehrende Routine (z. B. Morgen-Prep) planen — genau das Muster hinter deinen beiden Briefings.</div>
+        <div class="src"><a href="https://claude.com/blog/cowork-web-mobile">claude.com/blog</a></div>
+      </div>
+      <div class="card">
+        <span class="tag">Gemini · 21. Juli</span>
+        <h3>Gemini 3.6 Flash &amp; 3.5 Flash-Lite</h3>
+        <div class="row">Neue effiziente Modelle: 3.6 Flash stärker bei Coding/Wissensarbeit, 3.5 Flash-Lite auf Tempo/Volumen getrimmt.</div>
+        <div class="how"><b>So nutzt du's:</b> In App / AI Studio 3.6 Flash für günstige, schnelle Coding-Hilfe wählen.</div>
+        <div class="src"><a href="https://releasebot.io/updates/google/gemini">releasebot.io</a></div>
+      </div>
+      <div class="card">
+        <span class="tag">Kimi · verfügbar</span>
+        <h3>„OK Computer" + Agent Swarm</h3>
+        <div class="row">In-App-Agent baut Websites, Slides und Analysen; „Agent Swarm" fährt via Kimi-Work-Desktop bis zu ~300 Sub-Agenten mit Browser-Automation.</div>
+        <div class="how"><b>So nutzt du's:</b> „OK Computer" für One-Shot-Deliverables in der Kimi-App; Kimi Work für lokale Multi-Agent-Automation.</div>
+        <div class="src"><a href="https://theairankings.com/moonshot/">theairankings.com</a></div>
+        <span class="flag">⚠ Aggregator-Quelle — Details vor dem Verlassen prüfen</span>
+      </div>
+      <div class="card">
+        <span class="tag">Claude · Community</span>
+        <h3>Sofort nützliche Skills</h3>
+        <div class="row">Beliebte <code>SKILL.md</code>-Pakete: „Voice DNA" (Schreibstimme aus Samples), „Meeting Analyzer" (Action-Items aus Transkripten), „Automated UI Test" (Playwright).</div>
+        <div class="how"><b>So nutzt du's:</b> In den Skills-Ordner legen — Claude ruft sie per Beschreibung automatisch auf.</div>
+        <div class="src"><a href="https://www.firecrawl.dev/blog/best-claude-code-skills">firecrawl.dev</a></div>
+        <span class="flag">⚠ Community-Sammlung, nicht offiziell</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- KREATIV -->
+  <section>
+    <div class="sec-head"><span class="ic">🎨</span><h2>Kreativ-Plattformen</h2><span class="rule"></span></div>
+    <p class="sec-sub">Suno · ElevenLabs · Runway · OpenArt · Higgsfield · Midjourney</p>
+    <div class="grid2">
+      <div class="card">
+        <span class="tag">Suno · 9. Juli</span>
+        <h3>Neuer Lyrics-Editor + Lyricist Profile</h3>
+        <div class="row">Speicherbares „Lyricist Profile" (deine Texte als wiederverwendbare Stil-Vorlage), Zeilen-Edit per Klartext, Reim-Varianten, Vollbild-Editor mit Autosave.</div>
+        <div class="how"><b>So nutzt du's:</b> Alte Texte einlesen → Profil bauen → vor dem Schreiben anwenden → Zeilen mit „mach das witziger" verfeinern.</div>
+        <div class="src"><a href="https://suno.com/release-notes">suno.com</a></div>
+        <span class="flag">⚠ Creator-Quelle; „Suno V6" ist nur Gerücht</span>
+      </div>
+      <div class="card">
+        <span class="tag">ElevenLabs · 20. Juli</span>
+        <h3>Music Finetunes API</h3>
+        <div class="row">Eigenes Musikmodell aus bis zu 50 eigenen Audiodateien trainieren; jede Musik-Generierung akzeptiert nun eine <code>finetune_id</code>.</div>
+        <div class="how"><b>So nutzt du's:</b> Referenz-Katalog hochladen → wiederverwendbaren Marken-/House-Sound bauen, der über alle Generierungen konsistent bleibt.</div>
+        <div class="src"><a href="https://elevenlabs.io/docs/changelog">elevenlabs.io/changelog</a></div>
+      </div>
+      <div class="card">
+        <span class="tag">Runway · 29. Juni–2. Juli</span>
+        <h3>Seed Audio 1.0 + Agent Skills</h3>
+        <div class="row">Seed Audio erzeugt bis zu 120 s Sprache/Sounddesign/Musik aus Text; Agent Skills baut eine Kampagne per Ein-Wort-Befehl.</div>
+        <div class="how"><b>So nutzt du's:</b> Clip komplett in Runway vertonen (kein externes DAW nötig); „lokalisiere diese Ad für DE" als ein Befehl.</div>
+        <div class="src"><a href="https://runwayml.com/changelog">runwayml.com/changelog</a></div>
+      </div>
+      <div class="card">
+        <span class="tag">OpenArt · Juni/Juli</span>
+        <h3>„Director" Chat-zu-Video + Summer Sale</h3>
+        <div class="row">Video per Konversation steuern statt manuell schneiden; günstige 720p/1080p-Lite-Stufen fürs Iterieren. Bis 31. Juli bis zu 40 % auf Top-Modelle.</div>
+        <div class="how"><b>So nutzt du's:</b> Auf 720p Lite iterieren, den Gewinner in voller Qualität rendern — und ggf. vor Monatsende auf Jahresplan wechseln.</div>
+        <div class="src"><a href="https://openart.ai/whats-new">openart.ai/whats-new</a></div>
+      </div>
+      <div class="card">
+        <span class="tag">Higgsfield · Juli</span>
+        <h3>Photoshop- &amp; DaVinci-Resolve-Plugins</h3>
+        <div class="row">Generierung/Bearbeitung direkt in Pro-Tools: Layer-Zerlegung, Mockups, Hintergrund-Entfernung, Timeline-Footage, Reframing, 4K-Upscale.</div>
+        <div class="how"><b>So nutzt du's:</b> Kein App-Wechsel mehr — in Photoshop (Layer/Mockups) oder Resolve (Footage auf der Timeline) direkt generieren.</div>
+        <div class="src"><a href="https://blog.mean.ceo/higgsfield-news-july-2026/">Sekundärquelle</a></div>
+        <span class="flag">⚠ Sekundärquelle — Datum &amp; Preis offiziell prüfen</span>
+      </div>
+      <div class="card">
+        <span class="tag">Midjourney · Preview</span>
+        <h3>V8.2 im Preview testen</h3>
+        <div class="row">V8.2 ist über <code>--preview</code> testbar; Änderungen v. a. beim Verhalten der Style-Reference (<code>--sref</code>). Vollrelease „bald".</div>
+        <div class="how"><b>So nutzt du's:</b> <code>--preview</code> an Prompts hängen und die eigenen <code>--sref</code>-Codes neu testen — das Verhalten verschiebt sich.</div>
+        <div class="src"><a href="https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version">docs.midjourney.com</a></div>
+        <span class="flag">⚠ Timing unbestätigt</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CODING / AGENTS / AUTOMATION -->
+  <section>
+    <div class="sec-head"><span class="ic">🤖</span><h2>Coding, Agents &amp; Automatisierung</h2><span class="rule"></span></div>
+    <p class="sec-sub">MCP · Cursor · Claude Code · zum Nachbauen</p>
+    <div class="grid2">
+      <div class="card">
+        <span class="tag">MCP · finalisiert 28. Juli</span>
+        <h3>MCP wird „stateless" + MCP Apps</h3>
+        <div class="row">Neue Spec kippt den Initialize-Handshake/Session-IDs — remote MCP-Server laufen hinter simplem Round-Robin-LB. Neu: „MCP Apps" (Server rendern interaktive Sandbox-UIs) + Tasks-Extension.</div>
+        <div class="how"><b>So nutzt du's:</b> Eigene MCP-Server ohne Sticky-Sessions skalieren; UI-fähige Tools bauen. Achtung: Breaking für die experimentelle Tasks-API.</div>
+        <div class="src"><a href="https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/">modelcontextprotocol.io</a></div>
+      </div>
+      <div class="card">
+        <span class="tag">Cursor · 2.–17. Juli</span>
+        <h3>Automations, Side Chats, Slack</h3>
+        <div class="row">„Automations" starten Agenten bei Triggern (neuer Commit, Slack-Nachricht, Timer). „Side Chats" laufen parallel zum Haupt-Agent; Slack-Flow mit Plan-vor-Ausführung.</div>
+        <div class="how"><b>So nutzt du's:</b> CI-artige Agent-Läufe einrichten — z. B. bei jedem Commit automatisch Tests/Review-Agent starten.</div>
+        <div class="src"><a href="https://cursor.com/blog/2-0">cursor.com/blog</a></div>
+      </div>
+      <div class="card">
+        <span class="tag">Claude Code · 17.–22. Juli</span>
+        <h3>Kosten-Bremsen für Agenten</h3>
+        <div class="row">Neue Defaults: 200 Web-Suchen/Session, 200 Subagenten/Session, 20 gleichzeitig; MCP-Tools gehen nach 2 Min in den Hintergrund.</div>
+        <div class="how"><b>So nutzt du's:</b> Bei großen Läufen via <code>CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS</code> &amp; Co. Fan-out und Kosten steuern.</div>
+        <div class="src"><a href="https://code.claude.com/docs/en/changelog">code.claude.com/changelog</a></div>
+      </div>
+      <div class="card">
+        <span class="tag">MCP-Tool</span>
+        <h3>Desktop Commander MCP</h3>
+        <div class="row">MCP-Server, der einem Agenten Terminal, Dateisuche und Diff-basiertes Editieren über das ganze OS gibt — nicht nur in der IDE.</div>
+        <div class="how"><b>So nutzt du's:</b> Claude Shell-Befehle ausführen, Dateien per Search-Replace ändern und CSV/Excel außerhalb des Editors verarbeiten lassen.</div>
+        <div class="src"><a href="https://github.com/wonderwhy-er/DesktopCommanderMCP">github.com · ~6,3k ★</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GIT / OSS -->
+  <section>
+    <div class="sec-head"><span class="ic">⚡</span><h2>Git &amp; Open Source</h2><span class="rule"></span></div>
+    <p class="sec-sub">Trending Repos zum Nachbauen</p>
+    <div class="grid2">
+      <div class="card">
+        <span class="tag">~56k ★</span>
+        <h3>FoundationAgents/OpenManus</h3>
+        <div class="row">Offenes Framework für autonome General-Purpose-Agenten (MIT, kein Invite-Code), inkl. RL-Variante.</div>
+        <div class="how"><b>Wofür:</b> Eigene Agenten für Web-Automation, Datenanalyse, Multi-Agent-Workflows selbst bauen.</div>
+        <div class="src"><a href="https://github.com/FoundationAgents/OpenManus">github.com/FoundationAgents/OpenManus</a></div>
+      </div>
+      <div class="card">
+        <span class="tag">~6,3k ★ · +909/Woche</span>
+        <h3>chrome-devtools-mcp</h3>
+        <div class="row">Offizielles Google/Chrome-Repo: Chrome DevTools als MCP-Server für Coding-Agenten.</div>
+        <div class="how"><b>Wofür:</b> Agenten echtes Browser-Debugging geben — DOM/Netzwerk/Console inspizieren, Frontend-Tests automatisieren.</div>
+        <div class="src"><a href="https://github.com/ChromeDevTools/chrome-devtools-mcp">github.com/ChromeDevTools</a></div>
+      </div>
+      <div class="card">
+        <span class="tag">Templates</span>
+        <h3>davila7/claude-code-templates</h3>
+        <div class="row">CLI zum Konfigurieren und Überwachen von Claude-Code-Umgebungen (Dashboards, Health-Monitoring).</div>
+        <div class="how"><b>Wofür:</b> Claude-Code-Setups schnell aufsetzen und im Blick behalten.</div>
+        <div class="src"><a href="https://github.com/davila7/claude-code-templates">github.com/davila7</a></div>
+      </div>
+      <div class="card">
+        <span class="tag">Open Weights · HF</span>
+        <h3>Inkling (Thinking Machines)</h3>
+        <div class="row">Führendes US-Open-Weights-Modell (975B total / 41B aktiv), multimodal, 1M Kontext — auf Hugging Face.</div>
+        <div class="how"><b>Wofür:</b> Selbst-gehostete agentische Workloads mit starkem Open-Weight + langem Kontext.</div>
+        <div class="src"><a href="https://huggingface.co/blog/thinkingmachines-inkling">huggingface.co</a></div>
+        <span class="flag">⚠ Lizenz vor kommerzieller Nutzung prüfen</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div><b>AI Praxis-Briefing</b> — automatisch erstellt, täglich 10:00 Uhr (Europe/Berlin). Muster für die Formatabstimmung.</div>
+    <div style="margin-top:8px">Quellen sind je Meldung verlinkt. Mit ⚠ markierte Punkte stammen aus Sekundär-/Community-Quellen und sind vor dem Verlassen zu prüfen. Keine Anlage-, Rechts- oder Steuerberatung.</div>
+  </footer>
+
+</div>
+</body>
+</html>
