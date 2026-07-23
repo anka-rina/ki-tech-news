@@ -6,17 +6,16 @@
 *{box-sizing:border-box}
 body{margin:0;background:linear-gradient(180deg,#0b0e14,#0d1119 40%,#0b0e14);color:var(--ink);
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
-.wrap{max-width:900px;margin:0 auto;padding:40px 20px 80px}
+.wrap{max-width:1040px;margin:0 auto;padding:40px 20px 80px}
 .kicker{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);font-weight:700}
 h1{margin:8px 0 4px;font-size:30px;font-weight:800;letter-spacing:-.4px}
 .sub{color:var(--muted);font-size:14.5px;margin:6px 0 30px}
-.tracks{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-@media(max-width:640px){.tracks{grid-template-columns:1fr}h1{font-size:25px}}
+.tracks{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
 .track{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px 18px;border-top:3px solid var(--tc,#6ea8fe)}
-.tname{font-size:18px;font-weight:800}
+.tname{font-size:17px;font-weight:800}
 .tsub{color:var(--dim);font-size:12.5px;margin:2px 0 14px}
 a.latest{display:block;background:#0f1520;border:1px solid var(--tc,#33488a);border-radius:12px;
-padding:14px 15px;text-decoration:none;color:var(--ink);font-size:16px;font-weight:700;margin-bottom:16px}
+padding:14px 15px;text-decoration:none;color:var(--ink);font-size:15.5px;font-weight:700;margin-bottom:16px}
 a.latest span{display:block;color:var(--tc,#6ea8fe);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;font-weight:700;margin-bottom:4px}
 .empty{color:var(--dim);font-size:14px;margin-bottom:16px}
 .arch{font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);font-weight:700;margin-bottom:6px}
@@ -44,6 +43,12 @@ footer{margin-top:34px;color:#57606f;font-size:12px}
 <a class='latest' href='praxis/2026-07-23.html'><span>Neuestes Briefing</span>&#10148; 2026-07-23</a>
 <div class='arch'>Archiv</div><ul>
 <li><a href='praxis/2026-07-23.html'>2026-07-23</a></li>
+</ul></div>
+<div class='track' style='--tc:#a78bfa'>
+<div class='tname'>&#129302; GPT-Briefing</div><div class='tsub'>ChatGPT &middot; Markdown auf GitHub</div>
+<a class='latest' href='https://github.com/anka-rina/ki-tech-news/blob/main/briefings/2026/07/2026-07-23-gpt-ki-tech-briefing.md' target='_blank' rel='noopener'><span>Neuestes Briefing</span>&#10148; 2026-07-23</a>
+<div class='arch'>Archiv</div><ul>
+<li><a href='https://github.com/anka-rina/ki-tech-news/blob/main/briefings/2026/07/2026-07-23-gpt-ki-tech-briefing.md' target='_blank' rel='noopener'>2026-07-23</a></li>
 </ul></div>
 </div>
 <footer>Inhalte sind Analyse, keine Anlage-, Rechts- oder Steuerberatung.</footer>

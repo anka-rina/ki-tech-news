@@ -1,9 +1,15 @@
 #!/usr/bin/env bash
-# Baut die Hub-Übersicht index.html mit zwei Tracks: briefings/ (Executive) und praxis/ (Hands-on).
+# Baut die Hub-Übersicht index.html mit drei Tracks:
+#   briefings/*.html  -> Executive AI Intelligence (09:00)
+#   praxis/*.html     -> AI Praxis (10:00)
+#   briefings/**/*.md -> GPT-Briefing (ChatGPT, Markdown -> Link auf GitHub-Ansicht)
 set -e
 cd "$(dirname "$0")/.."
 
-render_track () {
+REPO_BLOB="https://github.com/anka-rina/ki-tech-news/blob/main"
+
+# HTML-Track: verlinkt Pages-relativ auf die HTML-Datei
+render_html_track () {
   local dir="$1" title="$2" sub="$3" accent="$4"
   local files latest d
   files=$(ls -1 "$dir"/*.html 2>/dev/null | sort -r || true)
@@ -24,6 +30,28 @@ render_track () {
   echo "</ul></div>"
 }
 
+# Markdown-Track (GPT): findet .md unter briefings/ rekursiv, verlinkt auf GitHub-Blob (rendert Markdown)
+render_md_track () {
+  local title="$1" sub="$2" accent="$3"
+  local files latest base d f
+  files=$(find briefings -type f -name '*.md' 2>/dev/null | sort -r || true)
+  latest=$(echo "$files" | head -1)
+  echo "<div class='track' style='--tc:$accent'>"
+  echo "<div class='tname'>$title</div><div class='tsub'>$sub</div>"
+  if [ -n "$latest" ]; then
+    base=$(basename "$latest" .md); d=${base:0:10}
+    echo "<a class='latest' href='$REPO_BLOB/$latest' target='_blank' rel='noopener'><span>Neuestes Briefing</span>&#10148; $d</a>"
+  else
+    echo "<div class='empty'>noch keine Ausgabe</div>"
+  fi
+  echo "<div class='arch'>Archiv</div><ul>"
+  for f in $files; do
+    base=$(basename "$f" .md); d=${base:0:10}
+    echo "<li><a href='$REPO_BLOB/$f' target='_blank' rel='noopener'>$d</a></li>"
+  done
+  echo "</ul></div>"
+}
+
 {
 cat <<'HEAD'
 <!DOCTYPE html><html lang="de"><head><meta charset="UTF-8">
@@ -34,17 +62,16 @@ cat <<'HEAD'
 *{box-sizing:border-box}
 body{margin:0;background:linear-gradient(180deg,#0b0e14,#0d1119 40%,#0b0e14);color:var(--ink);
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
-.wrap{max-width:900px;margin:0 auto;padding:40px 20px 80px}
+.wrap{max-width:1040px;margin:0 auto;padding:40px 20px 80px}
 .kicker{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);font-weight:700}
 h1{margin:8px 0 4px;font-size:30px;font-weight:800;letter-spacing:-.4px}
 .sub{color:var(--muted);font-size:14.5px;margin:6px 0 30px}
-.tracks{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-@media(max-width:640px){.tracks{grid-template-columns:1fr}h1{font-size:25px}}
+.tracks{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
 .track{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px 18px;border-top:3px solid var(--tc,#6ea8fe)}
-.tname{font-size:18px;font-weight:800}
+.tname{font-size:17px;font-weight:800}
 .tsub{color:var(--dim);font-size:12.5px;margin:2px 0 14px}
 a.latest{display:block;background:#0f1520;border:1px solid var(--tc,#33488a);border-radius:12px;
-padding:14px 15px;text-decoration:none;color:var(--ink);font-size:16px;font-weight:700;margin-bottom:16px}
+padding:14px 15px;text-decoration:none;color:var(--ink);font-size:15.5px;font-weight:700;margin-bottom:16px}
 a.latest span{display:block;color:var(--tc,#6ea8fe);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;font-weight:700;margin-bottom:4px}
 .empty{color:var(--dim);font-size:14px;margin-bottom:16px}
 .arch{font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);font-weight:700;margin-bottom:6px}
@@ -59,8 +86,9 @@ footer{margin-top:34px;color:#57606f;font-size:12px}
 <div class="sub">Automatisch erstellt · Zeitzone Europe/Berlin</div>
 <div class="tracks">
 HEAD
-render_track "briefings" "&#128680; Executive AI Intelligence" "Strategisch &middot; t&auml;glich 09:00" "#6ea8fe"
-render_track "praxis" "&#128640; AI Praxis" "Hands-on &middot; t&auml;glich 10:00" "#2dd4bf"
+render_html_track "briefings" "&#128680; Executive AI Intelligence" "Strategisch &middot; t&auml;glich 09:00" "#6ea8fe"
+render_html_track "praxis" "&#128640; AI Praxis" "Hands-on &middot; t&auml;glich 10:00" "#2dd4bf"
+render_md_track "&#129302; GPT-Briefing" "ChatGPT &middot; Markdown auf GitHub" "#a78bfa"
 cat <<'FOOT'
 </div>
 <footer>Inhalte sind Analyse, keine Anlage-, Rechts- oder Steuerberatung.</footer>
