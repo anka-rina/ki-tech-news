@@ -8,15 +8,14 @@
   :root{
     --bg:#0b0e14; --panel:#141922; --panel2:#1b2230; --line:#26304180;
     --ink:#e8ecf3; --muted:#94a0b4; --dim:#6b7688;
-    --accent:#2dd4bf; --accent2:#4ade80; --blue:#6ea8fe; --pink:#f472b6;
-    --amber:#fbbf24; --purple:#a78bfa;
+    --accent:#2dd4bf; --accent2:#4ade80; --blue:#6ea8fe; --amber:#fbbf24;
   }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
   body{margin:0;background:linear-gradient(180deg,#0b0e14,#0d1119 40%,#0b0e14);color:var(--ink);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    line-height:1.55;font-size:16px;letter-spacing:.1px}
-  .wrap{max-width:860px;margin:0 auto;padding:28px 20px 80px}
+    line-height:1.62;font-size:16px;letter-spacing:.1px}
+  .wrap{max-width:780px;margin:0 auto;padding:28px 20px 80px}
   header.masthead{border:1px solid var(--line);border-radius:18px;overflow:hidden;
     background:radial-gradient(120% 140% at 0% 0%, #123230 0%, #121722 55%, #0f141d 100%);
     box-shadow:0 20px 60px -30px #000;padding:26px 26px 22px}
@@ -26,35 +25,35 @@
   .meta-row{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:16px;font-size:12.5px;color:var(--dim)}
   .meta-row b{color:var(--muted);font-weight:600}
 
-  section{margin-top:30px}
+  section{margin-top:32px}
   .sec-head{display:flex;align-items:center;gap:10px;margin:0 0 6px}
   .sec-head .ic{font-size:20px}
   .sec-head h2{margin:0;font-size:19px;font-weight:800;letter-spacing:-.2px}
   .sec-head .rule{flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
-  .sec-sub{color:var(--dim);font-size:12.5px;margin:0 0 14px}
+  .sec-sub{color:var(--dim);font-size:12.5px;margin:0 0 16px}
 
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:15px 16px;margin-bottom:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 18px;margin-bottom:14px}
   .card .tag{display:inline-block;font-size:11px;letter-spacing:.5px;text-transform:uppercase;font-weight:700;
     color:var(--accent);margin-bottom:5px}
-  .card h3{margin:0 0 6px;font-size:16px;font-weight:750}
-  .card .date{color:var(--dim);font-weight:500;font-size:12.5px}
-  .row{margin:6px 0 0;font-size:14px;color:#cdd4e0}
-  .row b{color:var(--ink);font-weight:650}
-  .how{border-left:2px solid var(--accent2);padding-left:10px;margin-top:8px;color:#d7dcea;font-size:14px}
-  .src{margin-top:8px;font-size:12.5px}
+  .card h3{margin:0 0 8px;font-size:17px;font-weight:750;letter-spacing:-.1px}
+  .card p{margin:8px 0 0;font-size:14.7px;color:#cdd4e0}
+  .card p.what b, .card p.why b{color:var(--ink);font-weight:700}
+  .card p.new b{color:var(--blue)}
+  .how{background:#101b19;border-left:3px solid var(--accent2);border-radius:0 10px 10px 0;
+    padding:11px 14px;margin-top:12px;color:#dbe6e2;font-size:14.5px}
+  .how b{color:#eafff8}
+  .src{margin-top:11px;font-size:12.5px;color:var(--dim)}
   .src a{color:var(--blue);text-decoration:none}
   .src a:hover{text-decoration:underline}
-  .flag{display:inline-block;margin-top:8px;font-size:12px;color:var(--amber);background:#241f10;
+  .flag{display:inline-block;margin-top:10px;font-size:12px;color:var(--amber);background:#241f10;
     border:1px solid #4a3f1a;border-radius:8px;padding:3px 9px}
 
-  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  @media(max-width:640px){ .grid2{grid-template-columns:1fr} h1.title{font-size:23px} }
-
-  .try{background:linear-gradient(135deg,#122a26,#12161f);border:1px solid #235;border-color:#2a5f52;
+  .try{background:linear-gradient(135deg,#122a26,#12161f);border:1px solid #2a5f52;
     border-radius:16px;padding:18px 20px}
-  .try h2{margin:0 0 10px;font-size:18px}
+  .try h2{margin:0 0 6px;font-size:18px}
+  .try .lead{color:var(--muted);font-size:13px;margin:0 0 12px}
   .try ol{margin:0;padding-left:20px}
-  .try li{margin:7px 0;font-size:14.5px;color:#d7dcea}
+  .try li{margin:9px 0;font-size:14.6px;color:#d7dcea}
   .try li b{color:var(--ink)}
   .try a{color:var(--accent)}
 
@@ -71,7 +70,7 @@
   <header class="masthead">
     <div class="kicker">AI Praxis · Tägliches Hands-on-Briefing</div>
     <h1 class="title">Was du heute ausprobieren kannst</h1>
-    <div class="subtitle">Anwendungsbezogen: neue Features, beste Skills, Prompts &amp; Workflows für LLMs und Kreativ-Plattformen — jede Meldung mit „So nutzt du's" und Link zum Nachmachen.</div>
+    <div class="subtitle">Anwendungsbezogen und erklärt: pro Meldung „Was ist das?", „Warum relevant" und „So nutzt du's" — auch wenn das Thema neu für dich ist.</div>
     <div class="meta-row">
       <span><b>Ausgabe</b> · Donnerstag, 23. Juli 2026</span>
       <span><b>Zeitraum</b> · letzte 1–2 Wochen</span>
@@ -82,13 +81,14 @@
   <!-- HEUTE AUSPROBIEREN -->
   <section>
     <div class="try">
-      <h2>🚀 Heute ausprobieren — die 5 besten</h2>
+      <h2>🚀 Heute ausprobieren</h2>
+      <p class="lead">Die fünf lohnendsten Handgriffe der Woche — Details weiter unten in den jeweiligen Abschnitten.</p>
       <ol>
-        <li><b>ChatGPT Custom Instructions</b> auf ein echtes Stil-Handbuch aufbohren — das Limit liegt jetzt bei 5.000 Zeichen (statt 1.500). Höchster Hebel für wenig Aufwand.</li>
-        <li><b>Claude Code:</b> <code>/fork</code> für Seiten-Investigationen im Hintergrund nutzen und <code>/code-review</code> gezielt an Checkpoints statt automatisch.</li>
-        <li><b>ElevenLabs Music Finetune:</b> aus ~einer Handvoll eigener Tracks ein wiederverwendbares „Brand-Sound"-Modell trainieren.</li>
-        <li><b>Suno Lyricist Profile:</b> alte Songtexte einlesen → als Stil-Vorlage anwenden → neuen Song in deiner eigenen Schreibstimme generieren.</li>
-        <li><b>Gemini 3.6 Flash</b> für schnelle, günstige Coding-Fragen als Default setzen.</li>
+        <li><b>ChatGPT-Profil ausbauen:</b> Das Feld „Custom Instructions" fasst jetzt 5.000 statt 1.500 Zeichen — genug für ein echtes Stil-Handbuch, das ChatGPT bei jeder Antwort automatisch berücksichtigt.</li>
+        <li><b>ElevenLabs Musik-Finetune:</b> Aus ein paar eigenen Tracks ein wiederverwendbares „Haus-Sound"-Modell trainieren.</li>
+        <li><b>Suno Lyricist Profile:</b> Deine alten Songtexte einlesen und neue Songs in deiner eigenen Schreibstimme erzeugen.</li>
+        <li><b>Claude Code <code>/fork</code>:</b> Nebenfragen im Hintergrund klären, ohne den Hauptchat vollzumüllen.</li>
+        <li><b>Gemini 3.6 Flash:</b> Als schnelles, günstiges Standardmodell für Coding-Fragen einstellen.</li>
       </ol>
     </div>
   </section>
@@ -97,177 +97,171 @@
   <section>
     <div class="sec-head"><span class="ic">🧠</span><h2>LLM-Praxis: Skills, Prompts &amp; Tricks</h2><span class="rule"></span></div>
     <p class="sec-sub">Claude · ChatGPT · Gemini · Kimi</p>
-    <div class="grid2">
-      <div class="card">
-        <span class="tag">ChatGPT · 15. Juli</span>
-        <h3>Custom Instructions → 5.000 Zeichen</h3>
-        <div class="row">Das Personalisierungs-Feld wurde von 1.500 auf 5.000 Zeichen erweitert (Plus/Business/Enterprise/Edu).</div>
-        <div class="how"><b>So nutzt du's:</b> Ein echtes Stil-Handbuch hinterlegen — Do/Don't-Listen, Tonfall, Standard-Kontext. Sofort spürbar bessere Antworten.</div>
-        <div class="src"><a href="https://releasebot.io/updates/openai/chatgpt">releasebot.io</a></div>
-      </div>
-      <div class="card">
-        <span class="tag">Claude Code · 17.–22. Juli</span>
-        <h3><code>/fork</code> im Hintergrund + manuelles Review</h3>
-        <div class="row"><code>/fork</code> läuft jetzt als Hintergrund-Session; <code>/code-review</code> und <code>/verify</code> starten nur noch auf Zuruf.</div>
-        <div class="how"><b>So nutzt du's:</b> Seitenfrage per <code>/fork</code> auslagern, Hauptthread bleibt sauber; Review gezielt am Checkpoint aufrufen.</div>
-        <div class="src"><a href="https://code.claude.com/docs/en/changelog">code.claude.com/changelog</a></div>
-      </div>
-      <div class="card">
-        <span class="tag">Claude Cowork · 7. Juli</span>
-        <h3>Geplante Tasks + Handy-Push</h3>
-        <div class="row">Cowork läuft in der Cloud (Web &amp; Mobile); Aufgaben lassen sich planen und schicken dir eine Push-Nachricht, wenn eine Entscheidung ansteht.</div>
-        <div class="how"><b>So nutzt du's:</b> Wiederkehrende Routine (z. B. Morgen-Prep) planen — genau das Muster hinter deinen beiden Briefings.</div>
-        <div class="src"><a href="https://claude.com/blog/cowork-web-mobile">claude.com/blog</a></div>
-      </div>
-      <div class="card">
-        <span class="tag">Gemini · 21. Juli</span>
-        <h3>Gemini 3.6 Flash &amp; 3.5 Flash-Lite</h3>
-        <div class="row">Neue effiziente Modelle: 3.6 Flash stärker bei Coding/Wissensarbeit, 3.5 Flash-Lite auf Tempo/Volumen getrimmt.</div>
-        <div class="how"><b>So nutzt du's:</b> In App / AI Studio 3.6 Flash für günstige, schnelle Coding-Hilfe wählen.</div>
-        <div class="src"><a href="https://releasebot.io/updates/google/gemini">releasebot.io</a></div>
-      </div>
-      <div class="card">
-        <span class="tag">Kimi · verfügbar</span>
-        <h3>„OK Computer" + Agent Swarm</h3>
-        <div class="row">In-App-Agent baut Websites, Slides und Analysen; „Agent Swarm" fährt via Kimi-Work-Desktop bis zu ~300 Sub-Agenten mit Browser-Automation.</div>
-        <div class="how"><b>So nutzt du's:</b> „OK Computer" für One-Shot-Deliverables in der Kimi-App; Kimi Work für lokale Multi-Agent-Automation.</div>
-        <div class="src"><a href="https://theairankings.com/moonshot/">theairankings.com</a></div>
-        <span class="flag">⚠ Aggregator-Quelle — Details vor dem Verlassen prüfen</span>
-      </div>
-      <div class="card">
-        <span class="tag">Claude · Community</span>
-        <h3>Sofort nützliche Skills</h3>
-        <div class="row">Beliebte <code>SKILL.md</code>-Pakete: „Voice DNA" (Schreibstimme aus Samples), „Meeting Analyzer" (Action-Items aus Transkripten), „Automated UI Test" (Playwright).</div>
-        <div class="how"><b>So nutzt du's:</b> In den Skills-Ordner legen — Claude ruft sie per Beschreibung automatisch auf.</div>
-        <div class="src"><a href="https://www.firecrawl.dev/blog/best-claude-code-skills">firecrawl.dev</a></div>
-        <span class="flag">⚠ Community-Sammlung, nicht offiziell</span>
-      </div>
+
+    <div class="card">
+      <span class="tag">ChatGPT · 15. Juli</span>
+      <h3>Custom Instructions jetzt bis 5.000 Zeichen</h3>
+      <p class="what"><b>Was ist das?</b> „Custom Instructions" ist ein dauerhaftes Textfeld in den ChatGPT-Einstellungen, das ChatGPT vor <i>jeder</i> Antwort liest — quasi ein Steckbrief über dich und deine Wünsche (wer du bist, welchen Ton du willst, was ChatGPT tun und lassen soll). Bisher war es auf 1.500 Zeichen begrenzt, jetzt sind es 5.000.</p>
+      <p class="why"><b>Warum relevant:</b> Mehr Platz heißt, du kannst ein richtiges kleines Regelwerk hinterlegen statt nur Stichworte — das ist einer der größten Qualitätshebel überhaupt, weil es bei jeder Unterhaltung greift, ohne dass du es wiederholen musst.</p>
+      <div class="how"><b>So nutzt du's:</b> Einstellungen → Personalisierung → Custom Instructions. Schreib in Feld 1, wer du bist und woran du arbeitest; in Feld 2 den gewünschten Stil (z. B. „antworte auf Deutsch, kurz, mit konkreten Beispielen, keine Floskeln"). Am besten als Do-/Don't-Liste.</div>
+      <div class="src">Quelle: <a href="https://releasebot.io/updates/openai/chatgpt">releasebot.io (OpenAI-Release-Notes)</a></div>
+    </div>
+
+    <div class="card">
+      <span class="tag">Claude Code · 17.–22. Juli</span>
+      <h3><code>/fork</code> läuft im Hintergrund, Review nur auf Zuruf</h3>
+      <p class="what"><b>Was ist das?</b> Claude Code ist Claude als Assistent direkt im Terminal/Editor, der eigenständig Dateien liest, Code schreibt und Befehle ausführt. <code>/fork</code> macht eine Kopie deiner laufenden Unterhaltung und schickt sie als eigene Hintergrund-Sitzung weg — du kannst also eine Nebenfrage untersuchen lassen, während dein Hauptstrang unberührt weiterläuft. Zusätzlich starten die Prüf-Befehle <code>/code-review</code> und <code>/verify</code> jetzt nur noch, wenn du sie aufrufst, statt automatisch.</p>
+      <p class="why"><b>Warum relevant:</b> Weniger Kontext-Chaos. Große Aufgaben bleiben übersichtlich, und du zahlst nicht für Prüfläufe, die du gar nicht wolltest.</p>
+      <div class="how"><b>So nutzt du's:</b> Bei einer Seiten-Frage einfach <code>/fork</code> tippen — die Untersuchung läuft separat weiter. An einem sinnvollen Zwischenstand gezielt <code>/code-review</code> aufrufen.</div>
+      <div class="src">Quelle: <a href="https://code.claude.com/docs/en/changelog">code.claude.com/changelog</a></div>
+    </div>
+
+    <div class="card">
+      <span class="tag">Claude Cowork · 7. Juli</span>
+      <h3>Geplante Aufgaben mit Handy-Benachrichtigung</h3>
+      <p class="what"><b>Was ist das?</b> Cowork ist der Modus, in dem Claude in der Cloud eigenständig an mehrstufigen Aufgaben arbeitet (Dateien, E-Mail, Recherche) — auch wenn du gerade nicht zusiehst. Neu: Es läuft im Web und mobil, Aufgaben lassen sich auf feste Zeiten planen, und Claude schickt dir eine Push-Nachricht aufs Handy, sobald er eine Entscheidung braucht oder fertig ist.</p>
+      <p class="why"><b>Warum relevant:</b> Genau dieses Prinzip steckt hinter deinen beiden täglichen Briefings — ein geplanter Auftrag, der morgens automatisch losläuft.</p>
+      <div class="how"><b>So nutzt du's:</b> Eine wiederkehrende Routine beschreiben (z. B. „fasse mir jeden Montag X zusammen") und als geplante Aufgabe anlegen. Du bekommst das Ergebnis zugestellt, ohne selbst anstoßen zu müssen.</div>
+      <div class="src">Quelle: <a href="https://claude.com/blog/cowork-web-mobile">claude.com/blog</a></div>
+    </div>
+
+    <div class="card">
+      <span class="tag">Google Gemini · 21. Juli</span>
+      <h3>Gemini 3.6 Flash &amp; 3.5 Flash-Lite</h3>
+      <p class="what"><b>Was ist das?</b> „Flash" ist Googles Bezeichnung für die kleineren, schnelleren und günstigeren Varianten seiner Gemini-Modelle (im Gegensatz zu den großen „Pro"-Modellen). Die neue 3.6-Flash-Version ist bei Programmier- und Wissensfragen stärker geworden, „Flash-Lite" ist noch schneller für große Mengen.</p>
+      <p class="why"><b>Warum relevant:</b> Für die meisten Alltagsfragen brauchst du kein teures Top-Modell. Flash liefert schnell und kostet wenig — gerade bei Coding-Hilfe ein gutes Standardmodell.</p>
+      <div class="how"><b>So nutzt du's:</b> In der Gemini-App bzw. im Google AI Studio als Modell „3.6 Flash" wählen und für schnelle Fragen zum Default machen; nur bei den kniffligen Sachen aufs Pro-Modell wechseln.</div>
+      <div class="src">Quelle: <a href="https://releasebot.io/updates/google/gemini">releasebot.io (Gemini-Release-Notes)</a></div>
+    </div>
+
+    <div class="card">
+      <span class="tag">Kimi (Moonshot) · verfügbar</span>
+      <h3>„OK Computer" &amp; Agent Swarm</h3>
+      <p class="what"><b>Was ist das?</b> Kimi ist ein leistungsstarkes KI-Modell aus China. „OK Computer" ist ein Agenten-Modus in der Kimi-App, der komplette Ergebnisse baut (Websites, Präsentationen, Analysen) statt nur zu antworten. „Agent Swarm" lässt über die Kimi-Work-Desktop-App bis zu ~300 Unter-Agenten parallel arbeiten und dabei automatisch im Browser klicken.</p>
+      <p class="why"><b>Warum relevant:</b> Interessant, wenn du ein fertiges Artefakt in einem Rutsch willst oder viele gleichartige Aufgaben parallel erledigen lassen möchtest — oft günstiger als westliche Anbieter.</p>
+      <div class="how"><b>So nutzt du's:</b> In der Kimi-App „OK Computer" für ein One-Shot-Ergebnis testen; für lokale Multi-Agent-Automation die Kimi-Work-App (macOS/Windows) installieren.</div>
+      <div class="src">Quelle: <a href="https://theairankings.com/moonshot/">theairankings.com</a></div>
+      <span class="flag">⚠ Aggregator-Quelle — Details vor produktivem Einsatz offiziell prüfen</span>
     </div>
   </section>
 
   <!-- KREATIV -->
   <section>
     <div class="sec-head"><span class="ic">🎨</span><h2>Kreativ-Plattformen</h2><span class="rule"></span></div>
-    <p class="sec-sub">Suno · ElevenLabs · Runway · OpenArt · Higgsfield · Midjourney</p>
-    <div class="grid2">
-      <div class="card">
-        <span class="tag">Suno · 9. Juli</span>
-        <h3>Neuer Lyrics-Editor + Lyricist Profile</h3>
-        <div class="row">Speicherbares „Lyricist Profile" (deine Texte als wiederverwendbare Stil-Vorlage), Zeilen-Edit per Klartext, Reim-Varianten, Vollbild-Editor mit Autosave.</div>
-        <div class="how"><b>So nutzt du's:</b> Alte Texte einlesen → Profil bauen → vor dem Schreiben anwenden → Zeilen mit „mach das witziger" verfeinern.</div>
-        <div class="src"><a href="https://suno.com/release-notes">suno.com</a></div>
-        <span class="flag">⚠ Creator-Quelle; „Suno V6" ist nur Gerücht</span>
-      </div>
-      <div class="card">
-        <span class="tag">ElevenLabs · 20. Juli</span>
-        <h3>Music Finetunes API</h3>
-        <div class="row">Eigenes Musikmodell aus bis zu 50 eigenen Audiodateien trainieren; jede Musik-Generierung akzeptiert nun eine <code>finetune_id</code>.</div>
-        <div class="how"><b>So nutzt du's:</b> Referenz-Katalog hochladen → wiederverwendbaren Marken-/House-Sound bauen, der über alle Generierungen konsistent bleibt.</div>
-        <div class="src"><a href="https://elevenlabs.io/docs/changelog">elevenlabs.io/changelog</a></div>
-      </div>
-      <div class="card">
-        <span class="tag">Runway · 29. Juni–2. Juli</span>
-        <h3>Seed Audio 1.0 + Agent Skills</h3>
-        <div class="row">Seed Audio erzeugt bis zu 120 s Sprache/Sounddesign/Musik aus Text; Agent Skills baut eine Kampagne per Ein-Wort-Befehl.</div>
-        <div class="how"><b>So nutzt du's:</b> Clip komplett in Runway vertonen (kein externes DAW nötig); „lokalisiere diese Ad für DE" als ein Befehl.</div>
-        <div class="src"><a href="https://runwayml.com/changelog">runwayml.com/changelog</a></div>
-      </div>
-      <div class="card">
-        <span class="tag">OpenArt · Juni/Juli</span>
-        <h3>„Director" Chat-zu-Video + Summer Sale</h3>
-        <div class="row">Video per Konversation steuern statt manuell schneiden; günstige 720p/1080p-Lite-Stufen fürs Iterieren. Bis 31. Juli bis zu 40 % auf Top-Modelle.</div>
-        <div class="how"><b>So nutzt du's:</b> Auf 720p Lite iterieren, den Gewinner in voller Qualität rendern — und ggf. vor Monatsende auf Jahresplan wechseln.</div>
-        <div class="src"><a href="https://openart.ai/whats-new">openart.ai/whats-new</a></div>
-      </div>
-      <div class="card">
-        <span class="tag">Higgsfield · Juli</span>
-        <h3>Photoshop- &amp; DaVinci-Resolve-Plugins</h3>
-        <div class="row">Generierung/Bearbeitung direkt in Pro-Tools: Layer-Zerlegung, Mockups, Hintergrund-Entfernung, Timeline-Footage, Reframing, 4K-Upscale.</div>
-        <div class="how"><b>So nutzt du's:</b> Kein App-Wechsel mehr — in Photoshop (Layer/Mockups) oder Resolve (Footage auf der Timeline) direkt generieren.</div>
-        <div class="src"><a href="https://blog.mean.ceo/higgsfield-news-july-2026/">Sekundärquelle</a></div>
-        <span class="flag">⚠ Sekundärquelle — Datum &amp; Preis offiziell prüfen</span>
-      </div>
-      <div class="card">
-        <span class="tag">Midjourney · Preview</span>
-        <h3>V8.2 im Preview testen</h3>
-        <div class="row">V8.2 ist über <code>--preview</code> testbar; Änderungen v. a. beim Verhalten der Style-Reference (<code>--sref</code>). Vollrelease „bald".</div>
-        <div class="how"><b>So nutzt du's:</b> <code>--preview</code> an Prompts hängen und die eigenen <code>--sref</code>-Codes neu testen — das Verhalten verschiebt sich.</div>
-        <div class="src"><a href="https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version">docs.midjourney.com</a></div>
-        <span class="flag">⚠ Timing unbestätigt</span>
-      </div>
+    <p class="sec-sub">Suno · ElevenLabs · Runway · OpenArt · Midjourney</p>
+
+    <div class="card">
+      <span class="tag">Suno · 9. Juli</span>
+      <h3>Neuer Lyrics-Editor mit „Lyricist Profile"</h3>
+      <p class="what"><b>Was ist das?</b> Suno erzeugt aus einem Textprompt komplette Songs (Musik + Gesang). Das Update betrifft die Text-Seite: Ein „Lyricist Profile" lernt aus deinen bisherigen Songtexten deinen Schreibstil und speichert ihn als wiederverwendbare Vorlage. Dazu kannst du einzelne Zeilen per Klartext-Befehl ändern („mach diese Zeile witziger") und bekommst Reim-Varianten vorgeschlagen.</p>
+      <p class="why"><b>Warum relevant:</b> Statt bei jedem Song neu um den Ton zu ringen, schreibst du dauerhaft in „deiner" Stimme — konsistenter und schneller.</p>
+      <div class="how"><b>So nutzt du's:</b> Im Lyrics-Bereich (Zauberstab-Symbol) ein paar alte Texte einfügen, daraus das Profil bauen, vor dem Schreiben anwenden, dann einzelne Zeilen gezielt verfeinern. Abschnitte (Strophe/Refrain) vor dem Generieren markieren.</div>
+      <div class="src">Quelle: <a href="https://suno.com/release-notes">suno.com/release-notes</a></div>
+      <span class="flag">⚠ Creator-Quelle; ein „Suno V6" ist bislang nur Gerücht</span>
+    </div>
+
+    <div class="card">
+      <span class="tag">ElevenLabs · 20. Juli</span>
+      <h3>Music Finetunes: dein eigenes Musikmodell</h3>
+      <p class="what"><b>Was ist das?</b> ElevenLabs ist auf KI-Audio spezialisiert (Stimmen, Sound, Musik). „Finetune" bedeutet: Man nimmt ein bestehendes KI-Modell und trainiert es mit eigenen Beispielen nach, damit es genau deinen Stil trifft. Neu kannst du aus bis zu 50 eigenen Audiodateien ein maßgeschneidertes Musikmodell erstellen; jede Musik-Generierung lässt sich dann über eine <code>finetune_id</code> auf genau diesen Stil festnageln.</p>
+      <p class="why"><b>Warum relevant:</b> So bekommst du einen wiederkehrenden, konsistenten „Marken-Sound" — nützlich für Intros, Jingles, Hintergrundmusik, die immer gleich klingen soll.</p>
+      <div class="how"><b>So nutzt du's:</b> Einen kleinen Referenz-Katalog (Tracks im gewünschten Stil) hochladen, das Finetune trainieren lassen und danach bei jeder Generierung die erzeugte <code>finetune_id</code> mitgeben.</div>
+      <div class="src">Quelle: <a href="https://elevenlabs.io/docs/changelog">elevenlabs.io/changelog</a></div>
+    </div>
+
+    <div class="card">
+      <span class="tag">Runway · 29. Juni–2. Juli</span>
+      <h3>Seed Audio 1.0 &amp; Agent Skills</h3>
+      <p class="what"><b>Was ist das?</b> Runway ist eine Plattform für KI-Videogenerierung und -bearbeitung. „Seed Audio 1.0" erzeugt bis zu 120 Sekunden Sprache, Sounddesign oder Musik aus Text — also Ton direkt in Runway, ohne separates Audioprogramm. „Agent Skills" sind vorgefertigte Ein-Befehl-Workflows (z. B. eine komplette Werbekampagne oder das Lokalisieren einer Anzeige).</p>
+      <p class="why"><b>Warum relevant:</b> Bild und Ton an einem Ort spart den Umweg über ein zweites Tool; die Agent Skills nehmen dir wiederkehrende Produktionsschritte ab.</p>
+      <div class="how"><b>So nutzt du's:</b> Einen Clip erzeugen und mit Seed Audio direkt vertonen. Für Kampagnen einen Ein-Wort-Befehl geben, z. B. „lokalisiere diese Anzeige für den DE-Markt", statt Schnitt für Schnitt zu arbeiten.</div>
+      <div class="src">Quelle: <a href="https://runwayml.com/changelog">runwayml.com/changelog</a></div>
+    </div>
+
+    <div class="card">
+      <span class="tag">OpenArt · Juni/Juli</span>
+      <h3>„Director" (Chat-zu-Video) &amp; Summer Sale</h3>
+      <p class="what"><b>Was ist das?</b> OpenArt ist eine Plattform für KI-Bilder und -Videos. Mit „Director" steuerst du ein Video im Gespräch — du beschreibst und korrigierst per Chat, statt manuell zu schneiden. Neue günstige „Lite"-Qualitätsstufen (720p/1080p) sind zum Ausprobieren gedacht. Bis 31. Juli gibt es zudem bis zu 40 % Rabatt auf die Top-Modelle.</p>
+      <p class="why"><b>Warum relevant:</b> Der niedrigschwellige Einstieg ins Video-Erstellen — erst billig iterieren, dann das beste Ergebnis in voller Qualität rendern.</p>
+      <div class="how"><b>So nutzt du's:</b> Auf einer Lite-Stufe so lange im Chat nachjustieren, bis die Idee sitzt, dann den Favoriten hochauflösend rendern. Wer OpenArt regelmäßig nutzt, kann vor Monatsende auf den Jahresplan wechseln.</div>
+      <div class="src">Quelle: <a href="https://openart.ai/whats-new">openart.ai/whats-new</a></div>
+    </div>
+
+    <div class="card">
+      <span class="tag">Midjourney · Preview</span>
+      <h3>V8.2 testen &amp; Style-Reference (<code>--sref</code>)</h3>
+      <p class="what"><b>Was ist das?</b> Midjourney erzeugt Bilder aus Text. Eine „Style-Reference" (<code>--sref</code>) ist ein Code oder Referenzbild, das den visuellen Stil vorgibt, damit mehrere Bilder einheitlich aussehen. Die neue Version 8.2 ist als „Preview" (Vorschau) testbar, und das Verhalten der Style-References ändert sich dabei.</p>
+      <p class="why"><b>Warum relevant:</b> Wenn du mit festen Stil-Codes arbeitest, kann V8.2 deine gewohnten Ergebnisse verschieben — besser jetzt testen als später überrascht werden.</p>
+      <div class="how"><b>So nutzt du's:</b> An deinen Prompt <code>--preview</code> anhängen, um V8.2 auszuprobieren, und dabei deine bevorzugten <code>--sref</code>-Codes gegenprüfen.</div>
+      <div class="src">Quelle: <a href="https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version">docs.midjourney.com</a></div>
+      <span class="flag">⚠ Release-Zeitpunkt unbestätigt</span>
     </div>
   </section>
 
-  <!-- CODING / AGENTS / AUTOMATION -->
+  <!-- CODING / AGENTS -->
   <section>
     <div class="sec-head"><span class="ic">🤖</span><h2>Coding, Agents &amp; Automatisierung</h2><span class="rule"></span></div>
     <p class="sec-sub">MCP · Cursor · Claude Code · zum Nachbauen</p>
-    <div class="grid2">
-      <div class="card">
-        <span class="tag">MCP · finalisiert 28. Juli</span>
-        <h3>MCP wird „stateless" + MCP Apps</h3>
-        <div class="row">Neue Spec kippt den Initialize-Handshake/Session-IDs — remote MCP-Server laufen hinter simplem Round-Robin-LB. Neu: „MCP Apps" (Server rendern interaktive Sandbox-UIs) + Tasks-Extension.</div>
-        <div class="how"><b>So nutzt du's:</b> Eigene MCP-Server ohne Sticky-Sessions skalieren; UI-fähige Tools bauen. Achtung: Breaking für die experimentelle Tasks-API.</div>
-        <div class="src"><a href="https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/">modelcontextprotocol.io</a></div>
-      </div>
-      <div class="card">
-        <span class="tag">Cursor · 2.–17. Juli</span>
-        <h3>Automations, Side Chats, Slack</h3>
-        <div class="row">„Automations" starten Agenten bei Triggern (neuer Commit, Slack-Nachricht, Timer). „Side Chats" laufen parallel zum Haupt-Agent; Slack-Flow mit Plan-vor-Ausführung.</div>
-        <div class="how"><b>So nutzt du's:</b> CI-artige Agent-Läufe einrichten — z. B. bei jedem Commit automatisch Tests/Review-Agent starten.</div>
-        <div class="src"><a href="https://cursor.com/blog/2-0">cursor.com/blog</a></div>
-      </div>
-      <div class="card">
-        <span class="tag">Claude Code · 17.–22. Juli</span>
-        <h3>Kosten-Bremsen für Agenten</h3>
-        <div class="row">Neue Defaults: 200 Web-Suchen/Session, 200 Subagenten/Session, 20 gleichzeitig; MCP-Tools gehen nach 2 Min in den Hintergrund.</div>
-        <div class="how"><b>So nutzt du's:</b> Bei großen Läufen via <code>CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS</code> &amp; Co. Fan-out und Kosten steuern.</div>
-        <div class="src"><a href="https://code.claude.com/docs/en/changelog">code.claude.com/changelog</a></div>
-      </div>
-      <div class="card">
-        <span class="tag">MCP-Tool</span>
-        <h3>Desktop Commander MCP</h3>
-        <div class="row">MCP-Server, der einem Agenten Terminal, Dateisuche und Diff-basiertes Editieren über das ganze OS gibt — nicht nur in der IDE.</div>
-        <div class="how"><b>So nutzt du's:</b> Claude Shell-Befehle ausführen, Dateien per Search-Replace ändern und CSV/Excel außerhalb des Editors verarbeiten lassen.</div>
-        <div class="src"><a href="https://github.com/wonderwhy-er/DesktopCommanderMCP">github.com · ~6,3k ★</a></div>
-      </div>
+
+    <div class="card">
+      <span class="tag">MCP · finalisiert 28. Juli</span>
+      <h3>MCP wird „stateless" — und bekommt Apps</h3>
+      <p class="what"><b>Was ist das?</b> MCP (Model Context Protocol) ist ein offener Standard, über den KI-Assistenten an externe Werkzeuge und Datenquellen andocken — der „USB-Anschluss" zwischen KI und deinen Tools. Bisher musste ein Client beim Verbinden erst einen Handshake machen und eine feste Sitzung halten. „Stateless" heißt: Dieser Zwang fällt weg, jede Anfrage kann an jeden Server-Knoten gehen. Zusätzlich neu: „MCP Apps" — Server dürfen kleine interaktive Oberflächen anzeigen.</p>
+      <p class="why"><b>Warum relevant:</b> Für alle, die eigene MCP-Server betreiben, wird das Skalieren viel einfacher (kein spezieller Sitzungs-Server nötig). Mit „MCP Apps" werden Tools von reinen Textantworten zu echten kleinen Bedienoberflächen.</p>
+      <div class="how"><b>So nutzt du's:</b> Wenn du einen MCP-Server hast, auf die neue Spec umsteigen und ihn hinter einen einfachen Load-Balancer stellen. Achtung: Wer die experimentelle „Tasks"-Schnittstelle nutzt, muss anpassen (Breaking Change).</div>
+      <div class="src">Quelle: <a href="https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/">modelcontextprotocol.io</a></div>
+    </div>
+
+    <div class="card">
+      <span class="tag">Cursor · 2.–17. Juli</span>
+      <h3>Automations, Side Chats &amp; Slack</h3>
+      <p class="what"><b>Was ist das?</b> Cursor ist ein Code-Editor mit eingebautem KI-Assistenten. „Automations" starten einen Agenten automatisch, wenn ein Auslöser eintritt — etwa ein neuer Commit, eine Slack-Nachricht oder ein Zeitplan. „Side Chats" sind Neben-Unterhaltungen, die parallel zum Haupt-Agenten laufen.</p>
+      <p class="why"><b>Warum relevant:</b> Damit lassen sich wiederkehrende Entwickler-Aufgaben automatisieren (ähnlich einer CI-Pipeline), ohne dass du jedes Mal selbst anstößt.</p>
+      <div class="how"><b>So nutzt du's:</b> Eine Automation einrichten, die z. B. bei jedem Commit einen Test- oder Review-Agenten laufen lässt; für Experimente Side Chats parallel zum Hauptstrang nutzen.</div>
+      <div class="src">Quelle: <a href="https://cursor.com/blog/2-0">cursor.com/blog</a></div>
+    </div>
+
+    <div class="card">
+      <span class="tag">Desktop Commander · MCP-Tool</span>
+      <h3>Desktop Commander MCP</h3>
+      <p class="what"><b>Was ist das?</b> Ein MCP-Server (siehe oben), der einem KI-Assistenten Zugriff auf dein ganzes Betriebssystem gibt — Terminal-Befehle ausführen, Dateien im gesamten Rechner suchen und gezielt per „Suchen-und-Ersetzen" bearbeiten. Also nicht nur innerhalb eines Editors, sondern systemweit.</p>
+      <p class="why"><b>Warum relevant:</b> Damit kann Claude echte Arbeit auf deinem Rechner erledigen — Skripte laufen lassen, Dateien umbauen, Tabellen (CSV/Excel) verarbeiten. Eines der aktuell meistgenutzten MCP-Tools (~6,3k Sterne).</p>
+      <div class="how"><b>So nutzt du's:</b> Den Server nach Anleitung installieren und in Claude als MCP-Verbindung eintragen; danach kann der Assistent Befehle und Dateiänderungen ausführen (bewusst und mit Bedacht einsetzen).</div>
+      <div class="src">Quelle: <a href="https://github.com/wonderwhy-er/DesktopCommanderMCP">github.com/wonderwhy-er/DesktopCommanderMCP</a></div>
     </div>
   </section>
 
   <!-- GIT / OSS -->
   <section>
     <div class="sec-head"><span class="ic">⚡</span><h2>Git &amp; Open Source</h2><span class="rule"></span></div>
-    <p class="sec-sub">Trending Repos zum Nachbauen</p>
-    <div class="grid2">
-      <div class="card">
-        <span class="tag">~56k ★</span>
-        <h3>FoundationAgents/OpenManus</h3>
-        <div class="row">Offenes Framework für autonome General-Purpose-Agenten (MIT, kein Invite-Code), inkl. RL-Variante.</div>
-        <div class="how"><b>Wofür:</b> Eigene Agenten für Web-Automation, Datenanalyse, Multi-Agent-Workflows selbst bauen.</div>
-        <div class="src"><a href="https://github.com/FoundationAgents/OpenManus">github.com/FoundationAgents/OpenManus</a></div>
-      </div>
-      <div class="card">
-        <span class="tag">~6,3k ★ · +909/Woche</span>
-        <h3>chrome-devtools-mcp</h3>
-        <div class="row">Offizielles Google/Chrome-Repo: Chrome DevTools als MCP-Server für Coding-Agenten.</div>
-        <div class="how"><b>Wofür:</b> Agenten echtes Browser-Debugging geben — DOM/Netzwerk/Console inspizieren, Frontend-Tests automatisieren.</div>
-        <div class="src"><a href="https://github.com/ChromeDevTools/chrome-devtools-mcp">github.com/ChromeDevTools</a></div>
-      </div>
-      <div class="card">
-        <span class="tag">Templates</span>
-        <h3>davila7/claude-code-templates</h3>
-        <div class="row">CLI zum Konfigurieren und Überwachen von Claude-Code-Umgebungen (Dashboards, Health-Monitoring).</div>
-        <div class="how"><b>Wofür:</b> Claude-Code-Setups schnell aufsetzen und im Blick behalten.</div>
-        <div class="src"><a href="https://github.com/davila7/claude-code-templates">github.com/davila7</a></div>
-      </div>
-      <div class="card">
-        <span class="tag">Open Weights · HF</span>
-        <h3>Inkling (Thinking Machines)</h3>
-        <div class="row">Führendes US-Open-Weights-Modell (975B total / 41B aktiv), multimodal, 1M Kontext — auf Hugging Face.</div>
-        <div class="how"><b>Wofür:</b> Selbst-gehostete agentische Workloads mit starkem Open-Weight + langem Kontext.</div>
-        <div class="src"><a href="https://huggingface.co/blog/thinkingmachines-inkling">huggingface.co</a></div>
-        <span class="flag">⚠ Lizenz vor kommerzieller Nutzung prüfen</span>
-      </div>
+    <p class="sec-sub">Trending Repos — was sie sind und wofür man sie nutzt</p>
+
+    <div class="card">
+      <span class="tag">GitHub · ~56k ★</span>
+      <h3>OpenManus — Baukasten für autonome Agenten</h3>
+      <p class="what"><b>Was ist das?</b> Ein quelloffenes Framework (kostenlos, MIT-Lizenz), mit dem man eigene „autonome Agenten" baut — KI-Programme, die selbstständig mehrschrittige Aufgaben abarbeiten, etwa im Web recherchieren oder Daten analysieren. Entstanden aus dem Team hinter MetaGPT.</p>
+      <p class="why"><b>Warum relevant:</b> Wer selbst experimentieren will (statt fertige Produkte zu nutzen), hat hier eine breit genutzte, gut gepflegte Grundlage — inklusive einer Variante mit „Reinforcement Learning".</p>
+      <div class="how"><b>Wofür du's nutzt:</b> Eigene Agenten für Web-Automation, Datenanalyse oder Multi-Agent-Workflows aufsetzen und anpassen.</div>
+      <div class="src">Quelle: <a href="https://github.com/FoundationAgents/OpenManus">github.com/FoundationAgents/OpenManus</a></div>
+    </div>
+
+    <div class="card">
+      <span class="tag">GitHub · Google/Chrome</span>
+      <h3>chrome-devtools-mcp — Browser-Debugging für Agenten</h3>
+      <p class="what"><b>Was ist das?</b> Ein offizielles Google-Repo, das die Chrome-Entwicklerwerkzeuge als MCP-Server bereitstellt. Damit bekommt ein KI-Agent echten Zugriff auf einen Browser: Seitenaufbau (DOM), Netzwerk und Konsole inspizieren, Aktionen automatisieren.</p>
+      <p class="why"><b>Warum relevant:</b> Für alle, die Websites bauen oder testen — der Agent kann Fehler im Browser wirklich „sehen" und Frontend-Tests automatisch durchführen.</p>
+      <div class="how"><b>Wofür du's nutzt:</b> Automatisiertes Testen und Debuggen von Web-Oberflächen durch einen Coding-Agenten.</div>
+      <div class="src">Quelle: <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp">github.com/ChromeDevTools/chrome-devtools-mcp</a></div>
+    </div>
+
+    <div class="card">
+      <span class="tag">Hugging Face · Open Weights</span>
+      <h3>Inkling — starkes frei herunterladbares Modell</h3>
+      <p class="what"><b>Was ist das?</b> „Open Weights" bedeutet, dass die trainierten Modell-Dateien öffentlich zum Download stehen und man das Modell selbst betreiben kann (statt nur über eine fremde API). Inkling vom Labor „Thinking Machines" gilt als das derzeit führende US-Open-Weights-Modell: multimodal (Text, Bild, Audio) und mit sehr langem Kontextfenster (1 Mio. Tokens).</p>
+      <p class="why"><b>Warum relevant:</b> Interessant, wenn Datenschutz oder Unabhängigkeit von Anbietern zählt — du hostest das Modell selbst und schickst nichts an Dritte.</p>
+      <div class="how"><b>Wofür du's nutzt:</b> Selbst betriebene Agenten/Anwendungen mit starkem Modell und langem Kontext. Vor kommerziellem Einsatz die Lizenzbedingungen prüfen.</div>
+      <div class="src">Quelle: <a href="https://huggingface.co/blog/thinkingmachines-inkling">huggingface.co</a></div>
+      <span class="flag">⚠ Lizenz vor kommerzieller Nutzung prüfen</span>
     </div>
   </section>
 
