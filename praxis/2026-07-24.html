@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Praxis-Briefing — 24. Juli 2026</title>
+</head>
+<body style="margin:0; padding:0; background:#0b0f14; color:#e2e8f0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; line-height:1.6;">
+
+<div style="max-width:780px; margin:0 auto; padding:24px 18px 60px 18px;">
+
+  <!-- Header -->
+  <div style="margin-bottom:18px;">
+    <a href="../index.html" style="color:#2dd4bf; text-decoration:none; font-size:14px;">&larr; &Uuml;bersicht</a>
+  </div>
+
+  <div style="margin-bottom:28px;">
+    <div style="color:#2dd4bf; font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:6px;">AI Praxis-Briefing</div>
+    <h1 style="margin:0 0 6px 0; font-size:28px; line-height:1.25; color:#f8fafc;">Freitag, 24. Juli 2026</h1>
+    <p style="margin:0; color:#94a3b8; font-size:14px;">Hands-on &amp; erkl&auml;rend: was heute wirklich neu ist bei Claude, ChatGPT, Gemini, Kimi, den Kreativ-Tools und in der Coding/Open-Source-Welt &mdash; und wie du es sofort ausprobierst.</p>
+  </div>
+
+  <!-- Heute ausprobieren Box -->
+  <div style="background:linear-gradient(135deg, rgba(45,212,191,0.12), rgba(45,212,191,0.03)); border:1px solid rgba(45,212,191,0.35); border-radius:14px; padding:20px 20px 18px 20px; margin-bottom:32px;">
+    <div style="font-size:18px; font-weight:700; color:#f8fafc; margin-bottom:12px;">&#128640; Heute ausprobieren &mdash; die 5 besten Tipps</div>
+    <ol style="margin:0; padding-left:20px; color:#e2e8f0; font-size:15px;">
+      <li style="margin-bottom:10px;"><strong>Reflect with Claude aktivieren</strong> &mdash; sieh in wenigen Klicks, wie und wof&uuml;r du Claude wirklich nutzt, und ob du zu viel oder zu wenig delegierst. <a href="https://www.anthropic.com/news/reflect-with-claude" style="color:#2dd4bf;">Quelle</a></li>
+      <li style="margin-bottom:10px;"><strong>Kimi K3 kostenlos im Browser testen</strong> &mdash; ein offenes Spitzenmodell mit 1&nbsp;Million Token Kontextfenster, ideal f&uuml;r sehr lange Dokumente oder Codebasen. <a href="https://www.kimi.com/blog/kimi-k3" style="color:#2dd4bf;">Quelle</a></li>
+      <li style="margin-bottom:10px;"><strong>Cursor-Router auf &bdquo;Cost&ldquo; oder &bdquo;Balance&ldquo; stellen</strong> &mdash; lass die Software automatisch das passende (und g&uuml;nstigere) Modell pro Anfrage w&auml;hlen. <a href="https://cursor.com/changelog" style="color:#2dd4bf;">Quelle</a></li>
+      <li style="margin-bottom:10px;"><strong>codebase-memory-mcp in Claude Code/Cursor einbinden</strong> &mdash; spart laut Projekt bis zu 99&nbsp;% Token-Verbrauch, weil dein Agent den Code nicht mehr komplett neu einlesen muss. <a href="https://github.com/DeusData/codebase-memory-mcp" style="color:#2dd4bf;">Quelle</a></li>
+      <li style="margin-bottom:0;"><strong>Higgsfield &bdquo;Explainer&ldquo; ein Thema geben</strong> &mdash; aus einem Stichwort wird automatisch ein fertiges, bis zu 10-min&uuml;tiges Erkl&auml;rvideo mit Sprecherstimme und Untertiteln. <a href="https://higgsfield.ai/supercomputer/marketplace/skills/higgsfield-explainer" style="color:#2dd4bf;">Quelle</a></li>
+    </ol>
+  </div>
+
+  <!-- SECTION: LLM-Praxis -->
+  <h2 style="font-size:20px; color:#f8fafc; border-bottom:1px solid #1e293b; padding-bottom:10px; margin:36px 0 18px 0;">&#129504; LLM-Praxis: Skills, Prompts &amp; Tricks</h2>
+
+  <!-- Card 1 -->
+  <div style="background:#111827; border:1px solid #1f2937; border-radius:12px; padding:18px 20px; margin-bottom:16px;">
+    <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
+      <span style="color:#2dd4bf; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;">Claude &middot; 9. Juli 2026 (Beta)</span>
+    </div>
+    <h3 style="margin:0 0 12px 0; font-size:17px; color:#f8fafc;">Reflect with Claude &mdash; dein pers&ouml;nliches Nutzungs-Spiegelbild</h3>
+    <p style="margin:0 0 10px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Was ist das?</strong> Eine neue Beta-Funktion, mit der du siehst, wie du Claude tats&auml;chlich nutzt: welche Themen, welche Aufgabentypen, wie oft du Arbeit komplett abgibst (&bdquo;delegierst&ldquo;) statt selbst zu machen. Claude bewertet das nach einem 4-Punkte-Raster (Delegation, Beschreibung, Urteilsverm&ouml;gen, Sorgfalt) und stellt dir reflektierende Fragen, z.&nbsp;B. was du lieber selbst weitermachen willst.</p>
+    <p style="margin:0 0 12px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Warum relevant?</strong> F&uuml;r alle Vielnutzer:innen, die bewusster mit KI arbeiten wollen &mdash; z.&nbsp;B. um zu pr&uuml;fen, ob man zu abh&auml;ngig wird oder ungenutztes Potenzial liegen l&auml;sst.</p>
+    <div style="background:rgba(45,212,191,0.08); border-left:3px solid #2dd4bf; border-radius:6px; padding:12px 14px; margin-bottom:10px;">
+      <div style="font-weight:700; color:#2dd4bf; font-size:13px; margin-bottom:6px;">SO NUTZT DU'S</div>
+      <div style="color:#e2e8f0; font-size:14px;">1) &bdquo;Memory&ldquo; muss in deinen Claude-Einstellungen aktiv sein. 2) Web oder Desktop-App &rarr; Einstellungen &rarr; &bdquo;Reflect&ldquo; suchen. 3) Zeitraum w&auml;hlen (1&ndash;12 Monate) und deine Muster ansehen. Verf&uuml;gbar f&uuml;r Free-, Pro- und Max-Nutzer; sensible Chats (Incognito, Gesundheit) werden ausgeschlossen.</div>
+    </div>
+    <a href="https://www.anthropic.com/news/reflect-with-claude" style="color:#64748b; font-size:13px;">Quelle: anthropic.com/news/reflect-with-claude</a>
+  </div>
+
+  <!-- Card 2 -->
+  <div style="background:#111827; border:1px solid #1f2937; border-radius:12px; padding:18px 20px; margin-bottom:16px;">
+    <div style="margin-bottom:8px;">
+      <span style="color:#2dd4bf; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;">ChatGPT / OpenAI API &middot; 9. Juli 2026</span>
+    </div>
+    <h3 style="margin:0 0 12px 0; font-size:17px; color:#f8fafc;">GPT-5.6 &mdash; neues Flaggschiff in drei Gr&ouml;&szlig;en</h3>
+    <p style="margin:0 0 10px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Was ist das?</strong> GPT-5.6 ist OpenAIs neues Hauptmodell &mdash; in drei Varianten: <em>Sol</em> (h&ouml;chste Leistung), <em>Terra</em> (ausgewogen) und <em>Luna</em> (schnell &amp; g&uuml;nstig). Es verbessert vor allem Coding-Agenten (weniger verbrauchte Tokens bei besserer Leistung), Arbeiten mit unordentlichen Dokumenten (daraus werden fertige, teilbare Ergebnisse) und Design/Frontend-Arbeit inklusive verbessertem &bdquo;Computer Use&ldquo; &mdash; das Modell kann selbst Bildschirminhalte pr&uuml;fen und Ergebnisse verfeinern.</p>
+    <p style="margin:0 0 12px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Warum relevant?</strong> F&uuml;r alle ChatGPT-Nutzer:innen und Entwickler:innen spürbar besser bei Coding, Dokumentenarbeit und Agenten-Workflows; ist inzwischen auch das bevorzugte Modell in Microsoft 365 Copilot.</p>
+    <div style="background:rgba(45,212,191,0.08); border-left:3px solid #2dd4bf; border-radius:6px; padding:12px 14px; margin-bottom:10px;">
+      <div style="font-weight:700; color:#2dd4bf; font-size:13px; margin-bottom:6px;">SO NUTZT DU'S</div>
+      <div style="color:#e2e8f0; font-size:14px;">In ChatGPT (Plus/Pro/Business/Enterprise) Modell-Auswahl &ouml;ffnen &rarr; &bdquo;GPT-5.6&ldquo; w&auml;hlen, Anstrengungsgrad auf &bdquo;medium&ldquo; oder h&ouml;her stellen f&uuml;r Sol. Entwickler:innen sprechen &uuml;ber die API die Modelle <code>gpt-5.6-sol</code>, <code>-terra</code> oder <code>-luna</code> direkt an.</div>
+    </div>
+    <a href="https://openai.com/index/gpt-5-6/" style="color:#64748b; font-size:13px;">Quelle: openai.com/index/gpt-5-6</a>
+  </div>
+
+  <!-- Card 3 -->
+  <div style="background:#111827; border:1px solid #1f2937; border-radius:12px; padding:18px 20px; margin-bottom:16px;">
+    <div style="margin-bottom:8px;">
+      <span style="color:#2dd4bf; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;">ChatGPT (Voice) &middot; 8. Juli 2026</span>
+    </div>
+    <h3 style="margin:0 0 12px 0; font-size:17px; color:#f8fafc;">GPT-Live &mdash; ein Sprachmodell, das wirklich zuh&ouml;rt <em>und</em> spricht</h3>
+    <p style="margin:0 0 10px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Was ist das?</strong> GPT-Live ist eine neue Sprach-Engine mit &bdquo;Full-Duplex&ldquo;-Architektur &mdash; das hei&szlig;t, das Modell kann gleichzeitig zuh&ouml;ren und sprechen, wie in einem echten Gespr&auml;ch, inklusive nat&uuml;rlicher Best&auml;tigungslaute (&bdquo;mhmm&ldquo;) und weniger st&ouml;renden Unterbrechungen. Komplexere Anfragen (Websuche, Recherche) werden im Hintergrund an GPT-5.5 weitergereicht, ohne dass das Gespr&auml;ch stockt.</p>
+    <p style="margin:0 0 12px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Warum relevant?</strong> F&uuml;r alle, die ChatGPT freih&auml;ndig per Sprache nutzen &mdash; spürbar nat&uuml;rlicheres Gespr&auml;chsgef&uuml;hl statt der typischen Roboter-Pausen.</p>
+    <div style="background:rgba(45,212,191,0.08); border-left:3px solid #2dd4bf; border-radius:6px; padding:12px 14px; margin-bottom:10px;">
+      <div style="font-weight:700; color:#2dd4bf; font-size:13px; margin-bottom:6px;">SO NUTZT DU'S</div>
+      <div style="color:#e2e8f0; font-size:14px;">ChatGPT-App (iOS/Android) oder chatgpt.com &ouml;ffnen &rarr; aufs Mikrofon-Symbol tippen &mdash; die neue Engine ist bei zahlenden Abos (Go/Plus/Pro) automatisch aktiv, Free-Nutzer bekommen die kleinere &bdquo;mini&ldquo;-Version.</div>
+    </div>
+    <a href="https://openai.com/index/introducing-gpt-live/" style="color:#64748b; font-size:13px;">Quelle: openai.com/index/introducing-gpt-live</a>
+  </div>
+
+  <!-- Card 4 -->
+  <div style="background:#111827; border:1px solid #1f2937; border-radius:12px; padding:18px 20px; margin-bottom:16px;">
+    <div style="margin-bottom:8px;">
+      <span style="color:#2dd4bf; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;">Gemini (Google) &middot; 21. Juli 2026</span>
+    </div>
+    <h3 style="margin:0 0 12px 0; font-size:17px; color:#f8fafc;">Gemini 3.6 Flash, 3.5 Flash-Lite &amp; 3.5 Flash Cyber</h3>
+    <p style="margin:0 0 10px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Was ist das?</strong> Drei neue, kleinere/schnellere Gemini-Modelle: <em>3.6 Flash</em> (verbraucht bis zu 65&nbsp;% weniger Antwort-Tokens bei besserem Coding und &bdquo;Computer Use&ldquo;), <em>3.5 Flash-Lite</em> (das schnellste 3.5er-Modell, f&uuml;r Massenaufgaben wie Dokumentenverarbeitung) und <em>3.5 Flash Cyber</em> (spezialisiert auf das Aufsp&uuml;ren von Sicherheitsl&uuml;cken, vorerst nur f&uuml;r Beh&ouml;rden/Partner).</p>
+    <p style="margin:0 0 12px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Warum relevant?</strong> F&uuml;r Entwickler:innen, die Gemini in eigene Apps oder Agenten einbauen: g&uuml;nstigere, schnellere Bausteine. F&uuml;r Endnutzer:innen spürbar in der Gemini-App und der Google-Suche.</p>
+    <div style="background:rgba(45,212,191,0.08); border-left:3px solid #2dd4bf; border-radius:6px; padding:12px 14px; margin-bottom:10px;">
+      <div style="font-weight:700; color:#2dd4bf; font-size:13px; margin-bottom:6px;">SO NUTZT DU'S</div>
+      <div style="color:#e2e8f0; font-size:14px;">In der Gemini-App/gemini.google.com ist 3.6 Flash bereits das Standardmodell &mdash; einfach normal chatten. Entwickler:innen w&auml;hlen in Google AI Studio oder &uuml;ber die API das Modell <code>gemini-3.6-flash</code> bzw. <code>gemini-3.5-flash-lite</code>.</div>
+    </div>
+    <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/" style="color:#64748b; font-size:13px;">Quelle: blog.google &mdash; Gemini-Modelle</a>
+  </div>
+
+  <!-- Card 5 -->
+  <div style="background:#111827; border:1px solid #1f2937; border-radius:12px; padding:18px 20px; margin-bottom:16px;">
+    <div style="margin-bottom:8px;">
+      <span style="color:#2dd4bf; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;">Kimi (Moonshot AI) &middot; 16. Juli 2026 (Gewichte ab 27. Juli offen)</span>
+    </div>
+    <h3 style="margin:0 0 12px 0; font-size:17px; color:#f8fafc;">Kimi K3 &mdash; offenes Modell mit 1&nbsp;Million Token Kontext</h3>
+    <p style="margin:0 0 10px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Was ist das?</strong> Kimi K3 hat laut Moonshot AI 2,8&nbsp;Billionen Parameter, nutzt davon pro Anfrage aber nur einen kleinen aktiven Teil (&bdquo;Mixture-of-Experts&ldquo; &mdash; das Modell schaltet nur die gerade passenden &bdquo;Experten-Module&ldquo; ein, statt immer das komplette Netz zu nutzen, was Rechenkosten spart). Das Kontextfenster (wie viel Text das Modell &bdquo;im Kopf behalten&ldquo; kann) betr&auml;gt 1&nbsp;Million Tokens, das Modell versteht auch Bilder und ist f&uuml;r langes, mehrstufiges Programmieren optimiert. &bdquo;Open Weights&ldquo; bedeutet: die trainierten Modell-Gewichte werden zum Download ver&ouml;ffentlicht, man kann das Modell also selbst hosten statt nur per API zu nutzen.</p>
+    <p style="margin:0 0 12px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Warum relevant?</strong> F&uuml;r Entwickler:innen und Firmen, die ein starkes, aber offenes Modell mit gro&szlig;em Kontextfenster zu niedrigeren Kosten suchen &mdash; als Alternative zu geschlossenen US-Modellen.</p>
+    <div style="background:rgba(45,212,191,0.08); border-left:3px solid #2dd4bf; border-radius:6px; padding:12px 14px; margin-bottom:10px;">
+      <div style="font-weight:700; color:#2dd4bf; font-size:13px; margin-bottom:6px;">SO NUTZT DU'S</div>
+      <div style="color:#e2e8f0; font-size:14px;">Direkt kostenlos testen auf kimi.com (Web-Chat) oder den Apps. F&uuml;r Coding: &bdquo;Kimi Code&ldquo; (Terminal) oder die Desktop-App &bdquo;Kimi Work&ldquo;. Eigene Projekte per API: Account auf platform.kimi.ai, API-Key erzeugen. Wer selbst hosten will: Gewichte ab 27.7.2026 zum Download.</div>
+    </div>
+    <a href="https://www.kimi.com/blog/kimi-k3" style="color:#64748b; font-size:13px;">Quelle: kimi.com/blog/kimi-k3</a>
+  </div>
+
+  <!-- SECTION: Kreativ-Plattformen -->
+  <h2 style="font-size:20px; color:#f8fafc; border-bottom:1px solid #1e293b; padding-bottom:10px; margin:36px 0 18px 0;">&#127912; Kreativ-Plattformen</h2>
+
+  <!-- Card 6 -->
+  <div style="background:#111827; border:1px solid #1f2937; border-radius:12px; padding:18px 20px; margin-bottom:16px;">
+    <div style="margin-bottom:8px;">
+      <span style="color:#2dd4bf; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;">Midjourney &middot; ca. 9. Juli 2026 &nbsp;&#9888;</span>
+    </div>
+    <h3 style="margin:0 0 12px 0; font-size:17px; color:#f8fafc;">V8.2-Preview erneut aktualisiert</h3>
+    <p style="margin:0 0 10px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Was ist das?</strong> Midjourney testet gerade V8.2 als fr&uuml;he Vorschau (Preview-Modus seit 25. Juni 2026), die man mit dem Parameter <code>--preview</code> an jeden Prompt anh&auml;ngen kann. Anfang Juli wurde dieser Preview-Build laut Community-Beobachtungen erneut aktualisiert. V8.2 soll vor allem bei Bild&auml;sthetik und Personalisierung zulegen. Kurz erkl&auml;rt: <em>&bdquo;sref&ldquo;</em> (Style Reference) ist ein Midjourney-Parameter, mit dem du den Bildstil eines Referenzbildes auf einen neuen Prompt &uuml;bertr&auml;gst; <code>--profile</code> ist dein pers&ouml;nliches, trainiertes Geschmacksprofil, das Ergebnisse automatisch an deinen bisherigen Stil anpasst.</p>
+    <p style="margin:0 0 12px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Warum relevant?</strong> F&uuml;r Designer:innen und Bildgenerierungs-Profis, die fr&uuml;h neue Bildqualit&auml;t/Stiltreue testen wollen, bevor V8.2 zum Standardmodell wird.</p>
+    <div style="background:rgba(45,212,191,0.08); border-left:3px solid #2dd4bf; border-radius:6px; padding:12px 14px; margin-bottom:10px;">
+      <div style="font-weight:700; color:#2dd4bf; font-size:13px; margin-bottom:6px;">SO NUTZT DU'S</div>
+      <div style="color:#e2e8f0; font-size:14px;">In Discord oder auf midjourney.com einen Prompt eingeben und <code>--preview</code> anh&auml;ngen. Ergebnisse sind bewusst noch unpoliert und k&ouml;nnen sich bei identischen Prompts unterscheiden, da laufend nachjustiert wird.</div>
+    </div>
+    <div style="color:#fbbf24; font-size:12.5px; margin-bottom:8px;">&#9888; Sekund&auml;rquelle: kein offizieller Midjourney-Blogpost gefunden, nur Community-Berichterstattung basierend auf X-Posts Dritter.</div>
+    <a href="https://medium.com/@inchristiely/midjourney-quietly-updated-the-v8-2-preview-again-heres-what-changed-and-why-it-matters-now-ce392c255464" style="color:#64748b; font-size:13px;">Quelle: Medium-Artikel (Community)</a>
+  </div>
+
+  <!-- Card 7 -->
+  <div style="background:#111827; border:1px solid #1f2937; border-radius:12px; padding:18px 20px; margin-bottom:16px;">
+    <div style="margin-bottom:8px;">
+      <span style="color:#2dd4bf; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;">Runway &middot; 2. Juli 2026</span>
+    </div>
+    <h3 style="margin:0 0 12px 0; font-size:17px; color:#f8fafc;">Agent Skills &mdash; komplette Kampagnen per Slash-Befehl</h3>
+    <p style="margin:0 0 10px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Was ist das?</strong> Runway hat im Agent-Chat sogenannte &bdquo;Skills&ldquo; eingef&uuml;hrt: vorgefertigte Workflows, die man per Slash-Befehl (&bdquo;/&ldquo;) aus einem Men&uuml; ausw&auml;hlt. Danach &uuml;bernimmt das System den kompletten Ablauf &mdash; von Skript/Konzept bis zum fertigen Video-Asset &mdash; ohne weitere Prompts. Beispiele: eine komplette Werbekampagne bauen, einen Spot erstellen, Anzeigen f&uuml;r andere M&auml;rkte lokalisieren.</p>
+    <p style="margin:0 0 12px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Warum relevant?</strong> F&uuml;r Marketer:innen und Agenturen, die kein Prompt-Engineering betreiben, sondern direkt ein fertiges Endergebnis (z.&nbsp;B. lokalisierte Anzeige) wollen.</p>
+    <div style="background:rgba(45,212,191,0.08); border-left:3px solid #2dd4bf; border-radius:6px; padding:12px 14px; margin-bottom:10px;">
+      <div style="font-weight:700; color:#2dd4bf; font-size:13px; margin-bottom:6px;">SO NUTZT DU'S</div>
+      <div style="color:#e2e8f0; font-size:14px;">Auf app.runwayml.com/agent einloggen &rarr; im Chat &bdquo;/&ldquo; tippen &rarr; passende Skill w&auml;hlen (Kampagne/Commercial/Lokalisierung) &rarr; Kontext eingeben &rarr; ausf&uuml;hren lassen.</div>
+    </div>
+    <a href="https://runwayml.com/changelog" style="color:#64748b; font-size:13px;">Quelle: runwayml.com/changelog</a>
+  </div>
+
+  <!-- Card 8 -->
+  <div style="background:#111827; border:1px solid #1f2937; border-radius:12px; padding:18px 20px; margin-bottom:16px;">
+    <div style="margin-bottom:8px;">
+      <span style="color:#2dd4bf; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;">ElevenLabs &middot; 20. Juli 2026</span>
+    </div>
+    <h3 style="margin:0 0 12px 0; font-size:17px; color:#f8fafc;">Music Finetunes jetzt per API</h3>
+    <p style="margin:0 0 10px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Was ist das?</strong> ElevenLabs macht &bdquo;Music Finetunes&ldquo; jetzt vollst&auml;ndig f&uuml;r Entwickler:innen per API nutzbar: f&uuml;nf neue Endpunkte zum Erstellen, Auflisten, Abrufen, Aktualisieren und L&ouml;schen. Ein <em>Finetune</em> ist eine individuell nachtrainierte Variante eines KI-Modells auf Basis eigener Beispiele &mdash; hier: eigene Songs/Referenztracks &mdash;, sodass das Modell danach im eigenen &bdquo;Klangstil&ldquo; produziert statt generisch.</p>
+    <p style="margin:0 0 12px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Warum relevant?</strong> F&uuml;r Musiker:innen, Labels und Marken, die eine wiedererkennbare Klangsignatur (Jingles, Playlists, Werbespots) automatisiert in eigene Tools einbauen wollen.</p>
+    <div style="background:rgba(45,212,191,0.08); border-left:3px solid #2dd4bf; border-radius:6px; padding:12px 14px; margin-bottom:10px;">
+      <div style="font-weight:700; color:#2dd4bf; font-size:13px; margin-bottom:6px;">SO NUTZT DU'S</div>
+      <div style="color:#e2e8f0; font-size:14px;">ElevenLabs-Account mit Creator+ &rarr; API-Key erzeugen &rarr; eigene Tracks hochladen &rarr; per <code>/finetunes</code>-Endpunkt (SDK v2.59.0) einen Finetune anlegen &rarr; erhaltene <code>finetune_id</code> bei der Musikgenerierung mitgeben. Alternativ direkt einen der elf vorgefertigten Finetunes nutzen (z.&nbsp;B. Reggaeton).</div>
+    </div>
+    <a href="https://elevenlabs.io/docs/changelog" style="color:#64748b; font-size:13px;">Quelle: elevenlabs.io/docs/changelog</a>
+  </div>
+
+  <!-- Card 9 -->
+  <div style="background:#111827; border:1px solid #1f2937; border-radius:12px; padding:18px 20px; margin-bottom:16px;">
+    <div style="margin-bottom:8px;">
+      <span style="color:#2dd4bf; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;">Higgsfield &middot; 2. Juli 2026</span>
+    </div>
+    <h3 style="margin:0 0 12px 0; font-size:17px; color:#f8fafc;">Explainer &mdash; aus einem Thema wird ein Doku-Video</h3>
+    <p style="margin:0 0 10px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Was ist das?</strong> Man gibt ein Thema ein, best&auml;tigt einen automatisch erstellten Plan und erh&auml;lt ein fertig geschnittenes, gesichtsloses Dokumentarvideo von bis zu 10 Minuten &mdash; komplett mit Recherche, Skript, Bildmaterial, Erz&auml;hlstimme und Untertiteln. Im Hintergrund arbeiten zwei KI-Modelle zusammen: eines f&uuml;r Recherche/Skript, eines (Gemini Omni Flash) f&uuml;r Bildgenerierung und Schnitt.</p>
+    <p style="margin:0 0 12px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Warum relevant?</strong> F&uuml;r YouTuber:innen, Bildungs-Creator:innen und Marketing-Teams, die schnell erkl&auml;rende Langform-Videos brauchen, ohne Rechercheur, Autor, Sprecher und Editor einzeln zu buchen.</p>
+    <div style="background:rgba(45,212,191,0.08); border-left:3px solid #2dd4bf; border-radius:6px; padding:12px 14px; margin-bottom:10px;">
+      <div style="font-weight:700; color:#2dd4bf; font-size:13px; margin-bottom:6px;">SO NUTZT DU'S</div>
+      <div style="color:#e2e8f0; font-size:14px;">Im Higgsfield-Skills-Marktplatz &bdquo;Explainer&ldquo; &ouml;ffnen &rarr; Thema eingeben &rarr; vorgeschlagenen Plan pr&uuml;fen und freigeben &rarr; fertiges Video abwarten.</div>
+    </div>
+    <a href="https://higgsfield.ai/supercomputer/marketplace/skills/higgsfield-explainer" style="color:#64748b; font-size:13px;">Quelle: higgsfield.ai/supercomputer/marketplace</a>
+  </div>
+
+  <!-- Card 10 -->
+  <div style="background:#111827; border:1px solid #1f2937; border-radius:12px; padding:18px 20px; margin-bottom:16px;">
+    <div style="margin-bottom:8px;">
+      <span style="color:#2dd4bf; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;">OpenArt &middot; 14. Juli 2026 &nbsp;&#9888;</span>
+    </div>
+    <h3 style="margin:0 0 12px 0; font-size:17px; color:#f8fafc;">Director &mdash; &bdquo;Vibe Directing&ldquo; f&uuml;r durchg&auml;ngige KI-Videos</h3>
+    <p style="margin:0 0 10px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Was ist das?</strong> Mit &bdquo;Director&ldquo; beschreibst du in normaler Sprache Gef&uuml;hl, Story, Charaktere und Tempo einer Szene, und OpenArt erzeugt daraus ein durchgehendes Video mit synchronisiertem Bild, Voiceover, Musik und Soundeffekten &mdash; bis zu 5 Minuten am St&uuml;ck mit konsistenten Charakteren/Stil (bisherige KI-Videotools waren oft auf ca. 15 Sekunden begrenzt), in mehreren Genres und mit Lippensynchronisation in neun Sprachen.</p>
+    <p style="margin:0 0 12px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Warum relevant?</strong> F&uuml;r Content-Creator:innen und Marken, die l&auml;ngere, kohärente KI-Videos ohne Video-Know-how erstellen wollen &mdash; Konsistenz &uuml;ber mehrere Szenen war bisher das gr&ouml;&szlig;te Problem bei KI-Video.</p>
+    <div style="background:rgba(45,212,191,0.08); border-left:3px solid #2dd4bf; border-radius:6px; padding:12px 14px; margin-bottom:10px;">
+      <div style="font-weight:700; color:#2dd4bf; font-size:13px; margin-bottom:6px;">SO NUTZT DU'S</div>
+      <div style="color:#e2e8f0; font-size:14px;">Auf openart.ai einloggen &rarr; Bereich &bdquo;Director&ldquo; &ouml;ffnen &rarr; Szene/Geschichte im Chat beschreiben (Charaktere, Ort, Stimmung, Sprache) &rarr; Entwurf pr&uuml;fen und per Konversation weiter verfeinern.</div>
+    </div>
+    <div style="color:#fbbf24; font-size:12.5px; margin-bottom:8px;">&#9888; Sekund&auml;rquelle: verifiziert &uuml;ber Pressemitteilung, kein direkter OpenArt-Blogpost gefunden.</div>
+    <a href="https://www.einpresswire.com/article/926662912/meet-vibe-directing-openart-ai-launches-director-to-introduce-conversation-driven-longer-form-ai-visual-storytelling" style="color:#64748b; font-size:13px;">Quelle: Pressemitteilung (einpresswire.com)</a>
+  </div>
+
+  <!-- SECTION: Coding, Agents & Automatisierung -->
+  <h2 style="font-size:20px; color:#f8fafc; border-bottom:1px solid #1e293b; padding-bottom:10px; margin:36px 0 18px 0;">&#129302; Coding, Agents &amp; Automatisierung</h2>
+
+  <!-- Card 11 -->
+  <div style="background:#111827; border:1px solid #1f2937; border-radius:12px; padding:18px 20px; margin-bottom:16px;">
+    <div style="margin-bottom:8px;">
+      <span style="color:#2dd4bf; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;">Claude Code &middot; Woche 27&ndash;28 (29.6.&ndash;10.7.2026)</span>
+    </div>
+    <h3 style="margin:0 0 12px 0; font-size:17px; color:#f8fafc;">Sonnet 5 als Standard, Hintergrund-Subagenten &amp; Auto-Modus-Schutz</h3>
+    <p style="margin:0 0 10px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Was ist das?</strong> Claude Sonnet 5 ist jetzt Standardmodell f&uuml;r Pro-, Team- und Enterprise-Abos &mdash; mit nativem 1-Millionen-Token-Kontextfenster und &bdquo;adaptive thinking&ldquo; (das Modell entscheidet selbst, wie viel Denkzeit ein Problem braucht). <em>Subagenten</em> &mdash; spezialisierte Hilfs-Assistenten, die Claude f&uuml;r Teilaufgaben startet (z.&nbsp;B. &bdquo;durchsuche den Code&ldquo;) &mdash; laufen jetzt standardm&auml;&szlig;ig im Hintergrund weiter, w&auml;hrend du weiterarbeitest. Dazu: ein eingebauter Browser auf Desktop, ein Komplett-Check per <code>/doctor</code>, und der &bdquo;Auto-Modus&ldquo; fragt jetzt aktiv nach, bevor er riskante Befehle wie <code>rm -rf</code> mit unaufgel&ouml;sten Variablen ausf&uuml;hrt.</p>
+    <p style="margin:0 0 12px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Warum relevant?</strong> Weniger Wartezeit durch parallele Hintergrund-Agenten, mehr Sicherheit gegen versehentliche Datenverluste, und Spitzen-Coding-Leistung zum g&uuml;nstigeren Sonnet-Preis.</p>
+    <div style="background:rgba(45,212,191,0.08); border-left:3px solid #2dd4bf; border-radius:6px; padding:12px 14px; margin-bottom:10px;">
+      <div style="font-weight:700; color:#2dd4bf; font-size:13px; margin-bottom:6px;">SO NUTZT DU'S</div>
+      <div style="color:#e2e8f0; font-size:14px;">Claude Code aktualisieren (<code>claude update</code>) &rarr; Modell mit <code>/model</code> pr&uuml;fen &rarr; <code>/doctor</code> f&uuml;r einen Setup-Check ausf&uuml;hren &rarr; laufende Hintergrund-Agenten &uuml;ber die Agent-View (<code>/agents</code>) beobachten.</div>
+    </div>
+    <a href="https://code.claude.com/docs/en/whats-new" style="color:#64748b; font-size:13px;">Quelle: code.claude.com/docs/en/whats-new</a>
+  </div>
+
+  <!-- Card 12 -->
+  <div style="background:#111827; border:1px solid #1f2937; border-radius:12px; padding:18px 20px; margin-bottom:16px;">
+    <div style="margin-bottom:8px;">
+      <span style="color:#2dd4bf; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;">Cursor &middot; 22. Juli 2026</span>
+    </div>
+    <h3 style="margin:0 0 12px 0; font-size:17px; color:#f8fafc;">Router &mdash; automatisches Modell-Routing im Auto-Modus</h3>
+    <p style="margin:0 0 10px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Was ist das?</strong> Der &bdquo;Auto&ldquo;-Modus in Cursor bekommt einen intelligenten Router, der jede Anfrage analysiert und automatisch an das passende KI-Modell schickt, statt immer dasselbe zu nutzen. Drei Modi: &bdquo;Intelligence&ldquo; (h&ouml;chste Qualit&auml;t), &bdquo;Balance&ldquo; (guter Alltags-Kompromiss) und &bdquo;Cost&ldquo; (kostenoptimiert). Admins k&ouml;nnen den Router pro Team aktivieren und Modelle auf eine Erlaubnisliste setzen.</p>
+    <p style="margin:0 0 12px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Warum relevant?</strong> Spart Kosten und Zeit, weil man nicht mehr manuell zwischen teuren und g&uuml;nstigen Modellen w&auml;hlen muss &mdash; f&uuml;r Teams zudem wichtig wegen der Kostenkontrolle.</p>
+    <div style="background:rgba(45,212,191,0.08); border-left:3px solid #2dd4bf; border-radius:6px; padding:12px 14px; margin-bottom:10px;">
+      <div style="font-weight:700; color:#2dd4bf; font-size:13px; margin-bottom:6px;">SO NUTZT DU'S</div>
+      <div style="color:#e2e8f0; font-size:14px;">Cursor aktualisieren &rarr; Einstellungen &rarr; &bdquo;Auto&ldquo;-Modus w&auml;hlen &rarr; Router-Modus (Intelligence/Balance/Cost) einstellen. Team-Admins konfigurieren den Zugriff &uuml;ber das Cursor-Dashboard.</div>
+    </div>
+    <a href="https://cursor.com/changelog" style="color:#64748b; font-size:13px;">Quelle: cursor.com/changelog</a>
+  </div>
+
+  <!-- Card 13 -->
+  <div style="background:#111827; border:1px solid #1f2937; border-radius:12px; padding:18px 20px; margin-bottom:16px;">
+    <div style="margin-bottom:8px;">
+      <span style="color:#2dd4bf; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;">MCP (Model Context Protocol) &middot; Finale Spec: 28. Juli 2026</span>
+    </div>
+    <h3 style="margin:0 0 12px 0; font-size:17px; color:#f8fafc;">Gr&ouml;&szlig;ter Spec-Umbau seit Start: MCP wird &bdquo;stateless&ldquo;</h3>
+    <p style="margin:0 0 10px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Was ist das?</strong> <em>MCP</em> ist der offene Standard, &uuml;ber den KI-Agenten (wie Claude Code) auf externe Tools und Datenquellen zugreifen &mdash; z.&nbsp;B. Datenbanken, GitHub, das Dateisystem. Die neue Spec macht den Protokollkern &bdquo;stateless&ldquo; (zustandslos): der bisherige Verbindungsaufbau mit fester Sitzungs-ID entf&auml;llt, wodurch Anfragen einfach auf beliebige Server-Instanzen verteilt werden k&ouml;nnen &mdash; wichtig f&uuml;r MCP-Server im gro&szlig;en Ma&szlig;stab. Neu auch: eigenst&auml;ndig versionierbare &bdquo;Extensions&ldquo;, darunter server-gerenderte HTML-Oberfl&auml;chen (&bdquo;MCP Apps&ldquo;) und Verwaltung lang laufender Hintergrundaufgaben (&bdquo;Tasks&ldquo;). Die Autorisierung wird st&auml;rker an OAuth 2.0 angeglichen.</p>
+    <p style="margin:0 0 12px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Warum relevant?</strong> Wer eigene MCP-Server betreibt oder MCP-Integrationen in Claude Code/Cursor nutzt, muss diese Breaking Changes kennen &mdash; vor allem den Wegfall der Sitzungs-basierten Kommunikation.</p>
+    <div style="background:rgba(45,212,191,0.08); border-left:3px solid #2dd4bf; border-radius:6px; padding:12px 14px; margin-bottom:10px;">
+      <div style="font-weight:700; color:#2dd4bf; font-size:13px; margin-bottom:6px;">SO NUTZT DU'S</div>
+      <div style="color:#e2e8f0; font-size:14px;">MCP-SDK (Python/TypeScript) aktualisieren &rarr; eigene MCP-Server gegen die 2026-07-28-Spec testen (10 Wochen Validierungsfenster) &rarr; bei Nutzung veralteter Features (&bdquo;Roots&ldquo;, &bdquo;Sampling&ldquo;, &bdquo;Logging&ldquo;) rechtzeitig migrieren.</div>
+    </div>
+    <a href="https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/" style="color:#64748b; font-size:13px;">Quelle: blog.modelcontextprotocol.io</a>
+  </div>
+
+  <!-- SECTION: Git & Open Source -->
+  <h2 style="font-size:20px; color:#f8fafc; border-bottom:1px solid #1e293b; padding-bottom:10px; margin:36px 0 18px 0;">&#9889; Git &amp; Open Source</h2>
+
+  <!-- Card 14 -->
+  <div style="background:#111827; border:1px solid #1f2937; border-radius:12px; padding:18px 20px; margin-bottom:16px;">
+    <div style="margin-bottom:8px;">
+      <span style="color:#2dd4bf; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;">GitHub &middot; usestrix/strix &middot; &#11088; ~39.000 Sterne</span>
+    </div>
+    <h3 style="margin:0 0 12px 0; font-size:17px; color:#f8fafc;">Strix &mdash; KI-Agenten als eigener Pentester</h3>
+    <p style="margin:0 0 10px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Was ist das?</strong> Ein Open-Source-Tool, das mit autonomen KI-Agenten Penetrationstests (&bdquo;Hacker-Simulation&ldquo;) an eigenen Anwendungen durchf&uuml;hrt &mdash; es sucht aktiv nach Sicherheitsl&uuml;cken und baut sogar funktionierende Proof-of-Concept-Exploits, um echte von falschen Alarmen zu unterscheiden.</p>
+    <p style="margin:0 0 12px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Wof&uuml;r nutzt man es?</strong> Entwickler:innen und Security-Teams lassen es vor einem Release &uuml;ber den eigenen Code laufen, um Schwachstellen zu finden, bevor es ein Angreifer tut.</p>
+    <div style="background:rgba(45,212,191,0.08); border-left:3px solid #2dd4bf; border-radius:6px; padding:12px 14px; margin-bottom:10px;">
+      <div style="font-weight:700; color:#2dd4bf; font-size:13px; margin-bottom:6px;">SO NUTZT DU'S</div>
+      <div style="color:#e2e8f0; font-size:14px;"><code>git clone https://github.com/usestrix/strix</code> &rarr; Setup-Anleitung im README folgen (ben&ouml;tigt in der Regel einen LLM-API-Zugang, z.&nbsp;B. Claude oder GPT, als &bdquo;Gehirn&ldquo; der Agenten).</div>
+    </div>
+    <a href="https://github.com/usestrix/strix" style="color:#64748b; font-size:13px;">Quelle: github.com/usestrix/strix</a>
+  </div>
+
+  <!-- Card 15 -->
+  <div style="background:#111827; border:1px solid #1f2937; border-radius:12px; padding:18px 20px; margin-bottom:16px;">
+    <div style="margin-bottom:8px;">
+      <span style="color:#2dd4bf; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;">GitHub &middot; DeusData/codebase-memory-mcp &middot; &#11088; ~32.700 Sterne</span>
+    </div>
+    <h3 style="margin:0 0 12px 0; font-size:17px; color:#f8fafc;">codebase-memory-mcp &mdash; Wissensgraph statt Neu-Einlesen</h3>
+    <p style="margin:0 0 10px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Was ist das?</strong> Ein MCP-Server (siehe Erkl&auml;rung oben), der eine Codebasis in einen dauerhaften &bdquo;Wissensgraphen&ldquo; verwandelt: Er indiziert ein Repository in 158 Programmiersprachen und macht danach blitzschnelle Abfragen m&ouml;glich, statt dass ein Agent bei jeder Frage den ganzen Code erneut einlesen muss.</p>
+    <p style="margin:0 0 12px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Wof&uuml;r nutzt man es?</strong> Reduziert laut Projektangaben den Token-Verbrauch (und damit Kosten/Zeit) von Coding-Agenten wie Claude Code oder Cursor um bis zu 99&nbsp;%.</p>
+    <div style="background:rgba(45,212,191,0.08); border-left:3px solid #2dd4bf; border-radius:6px; padding:12px 14px; margin-bottom:10px;">
+      <div style="font-weight:700; color:#2dd4bf; font-size:13px; margin-bottom:6px;">SO NUTZT DU'S</div>
+      <div style="color:#e2e8f0; font-size:14px;">Repository klonen oder vorkompilierte Bin&auml;rdatei laden (single static binary, keine Abh&auml;ngigkeiten) &rarr; als MCP-Server in Claude Code (<code>claude mcp add</code>) oder in Cursors MCP-Einstellungen einbinden.</div>
+    </div>
+    <a href="https://github.com/DeusData/codebase-memory-mcp" style="color:#64748b; font-size:13px;">Quelle: github.com/DeusData/codebase-memory-mcp</a>
+  </div>
+
+  <!-- Card 16 -->
+  <div style="background:#111827; border:1px solid #1f2937; border-radius:12px; padding:18px 20px; margin-bottom:16px;">
+    <div style="margin-bottom:8px;">
+      <span style="color:#2dd4bf; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;">GitHub &middot; xai-org/grok-build &middot; &#11088; ~19.600 Sterne</span>
+    </div>
+    <h3 style="margin:0 0 12px 0; font-size:17px; color:#f8fafc;">grok-build &mdash; xAIs offener Coding-Agent</h3>
+    <p style="margin:0 0 10px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Was ist das?</strong> Ein neuer Open-Source-Coding-Agent von xAI mit Terminal-Oberfl&auml;che. &Auml;hnlich wie Claude Code oder Cursor CLI erlaubt er vollst&auml;ndige Einsicht in Kontext-Handling, Tool-Ausf&uuml;hrung, Plugins/Skills und MCP-Integration &mdash; also komplett transparent statt Blackbox.</p>
+    <p style="margin:0 0 12px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Wof&uuml;r nutzt man es?</strong> F&uuml;r Entwickler:innen, die einen alternativen, quelloffenen Coding-Agenten zu Claude Code/Cursor ausprobieren wollen &mdash; auch interaktiv, headless im Skript oder in Editoren eingebettet.</p>
+    <div style="background:rgba(45,212,191,0.08); border-left:3px solid #2dd4bf; border-radius:6px; padding:12px 14px; margin-bottom:10px;">
+      <div style="font-weight:700; color:#2dd4bf; font-size:13px; margin-bottom:6px;">SO NUTZT DU'S</div>
+      <div style="color:#e2e8f0; font-size:14px;"><code>git clone https://github.com/xai-org/grok-build</code> &rarr; Build-Anleitung im README folgen &rarr; eigenen xAI/Grok-API-Key hinterlegen.</div>
+    </div>
+    <a href="https://github.com/xai-org/grok-build" style="color:#64748b; font-size:13px;">Quelle: github.com/xai-org/grok-build</a>
+  </div>
+
+  <!-- Card 17 -->
+  <div style="background:#111827; border:1px solid #1f2937; border-radius:12px; padding:18px 20px; margin-bottom:16px;">
+    <div style="margin-bottom:8px;">
+      <span style="color:#2dd4bf; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;">Hugging Face &middot; zai-org/GLM-5.2 &middot; &#11088; 3.020 Likes / 142.547 Downloads (letzter Monat)</span>
+    </div>
+    <h3 style="margin:0 0 12px 0; font-size:17px; color:#f8fafc;">GLM-5.2 &mdash; offenes 753-Milliarden-Parameter-Modell</h3>
+    <p style="margin:0 0 10px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Was ist das?</strong> Ein gro&szlig;es Sprachmodell mit MIT-Lizenz (also frei nutzbar, auch kommerziell) und 1-Millionen-Token-Kontextfenster, spezialisiert auf lang laufende Aufgaben, Programmieren und agentische Workflows (mehrstufiges, eigenst&auml;ndiges Arbeiten mit Tools). Da es &bdquo;Open Weights&ldquo; hat (siehe Erkl&auml;rung bei Kimi K3 oben), kann man es selbst hosten.</p>
+    <p style="margin:0 0 12px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Wof&uuml;r nutzt man es?</strong> Als Alternative zu proprietären Modellen (Claude, GPT) f&uuml;r eigene Coding-Agenten oder Automatisierungen, wenn man ein offenes Modell selbst betreiben m&ouml;chte.</p>
+    <div style="background:rgba(45,212,191,0.08); border-left:3px solid #2dd4bf; border-radius:6px; padding:12px 14px; margin-bottom:10px;">
+      <div style="font-weight:700; color:#2dd4bf; font-size:13px; margin-bottom:6px;">SO NUTZT DU'S</div>
+      <div style="color:#e2e8f0; font-size:14px;">Von Hugging Face laden und lokal/serverseitig mit vLLM, SGLang oder <code>transformers</code> betreiben (Modell-ID <code>zai-org/GLM-5.2</code>), oder &uuml;ber einen gehosteten API-Anbieter nutzen.</div>
+    </div>
+    <a href="https://huggingface.co/zai-org/GLM-5.2" style="color:#64748b; font-size:13px;">Quelle: huggingface.co/zai-org/GLM-5.2</a>
+  </div>
+
+  <!-- Card 18 -->
+  <div style="background:#111827; border:1px solid #1f2937; border-radius:12px; padding:18px 20px; margin-bottom:16px;">
+    <div style="margin-bottom:8px;">
+      <span style="color:#2dd4bf; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;">Hugging Face &middot; nvidia/LocateAnything-3B &middot; &#11088; 2.770 Likes / 1,6&nbsp;Mio. Downloads (letzter Monat)</span>
+    </div>
+    <h3 style="margin:0 0 12px 0; font-size:17px; color:#f8fafc;">LocateAnything-3B &mdash; Objekte per Sprache im Bild finden</h3>
+    <p style="margin:0 0 10px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Was ist das?</strong> Ein Vision-Language-Modell von NVIDIA (kombiniert Bildverstehen mit Sprachmodell), das Objekte anhand natürlichsprachlicher Beschreibungen pr&auml;zise in Bildern/Videos lokalisieren kann &mdash; inklusive Koordinaten von Begrenzungsrahmen in einem einzigen schnellen Schritt statt Wort f&uuml;r Wort.</p>
+    <p style="margin:0 0 12px 0; color:#cbd5e1; font-size:14.5px;"><strong style="color:#f1f5f9;">Wof&uuml;r nutzt man es?</strong> F&uuml;r Objekterkennung, Robotik, Erkennung von Bedienelementen auf Bildschirmen (GUI-Automatisierung) und Texterkennung &mdash; z.&nbsp;B. als Baustein f&uuml;r visuelle KI-Agenten, die Screenshots verstehen m&uuml;ssen.</p>
+    <div style="background:rgba(45,212,191,0.08); border-left:3px solid #2dd4bf; border-radius:6px; padding:12px 14px; margin-bottom:10px;">
+      <div style="font-weight:700; color:#2dd4bf; font-size:13px; margin-bottom:6px;">SO NUTZT DU'S</div>
+      <div style="color:#e2e8f0; font-size:14px;">Direkt &uuml;ber die Hugging-Face-Space-Demo testen (&bdquo;LocateAnything&ldquo; suchen) oder Modell laden via <code>transformers</code> + Modell-ID <code>nvidia/LocateAnything-3B</code>. Achtung: Lizenz ist auf akademische/nicht-kommerzielle Forschung beschr&auml;nkt.</div>
+    </div>
+    <a href="https://huggingface.co/nvidia/LocateAnything-3B" style="color:#64748b; font-size:13px;">Quelle: huggingface.co/nvidia/LocateAnything-3B</a>
+  </div>
+
+  <!-- Footer -->
+  <div style="margin-top:36px; padding-top:18px; border-top:1px solid #1e293b; color:#64748b; font-size:12.5px;">
+    <p style="margin:0 0 6px 0;">Einordnungen sind Analyse auf Basis der verlinkten Quellen, keine Anlage-, Rechts- oder Steuerberatung. Mit &#9888; markierte Meldungen st&uuml;tzen sich auf Sekund&auml;r-/Community-Quellen, da keine offizielle Erstquelle auffindbar war.</p>
+    <p style="margin:0;">AI Praxis-Briefing &middot; automatisch erstellt &middot; 24. Juli 2026</p>
+  </div>
+
+</div>
+</body>
+</html>
