@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Praxis-Briefing — 28. Juli 2026</title>
+<style>
+  :root{
+    --bg:#0b0f14;
+    --bg-card:#131a22;
+    --bg-card2:#0f1620;
+    --border:#22303c;
+    --teal:#2dd4bf;
+    --teal-dim:#1a3d38;
+    --text:#e7edf2;
+    --text-dim:#9fb0bd;
+    --text-dimmer:#6c7d8a;
+    --warn:#f5a524;
+    --warn-bg:#3a2c10;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;
+  }
+  .wrap{
+    max-width:780px;
+    margin:0 auto;
+    padding:24px 18px 80px;
+  }
+  a{color:var(--teal); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .backlink{
+    display:inline-block;
+    font-size:14px;
+    color:var(--text-dim);
+    margin-bottom:18px;
+  }
+  .kicker{
+    color:var(--teal);
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    margin:0 0 6px;
+  }
+  h1{
+    font-size:26px;
+    margin:0 0 4px;
+    line-height:1.25;
+  }
+  .subtitle{
+    color:var(--text-dim);
+    font-size:15px;
+    margin:0 0 26px;
+  }
+  .hero{
+    background:linear-gradient(155deg, var(--teal-dim), var(--bg-card));
+    border:1px solid #2a5a52;
+    border-radius:16px;
+    padding:20px 20px 18px;
+    margin-bottom:34px;
+  }
+  .hero h2{
+    margin:0 0 14px;
+    font-size:19px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .hero ol{
+    margin:0;
+    padding-left:22px;
+  }
+  .hero li{
+    margin-bottom:11px;
+    font-size:15px;
+  }
+  .hero li:last-child{margin-bottom:0;}
+  .hero li a{font-weight:600;}
+  section{margin-bottom:38px;}
+  .section-title{
+    font-size:20px;
+    margin:0 0 4px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .section-sub{
+    color:var(--text-dimmer);
+    font-size:13.5px;
+    margin:0 0 16px;
+  }
+  .card{
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:18px 18px 16px;
+    margin-bottom:16px;
+  }
+  .card-tag{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:6px 12px;
+    font-size:12.5px;
+    color:var(--teal);
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.03em;
+    margin-bottom:8px;
+  }
+  .card-tag .date{
+    color:var(--text-dimmer);
+    font-weight:500;
+    text-transform:none;
+    letter-spacing:0;
+  }
+  .card h3{
+    margin:0 0 12px;
+    font-size:17.5px;
+    line-height:1.35;
+  }
+  .card .stars{
+    display:inline-block;
+    margin-left:8px;
+    color:#f5c518;
+    font-weight:600;
+    font-size:13px;
+  }
+  .label{
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    color:var(--text-dimmer);
+    margin:14px 0 4px;
+  }
+  .label:first-of-type{margin-top:0;}
+  .card p{
+    margin:0 0 4px;
+    font-size:14.5px;
+    color:var(--text);
+  }
+  .usebox{
+    background:var(--bg-card2);
+    border-left:3px solid var(--teal);
+    border-radius:8px;
+    padding:12px 14px;
+    margin:14px 0 12px;
+  }
+  .usebox .label{color:var(--teal); margin-top:0;}
+  .usebox p{font-size:14.5px; margin:0;}
+  .src{
+    font-size:13px;
+    margin-top:10px;
+  }
+  .src a{word-break:break-word;}
+  .flag{
+    display:inline-block;
+    background:var(--warn-bg);
+    color:var(--warn);
+    border:1px solid #6b4d16;
+    border-radius:6px;
+    padding:2px 8px;
+    font-size:12px;
+    font-weight:700;
+    margin-left:6px;
+  }
+  .glossary{
+    font-size:13.5px;
+    color:var(--text-dim);
+    background:var(--bg-card2);
+    border:1px dashed var(--border);
+    border-radius:10px;
+    padding:10px 14px;
+    margin-bottom:16px;
+  }
+  .glossary b{color:var(--text);}
+  footer{
+    margin-top:40px;
+    padding-top:20px;
+    border-top:1px solid var(--border);
+    color:var(--text-dimmer);
+    font-size:12.5px;
+    line-height:1.6;
+  }
+  @media (max-width:480px){
+    h1{font-size:22px;}
+    .hero{padding:16px;}
+    .card{padding:15px 14px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="backlink" href="../index.html">← Übersicht</a>
+  <p class="kicker">AI Praxis-Briefing</p>
+  <h1>🗞️ Dein tägliches KI-Update</h1>
+  <p class="subtitle">Dienstag, 28. Juli 2026 — verständlich erklärt, direkt anwendbar</p>
+
+  <div class="hero">
+    <h2>🚀 Heute ausprobieren — die 5 besten Tipps</h2>
+    <ol>
+      <li><b>Claude Opus 5 mit Effort-Regler testen</b> — neues Anthropic-Flaggschiffmodell zum halben Preis von Fable 5, mit einstellbarer Denkleistung für Kosten/Tempo-Balance. <a href="https://www.anthropic.com/news/claude-opus-5" target="_blank" rel="noopener">Details unten ↓</a></li>
+      <li><b>Kimi K3 kostenlos ausprobieren</b> — offenes 2,8-Billionen-Parameter-Modell mit 1-Mio.-Token-Kontext, komplett ohne Abo herunterladbar oder über Chat-Oberflächen testbar. <a href="https://huggingface.co/moonshotai/Kimi-K3" target="_blank" rel="noopener">Details unten ↓</a></li>
+      <li><b>In Claude Code <code>/fork</code> nutzen</b> — lässt Recherche oder Refactoring im Hintergrund weiterlaufen, während du im Hauptchat weiterarbeitest. <a href="https://code.claude.com/docs/en/changelog" target="_blank" rel="noopener">Details unten ↓</a></li>
+      <li><b>Midjourney-Bilder bewerten (Like/Dislike)</b> — mit V8.2 verbessert das direkt deine persönliche Personalisierung und die Trefferquote künftiger Prompts. <a href="https://updates.midjourney.com/version-8-2/" target="_blank" rel="noopener">Details unten ↓</a></li>
+      <li><b>„Superpowers"-Plugin in Claude Code installieren</b> — erzwingt Planung, Review und Tests statt drauflos zu programmieren; 262k Stars auf GitHub. <a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">Details unten ↓</a></li>
+    </ol>
+  </div>
+
+  <section>
+    <h2 class="section-title">🧠 LLM-Praxis: Skills, Prompts &amp; Tricks</h2>
+    <p class="section-sub">Claude, ChatGPT, Gemini und Kimi — was neu ist und wie du es nutzt</p>
+
+    <div class="glossary">
+      <b>Kurz erklärt:</b> <b>Open Weights</b> = die trainierten Modell-Parameter werden veröffentlicht, du kannst das Modell selbst herunterladen und betreiben, statt nur über eine bezahlte API. <b>Context Window</b> = wie viel Text das Modell gleichzeitig „im Kopf" behalten kann (mehr = längere Dokumente/Gespräche möglich). <b>System-/Custom-Prompt</b> = feste Hintergrund-Anweisung, die bei jedem Chat automatisch mitgegeben wird.
+    </div>
+
+    <div class="card">
+      <div class="card-tag"><span>Anthropic · Claude</span><span class="date">24. Juli 2026</span></div>
+      <h3>Claude Opus 5: neues Flaggschiff-Modell mit Effort-Regler</h3>
+      <p class="label">Was ist das?</p>
+      <p>Anthropic hat mit Opus 5 ein neues Top-Modell veröffentlicht, das laut eigenen Angaben an die Fähigkeiten des größeren „Fable 5"-Modells heranreicht — bei gleichem Preis wie der Vorgänger Opus 4.8 ($5 pro Mio. Input-Token, $25 pro Mio. Output-Token). Neu ist ein „Effort"-Regler: Du kannst einstellen, ob das Modell mehr nachdenkt (höhere Qualität, mehr Kosten/Zeit) oder schneller/günstiger antwortet. Zudem prüft Opus 5 laut Anthropic seine eigene Arbeit und iteriert selbstständig, bis eine Aufgabe gelöst ist.</p>
+      <p class="label">Warum relevant</p>
+      <p>Für alle, die Claude für längere, mehrstufige Aufgaben nutzen (Coding, Recherche, Automatisierung) — bessere Kosten-/Leistungsbalance als bisherige Modelle, besonders bei Coding-Benchmarks.</p>
+      <div class="usebox">
+        <p class="label">So nutzt du's</p>
+        <p>In Claude.ai oder der API „Opus 5" auswählen. Bei einfachen Aufgaben den Effort niedrig einstellen (spart Zeit/Kosten), bei komplexen Multi-Step-Aufgaben hochstellen. Für zeitkritische Anfragen gibt es einen „Fast Mode" (ca. 2,5x schneller, doppelter Preis).</p>
+      </div>
+      <p class="src">Quelle: <a href="https://www.anthropic.com/news/claude-opus-5" target="_blank" rel="noopener">anthropic.com/news/claude-opus-5</a></p>
+    </div>
+
+    <div class="card">
+      <div class="card-tag"><span>OpenAI · ChatGPT</span><span class="date">15. Juli 2026</span></div>
+      <h3>Custom Instructions: Zeichenlimit auf 5.000 verdreifacht</h3>
+      <p class="label">Was ist das?</p>
+      <p>„Custom Instructions" sind ein persönlicher Anweisungstext (ähnlich einem System-Prompt), den ChatGPT bei jedem neuen Chat automatisch berücksichtigt — z. B. Angaben zu deinem Beruf, bevorzugten Ton oder Hintergrundwissen. Das Zeichenlimit wurde von 1.500 auf 5.000 Zeichen erhöht, du kannst also deutlich ausführlicher werden.</p>
+      <p class="label">Warum relevant</p>
+      <p>Für alle, die ChatGPT regelmäßig für wiederkehrende Aufgaben nutzen (z. B. immer im gleichen Schreibstil, mit Firmenkontext) — spart, dieselben Vorgaben in jedem Prompt zu wiederholen.</p>
+      <div class="usebox">
+        <p class="label">So nutzt du's</p>
+        <p>Einstellungen → Personalization → Custom Instructions öffnen und die beiden Felder („Was soll ChatGPT über dich wissen" / „Wie soll ChatGPT antworten") ausführlicher ausfüllen — z. B. Rolle, Tonfall, Formatierungswünsche, wiederkehrende Constraints.</p>
+      </div>
+      <p class="src">Quelle: <a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener">help.openai.com — ChatGPT Release Notes</a></p>
+    </div>
+
+    <div class="card">
+      <div class="card-tag"><span>Google · Gemini</span><span class="date">21. Juli 2026</span></div>
+      <h3>Gemini 3.6 Flash &amp; 3.5 Flash-Lite: schneller und günstiger</h3>
+      <p class="label">Was ist das?</p>
+      <p>Google hat zwei neue Gemini-Modelle veröffentlicht: „3.6 Flash" ist das neue Arbeitspferd-Modell — laut Google 17% weniger Output-Token-Verbrauch bei besserer Coding- und Multimodal-Leistung (Text, Bild, Video gemeinsam verarbeiten) und aktualisiertem Wissensstand bis März 2026. „3.5 Flash-Lite" ist die günstigste/schnellste Variante (bis zu 350 Token/Sekunde) mit eingebauter „Computer-Use"-Fähigkeit — das Modell kann selbstständig einen Bildschirm oder Browser bedienen.</p>
+      <p class="label">Warum relevant</p>
+      <p>Für Entwickler, die kosteneffiziente Agenten bauen wollen (z. B. automatisierte Dokumentenverarbeitung oder Web-Recherche) — mehr Leistung pro Euro als bei den Vorgängermodellen.</p>
+      <div class="usebox">
+        <p class="label">So nutzt du's</p>
+        <p>In der Gemini-App, Google AI Studio oder Android Studio das Modell „gemini-3.6-flash" für allgemeine Aufgaben bzw. „gemini-3.5-flash-lite" für einfache/günstige Massenaufgaben auswählen.</p>
+      </div>
+      <p class="src">Quelle: <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/" target="_blank" rel="noopener">blog.google — Gemini 3.6 Flash Announcement</a></p>
+    </div>
+
+    <div class="card">
+      <div class="card-tag"><span>Moonshot AI · Kimi</span><span class="date">17.–27. Juli 2026</span></div>
+      <h3>Kimi K3: offenes 2,8-Billionen-Parameter-Modell</h3>
+      <p class="label">Was ist das?</p>
+      <p>Moonshot AI hat Kimi K3 als „Open Weights"-Modell veröffentlicht — das bedeutet, jeder kann die vollständigen Modell-Parameter herunterladen und selbst betreiben, statt nur über eine API zuzugreifen. K3 ist ein Mixture-of-Experts-Modell (nur ein Teil der 2,8 Billionen Parameter — 104 Mrd. — wird pro Anfrage aktiv genutzt) mit 1-Millionen-Token-Kontextfenster und versteht laut Modellkarte zusätzlich Bilder und Videos nativ. Laut Moonshot AI eines der stärksten bislang offen veröffentlichten Modelle, u. a. stark bei Coding- und Agenten-Aufgaben.</p>
+      <p class="label">Warum relevant</p>
+      <p>Für Entwickler/Unternehmen, die ein leistungsstarkes Modell selbst hosten wollen (Datenschutz, Kostenkontrolle, keine Abhängigkeit von einem einzelnen API-Anbieter).</p>
+      <div class="usebox">
+        <p class="label">So nutzt du's</p>
+        <p>Modellkarte auf Hugging Face öffnen und Gewichte laden (Betrieb erfordert leistungsfähige eigene Hardware oder Cloud-GPUs, z. B. via vLLM), oder ohne eigene Infrastruktur direkt über platform.kimi.ai bzw. HuggingChat ausprobieren.</p>
+      </div>
+      <p class="src">Quelle: <a href="https://huggingface.co/moonshotai/Kimi-K3" target="_blank" rel="noopener">huggingface.co/moonshotai/Kimi-K3</a> · <a href="https://x.com/Kimi_Moonshot/status/2081760186235289764" target="_blank" rel="noopener">offizieller X-Post @Kimi_Moonshot</a></p>
+    </div>
+
+    <div class="card">
+      <div class="card-tag"><span>OpenAI · ChatGPT</span><span class="date">14. Juli 2026</span></div>
+      <h3>ChatGPT: gründlich überarbeitete Suche über Chats, Projekte &amp; Dateien</h3>
+      <p class="label">Was ist das?</p>
+      <p>Die Suchfunktion in ChatGPT (Web, iOS, Android) durchsucht jetzt gezielter alte Unterhaltungen, Projekte und angehängte Dateien, ergänzt um neue Filtermöglichkeiten zur Eingrenzung der Treffer.</p>
+      <p class="label">Warum relevant</p>
+      <p>Praktisch für Vielnutzer, die alte Konversationen oder Dokumente wiederfinden müssen, ohne endlos zu scrollen.</p>
+      <div class="usebox">
+        <p class="label">So nutzt du's</p>
+        <p>Such-Symbol in ChatGPT öffnen, Suchbegriff eingeben und die neuen Filter (z. B. nach Projekt oder Dateityp) nutzen, um schneller zum gesuchten Chat oder Dokument zu kommen.</p>
+      </div>
+      <p class="src">Quelle: <a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener">help.openai.com — ChatGPT Release Notes</a></p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">🎨 Kreativ-Plattformen</h2>
+    <p class="section-sub">Suno, Midjourney, Runway, ElevenLabs, Luma &amp; Co.</p>
+
+    <div class="card">
+      <div class="card-tag"><span>Midjourney</span><span class="date">24. Juli 2026</span></div>
+      <h3>Version 8.2: bessere Bildqualität und Personalisierung</h3>
+      <p class="label">Was ist das?</p>
+      <p>Midjourney hat Version 8.2 seines Bildmodells veröffentlicht. Fokus: „mutigere", kreativere Bildergebnisse und deutlich weniger misslungene Generierungen. Zusätzlich lernt das System stärker aus den Bewertungen (Like/Dislike), die du in deinem Profil vergibst — die Personalisierung wird jetzt aus einem größeren Bild-Pool gespeist.</p>
+      <p class="label">Warum relevant</p>
+      <p>Für alle, die Midjourney regelmäßig nutzen — höhere Trefferquote bei Prompts und ein persönlicherer, konsistenterer Stil.</p>
+      <div class="usebox">
+        <p class="label">So nutzt du's</p>
+        <p>In den Einstellungen prüfen, dass Version 8.2 aktiv ist (Standard bei neuen Jobs), und weiterhin eigene generierte Bilder im Profil bewerten (Like/Dislike) — je mehr Bewertungen, desto besser greift die Personalisierung.</p>
+      </div>
+      <p class="src">Quelle: <a href="https://updates.midjourney.com/version-8-2/" target="_blank" rel="noopener">updates.midjourney.com/version-8-2</a></p>
+    </div>
+
+    <div class="card">
+      <div class="card-tag"><span>Runway</span><span class="date">23. Juli 2026</span></div>
+      <h3>Media Router: automatische Modellauswahl für Video/Bild/Audio</h3>
+      <p class="label">Was ist das?</p>
+      <p>Runway hat einen „Router" für generative Medien in seine Entwickler-API integriert. Statt manuell ein Modell auszuwählen, gibst du Vorgaben vor (Kosten, Geschwindigkeit, Qualität) — das System wählt automatisch das passende Modell (eigene wie Gen-4.5 oder Drittanbieter) für die jeweilige Anfrage. Es gibt eine Kostenobergrenze pro Generierung sowie einen „Dry-Run"-Testmodus ohne echte Kosten.</p>
+      <p class="label">Warum relevant</p>
+      <p>Vor allem für Entwickler/Agenturen, die KI-Video oder -Bild automatisiert in großem Umfang erzeugen (z. B. Werbekampagnen) und Kosten gegen Qualität abwägen müssen.</p>
+      <div class="usebox">
+        <p class="label">So nutzt du's</p>
+        <p>Im Runway-Dev-Portal einen Konfigurations-Endpunkt mit Präferenzen (Kosten/Latenz/Qualität) anlegen, dann per API-Call mit dieser Config-ID generieren lassen; die Antwort zeigt, welches Modell tatsächlich verwendet wurde.</p>
+      </div>
+      <p class="src">Quelle: <a href="https://runway.com/news/company-news/introducing-runway-media-router" target="_blank" rel="noopener">runway.com/news — Media Router</a></p>
+    </div>
+
+    <div class="card">
+      <div class="card-tag"><span>ElevenLabs</span><span class="date">20. Juli 2026</span></div>
+      <h3>Music-Finetunes-API &amp; verbesserte Voice-Agenten</h3>
+      <p class="label">Was ist das?</p>
+      <p>ElevenLabs hat API-Unterstützung für „Music Finetunes" ergänzt: Über neue Endpunkte kannst du ein eigens auf deine hochgeladenen Audiodateien trainiertes Musik-Modell erstellen und verwalten. Ein <b>Finetune</b> ist eine angepasste, auf eigene Daten nachjustierte Version eines KI-Modells, die künftig deinen eigenen Klangstil reproduziert. Zusätzlich wurden die Voice-Agenten verbessert: Anbindung an Slack/Zendesk, wissensbasierte Antworten (das Modell durchsucht vor der Antwort eine Wissensdatenbank) und schnellere Reaktionszeiten.</p>
+      <p class="label">Warum relevant</p>
+      <p>Für Musikschaffende/Marken, die einen konsistenten eigenen Sound automatisieren wollen, sowie für Firmen mit Sprach-Support-Bots.</p>
+      <div class="usebox">
+        <p class="label">So nutzt du's</p>
+        <p>Eigene Audiodateien über die Music-Finetunes-API hochladen (Creator+-Abo nötig), Freigabe/Rechte-Check abwarten, danach das Finetune als Basis für neue Tracks nutzen.</p>
+      </div>
+      <p class="src">Quelle: <a href="https://elevenlabs.io/docs/changelog" target="_blank" rel="noopener">elevenlabs.io/docs/changelog</a> (Eintrag 20.07.2026)</p>
+    </div>
+
+    <div class="card">
+      <div class="card-tag"><span>Luma AI</span><span class="date">22. Juli 2026</span></div>
+      <h3>Mehr Rechenkapazität für Video-zu-Video-Generierung</h3>
+      <p class="label">Was ist das?</p>
+      <p>Luma AI betreibt sein Videomodell Ray3.2 jetzt zusätzlich über neue Hardware-Partner, um mehr gleichzeitige Anfragen zu bewältigen — besonders für die rechenintensive „Video-zu-Video"-Funktion: Aus echtem Filmmaterial (z. B. vom Smartphone) wird eine komplett neu gestaltete Szene, bei der Bewegung und Bildaufbau erhalten bleiben.</p>
+      <p class="label">Warum relevant</p>
+      <p>Praktisch heißt das: bessere Verfügbarkeit und weniger Wartezeit bei Video-zu-Video-Umwandlungen, da mehr Rechenkapazität zur Verfügung steht.</p>
+      <div class="usebox">
+        <p class="label">So nutzt du's</p>
+        <p>In Dream Machine die Video-zu-Video-Funktion nutzen: eigenes Videomaterial hochladen, gewünschten neuen Stil/neue Szene per Textprompt vorgeben.</p>
+      </div>
+      <p class="src">Quelle: <a href="https://lumalabs.ai/news/luma-runs-production-inference-on-amd-and-tensorwave" target="_blank" rel="noopener">lumalabs.ai/news</a></p>
+    </div>
+
+    <div class="card">
+      <div class="card-tag"><span>Runway</span><span class="date">8. Juli 2026</span></div>
+      <h3>Runway Dev: eine API für Video, Bild, Audio und Charaktere</h3>
+      <p class="label">Was ist das?</p>
+      <p>Runway bündelt seine KI-Medienmodelle in einer einzigen Entwickler-API namens „Runway Dev": Models (Zugriff auf Gen-4.5, Aleph 2.0, Act-Two u. a. mit einem Code-Wechsel), Recipes (fertige Endpunkte für Standardaufgaben wie Anzeigen-Lokalisierung), Workflows (eigene Multi-Modell-Pipelines) und Characters (interaktive Echtzeit-Avatare mit Stimme). Bereits genutzt von Adobe, Figma Weave, Gamma und Shutterstock.</p>
+      <p class="label">Warum relevant</p>
+      <p>Für Entwickler und Unternehmen, die KI-Video-/Bildfunktionen in eigene Produkte integrieren wollen, statt einzelne Modelle separat anzusteuern.</p>
+      <div class="usebox">
+        <p class="label">So nutzt du's</p>
+        <p>Über runway.com/dev (Developer-Portal) einen API-Key anlegen, gewünschtes Modell oder eine „Recipe" auswählen und per REST-Call ansteuern.</p>
+      </div>
+      <p class="src">Quelle: <a href="https://runwayml.com/news/introducing-runway-dev" target="_blank" rel="noopener">runwayml.com/news — Runway Dev</a></p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">🤖 Coding, Agents &amp; Automatisierung</h2>
+    <p class="section-sub">MCP, Cursor, Claude Code — zum Nachbauen</p>
+
+    <div class="glossary">
+      <b>Kurz erklärt:</b> <b>MCP (Model Context Protocol)</b> = offener Standard von Anthropic, der KI-Modellen erlaubt, sich einheitlich mit externen Tools und Datenquellen zu verbinden — wie ein „USB-Anschluss" für KI-Agenten. <b>Subagent</b> = ein vom Haupt-Agenten gestarteter Hilfs-Agent, der eine Teilaufgabe selbstständig erledigt. <b>Hook</b> = ein Skript, das automatisch an einem bestimmten Punkt im Workflow ausgelöst wird.
+    </div>
+
+    <div class="card">
+      <div class="card-tag"><span>Claude Code</span><span class="date">v2.1.219 · 24. Juli 2026</span></div>
+      <h3>Opus 5 als Standardmodell + Subagents jetzt 3 Ebenen tief</h3>
+      <p class="label">Was ist das?</p>
+      <p>Claude Opus 5 ist jetzt das Standard-Opus-Modell in Claude Code. Subagents können nun bis zu drei Ebenen tief weitere Subagents starten (vorher nur eine Ebene) — konfigurierbar über eine Umgebungsvariable. Außerdem neu: ein Hook, der auslöst, sobald per <code>/add-dir</code> ein neues Arbeitsverzeichnis hinzugefügt wird, sowie klarere Fehlermeldungen bei MCP-Verbindungsproblemen.</p>
+      <p class="label">Warum relevant</p>
+      <p>Für Entwickler, die komplexe, mehrstufige Agenten-Workflows bauen (z. B. Recherche-Subagent → Code-Subagent → Test-Subagent) — mehr Verschachtelungstiefe erlaubt komplexere Automatisierung.</p>
+      <div class="usebox">
+        <p class="label">So nutzt du's</p>
+        <p><code>claude update</code> ausführen, mit <code>/model</code> prüfen, dass Opus 5 aktiv ist. Bei MCP-Verbindungsproblemen <code>/mcp</code> bzw. <code>claude mcp list</code> aufrufen — zeigt jetzt den genauen HTTP-Status an.</p>
+      </div>
+      <p class="src">Quelle: <a href="https://code.claude.com/docs/en/changelog" target="_blank" rel="noopener">code.claude.com/docs/changelog</a></p>
+    </div>
+
+    <div class="card">
+      <div class="card-tag"><span>Claude Code</span><span class="date">v2.1.212 · 17. Juli 2026</span></div>
+      <h3><code>/fork</code> &amp; <code>/subtask</code>: Hintergrundsitzungen für Parallelarbeit</h3>
+      <p class="label">Was ist das?</p>
+      <p><code>/fork</code> kopiert eine laufende Konversation komplett in eine neue Hintergrundsitzung (sichtbar über <code>claude agents</code>), während du in der Hauptsitzung weiterarbeitest. <code>/subtask</code> übernimmt die Rolle kurzer, paralleler Teilaufgaben innerhalb der aktuellen Session. MCP-Tool-Aufrufe, die länger als 2 Minuten laufen, wandern jetzt automatisch in den Hintergrund.</p>
+      <p class="label">Warum relevant</p>
+      <p>Für alle, die parallel an mehreren Aufgaben arbeiten wollen, ohne den Hauptkontext zu blockieren — praktisch für lange Refactorings oder Recherchen im Hintergrund.</p>
+      <div class="usebox">
+        <p class="label">So nutzt du's</p>
+        <p>In Claude Code <code>/fork</code> eingeben, um die aktuelle Aufgabe als Hintergrundagent weiterlaufen zu lassen; mit <code>claude agents</code> den Status prüfen. <code>/subtask</code> für kurze, parallele Teilaufgaben innerhalb der Session nutzen.</p>
+      </div>
+      <p class="src">Quelle: <a href="https://code.claude.com/docs/en/changelog" target="_blank" rel="noopener">code.claude.com/docs/changelog</a></p>
+    </div>
+
+    <div class="card">
+      <div class="card-tag"><span>Anthropic · Claude Artifacts</span><span class="date">Woche vom 13.–17. Juli 2026</span></div>
+      <h3>Artifacts bekommen Live-MCP-Zugriff + Screen-Reader-Modus</h3>
+      <p class="label">Was ist das?</p>
+      <p>Ein Artifact ist eine von Claude erzeugte, teilbare Live-Seite (z. B. ein Dashboard). Neu: Ein veröffentlichtes Artifact kann beim Öffnen live Daten holen und Aktionen ausführen — über die MCP-Connectors, die der jeweilige Betrachter selbst konfiguriert hat. Zusätzlich gibt es einen Screen-Reader-Modus, der die visuelle Terminal-Oberfläche durch reinen linearen Text ersetzt (für VoiceOver/NVDA).</p>
+      <p class="label">Warum relevant</p>
+      <p>Für Entwickler/Poweruser, die Claude für Automatisierung nutzen — Artifacts werden dadurch zu echten Mini-Apps mit Live-Datenanbindung statt statischen Momentaufnahmen.</p>
+      <div class="usebox">
+        <p class="label">So nutzt du's</p>
+        <p>In Claude Code ein Artifact erstellen und veröffentlichen (Team-/Enterprise-Plan, Beta) — beim Öffnen verbindet es sich automatisch mit den im Viewer konfigurierten MCP-Connectors.</p>
+      </div>
+      <p class="src">Quelle: <a href="https://code.claude.com/docs/en/whats-new" target="_blank" rel="noopener">code.claude.com/docs/whats-new</a></p>
+    </div>
+
+    <div class="card">
+      <div class="card-tag"><span>Model Context Protocol</span><span class="date">28. Juli 2026</span></div>
+      <h3>MCP-Spezifikation 2026-07-28: „Stateless Core" + Extensions</h3>
+      <p class="label">Was ist das?</p>
+      <p>Die größte Überarbeitung des MCP-Standards seit seiner Einführung. Die bisherige zustandsbehaftete Sitzungslogik entfällt — jede Anfrage trägt ihre Metadaten selbst mit, wodurch beliebige Server-Instanzen sie bearbeiten können (kein aufwendiges „Session-Routing" mehr nötig). Neu ist ein „Extensions"-System für optionale Zusatzfähigkeiten, u. a. „MCP Apps" (server-gerenderte Oberflächen in einer abgesicherten Sandbox). GitHub hat seinen offiziellen MCP-Server bereits vorab auf das neue Protokoll umgestellt.</p>
+      <p class="label">Warum relevant</p>
+      <p>Für alle, die eigene MCP-Server betreiben oder in Claude Code/Cursor integrieren (Entwickler, DevOps) — einfacheres Skalieren, aber Breaking Changes bei eigenen Implementierungen.</p>
+      <div class="usebox">
+        <p class="label">So nutzt du's</p>
+        <p>Bei eigenen MCP-Servern: SDK auf die neue Spezifikation aktualisieren und auf zustandslose Anfrageverarbeitung umstellen. Bei reiner Nutzung fremder MCP-Server (z. B. GitHub): einfach die Server-Version aktualisieren, die Konfiguration in Claude Code/Cursor bleibt unverändert (abwärtskompatibel).</p>
+      </div>
+      <p class="src">Quelle: <a href="https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/" target="_blank" rel="noopener">blog.modelcontextprotocol.io</a> · <a href="https://github.blog/changelog/2026-07-23-github-mcp-server-supports-the-next-mcp-specification/" target="_blank" rel="noopener">GitHub-Änderungsprotokoll</a></p>
+    </div>
+
+    <div class="card">
+      <div class="card-tag"><span>Cursor</span><span class="date">22. Juli 2026</span></div>
+      <h3>Auto-Modus bekommt intelligenten Modell-Router</h3>
+      <p class="label">Was ist das?</p>
+      <p>Der „Auto"-Modus in Cursor wählt jetzt automatisch das passende KI-Modell je nach Aufgabe — über drei Optimierungsmodi: „Intelligence" (Spitzenqualität), „Balance" (gute Alltagsqualität) und „Cost" (tokensparend). Team-Admins können den Router zentral steuern (aktivieren/deaktivieren, Modell-Erlaubnislisten) über Desktop, Web, iOS, CLI und SDK.</p>
+      <p class="label">Warum relevant</p>
+      <p>Für Teams, die Kosten und Modellqualität zentral steuern wollen, sowie für Einzelnutzer, die nicht manuell zwischen Modellen wechseln möchten.</p>
+      <div class="usebox">
+        <p class="label">So nutzt du's</p>
+        <p>In den Cursor-Einstellungen „Auto" aktivieren und den gewünschten Router-Modus (Intelligence/Balance/Cost) wählen; als Team-Admin über das Dashboard Modellrichtlinien festlegen.</p>
+      </div>
+      <p class="src">Quelle: <a href="https://cursor.com/changelog" target="_blank" rel="noopener">cursor.com/changelog</a></p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">⚡ Git &amp; Open Source</h2>
+    <p class="section-sub">Trending auf GitHub &amp; Hugging Face — was es ist, wofür du es nutzt</p>
+
+    <div class="card">
+      <div class="card-tag"><span>GitHub</span><span class="date">Trending · Stand 28.07.2026</span></div>
+      <h3>obra/superpowers <span class="stars">★ ~262k</span></h3>
+      <p class="label">Was ist das?</p>
+      <p>Eine Methodik plus Skill-Sammlung, die Coding-Agenten (Claude Code, Cursor, Codex, Gemini CLI) zwingt, strukturiert vorzugehen: erst Anforderungen klären, dann in kleinen Schritten planen, dann mit Subagent-gestütztem Zwei-Stufen-Review umsetzen, dann testgetrieben entwickeln (erst ein fehlschlagender Test, dann die Lösung, dann Aufräumen).</p>
+      <p class="label">Warum relevant</p>
+      <p>Für Entwickler, die ihre Coding-Agenten disziplinierter und nachvollziehbarer arbeiten lassen wollen, statt Code „blind" generieren zu lassen.</p>
+      <div class="usebox">
+        <p class="label">So nutzt du's (Installation)</p>
+        <p>In Claude Code: <code>/plugin install superpowers@claude-plugins-official</code> — oder alternativ <code>/plugin marketplace add obra/superpowers-marketplace</code> gefolgt von <code>/plugin install superpowers@superpowers-marketplace</code>.</p>
+      </div>
+      <p class="src">Quelle: <a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">github.com/obra/superpowers</a></p>
+    </div>
+
+    <div class="card">
+      <div class="card-tag"><span>GitHub</span><span class="date">Trending · Stand 28.07.2026</span></div>
+      <h3>ChromeDevTools/chrome-devtools-mcp <span class="stars">★ ~47,1k</span></h3>
+      <p class="label">Was ist das?</p>
+      <p>Ein vom Chrome-Team bereitgestellter offizieller MCP-Server, der Coding-Agenten Zugriff auf Chrome DevTools gibt (Konsole, Netzwerk-Requests, DOM-Inspektion, Screenshots). Dadurch können Agenten wie Claude Code oder Cursor eigenständig Web-Apps im echten Browser debuggen.</p>
+      <p class="label">Warum relevant</p>
+      <p>Für Web-Entwickler, die Agentic Coding mit echtem Browser-Feedback kombinieren wollen — z. B. automatisiert diagnostizieren lassen, warum eine Seite nicht lädt.</p>
+      <div class="usebox">
+        <p class="label">So nutzt du's</p>
+        <p>MCP-Server in Claude Code/Cursor eintragen, z. B. mit <code>claude mcp add chrome-devtools -- npx chrome-devtools-mcp</code>. Danach kann der Agent Browser-Aktionen und DevTools-Daten direkt abfragen.</p>
+      </div>
+      <p class="src">Quelle: <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp" target="_blank" rel="noopener">github.com/ChromeDevTools/chrome-devtools-mcp</a></p>
+    </div>
+
+    <div class="card">
+      <div class="card-tag"><span>Hugging Face</span><span class="date">Trending · Stand 28.07.2026</span></div>
+      <h3>zai-org/GLM-5.2 <span class="stars">142k Downloads/Monat</span></h3>
+      <p class="label">Was ist das?</p>
+      <p>Ein neues offenes (MIT-lizenziertes) Sprachmodell von Z.ai mit 753 Mrd. Parametern und 1-Millionen-Token-Kontextfenster, ausgelegt auf lange, mehrstufige Aufgaben und starke Coding-Fähigkeiten mit einstellbarem Denkaufwand.</p>
+      <p class="label">Warum relevant</p>
+      <p>Für Entwickler, die ein offenes, selbst betreibbares Alternativmodell zu proprietären Coding-/Agenten-Modellen suchen.</p>
+      <div class="usebox">
+        <p class="label">So nutzt du's</p>
+        <p>Über Transformers, vLLM oder SGLang lokal deployen (Modellkarte enthält Setup-Code); alternativ direkt über HuggingChat ausprobieren, ohne eigene Server zu betreiben.</p>
+      </div>
+      <p class="src">Quelle: <a href="https://huggingface.co/zai-org/GLM-5.2" target="_blank" rel="noopener">huggingface.co/zai-org/GLM-5.2</a></p>
+    </div>
+
+    <div class="card">
+      <div class="card-tag"><span>Hugging Face</span><span class="date">Trending · Stand 28.07.2026</span></div>
+      <h3>baidu/Unlimited-OCR <span class="stars">2,6 Mio. Downloads/Monat</span></h3>
+      <p class="label">Was ist das?</p>
+      <p>Ein Vision-Language-Modell (3 Mrd. Parameter, MIT-Lizenz) von Baidu zur Texterkennung (OCR), das komplexe Layouts und mehrseitige Dokumente/PDFs in einem Durchgang verarbeiten kann — mit Struktur-Erhalt statt reinem Text-Auslesen.</p>
+      <p class="label">Warum relevant</p>
+      <p>Für Entwickler, die Dokumentenverarbeitung (Rechnungen, Verträge, gescannte PDFs) automatisieren wollen, ohne kommerzielle OCR-APIs zu bezahlen.</p>
+      <div class="usebox">
+        <p class="label">So nutzt du's</p>
+        <p>Über Transformers/vLLM/SGLang laden — die Modellkarte enthält Beispielcode für eine Dokument-zu-Text-Pipeline; eignet sich auch als Baustein in einer RAG- oder Automatisierungs-Pipeline.</p>
+      </div>
+      <p class="src">Quelle: <a href="https://huggingface.co/baidu/Unlimited-OCR" target="_blank" rel="noopener">huggingface.co/baidu/Unlimited-OCR</a></p>
+    </div>
+
+    <div class="card">
+      <div class="card-tag"><span>GitHub</span><span class="date">Trending · Stand 28.07.2026</span><span class="flag">⚠ Sternezahl unsicher</span></div>
+      <h3>usestrix/strix <span class="stars">★ ~34–39k</span></h3>
+      <p class="label">Was ist das?</p>
+      <p>Ein autonomes, KI-gestütztes Penetration-Testing-Tool, das Schwachstellen in Anwendungen automatisch findet und teils direkt Fixes vorschlägt.</p>
+      <p class="label">Warum relevant</p>
+      <p>Für Security-Teams/Entwickler, die automatisierte Sicherheitsprüfungen in CI/CD einbauen wollen, ohne einen Pentester zu buchen.</p>
+      <div class="usebox">
+        <p class="label">So nutzt du's</p>
+        <p>Repo klonen (<code>git clone https://github.com/usestrix/strix</code>), README-Setup folgen (Python-basiert), Tool nur gegen eigene Staging-Anwendungen laufen lassen — nicht gegen fremde/produktive Systeme ohne Erlaubnis.</p>
+      </div>
+      <p class="src">Quelle: <a href="https://github.com/usestrix/strix" target="_blank" rel="noopener">github.com/usestrix/strix</a> — Sternezahl schwankte zwischen Abrufen (Trending-Seite vs. Repo-Seite) zwischen 34k und 39k, daher als unsicher markiert.</p>
+    </div>
+  </section>
+
+  <footer>
+    Einordnungen in diesem Briefing sind journalistische Analyse, keine Anlage-, Rechts- oder Steuerberatung. Alle Angaben nach bestem Wissen anhand der verlinkten Originalquellen recherchiert (Stand: 28. Juli 2026); bei Sekundärquellen ist dies mit ⚠ gekennzeichnet. Automatisch erstellt, täglich um 10:00 Uhr.
+  </footer>
+
+</div>
+</body>
+</html>
